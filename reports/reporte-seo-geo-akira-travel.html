@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plan Maestro SEO + GEO — Akira Travel 2026</title>
+<style>
+  /* ── FUENTES ── */
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+  /* ── RESET ── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  /* ── BASE ── */
+  body {
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 11pt;
+    color: #1a1a2e;
+    background: #fff;
+    line-height: 1.6;
+  }
+
+  /* ── PORTADA ── */
+  .cover {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f3460 0%, #16213e 60%, #1a1a2e 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 40px;
+    text-align: center;
+    page-break-after: always;
+  }
+  .cover-logo {
+    font-size: 13pt;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #e94560;
+    margin-bottom: 16px;
+  }
+  .cover-divider {
+    width: 60px;
+    height: 3px;
+    background: #e94560;
+    margin: 0 auto 40px;
+    border-radius: 2px;
+  }
+  .cover h1 {
+    font-size: 32pt;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    max-width: 700px;
+  }
+  .cover h1 span { color: #e94560; }
+  .cover-subtitle {
+    font-size: 14pt;
+    color: #a8b2d8;
+    margin-bottom: 50px;
+    max-width: 500px;
+  }
+  .cover-meta {
+    display: flex;
+    gap: 40px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .cover-meta-item {
+    text-align: center;
+  }
+  .cover-meta-item .label {
+    font-size: 8pt;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #6b7db3;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .cover-meta-item .value {
+    font-size: 12pt;
+    font-weight: 600;
+    color: #ffffff;
+  }
+  .cover-badge {
+    margin-top: 60px;
+    padding: 10px 28px;
+    background: rgba(233, 69, 96, 0.15);
+    border: 1px solid rgba(233, 69, 96, 0.4);
+    border-radius: 30px;
+    color: #e94560;
+    font-size: 9pt;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  /* ── CONTENIDO ── */
+  .content { max-width: 900px; margin: 0 auto; padding: 40px 50px; }
+
+  /* ── ÍNDICE ── */
+  .toc { page-break-after: always; }
+  .toc h2 {
+    font-size: 20pt;
+    font-weight: 800;
+    color: #0f3460;
+    margin-bottom: 30px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid #e94560;
+  }
+  .toc-list { list-style: none; }
+  .toc-list li {
+    padding: 8px 0;
+    border-bottom: 1px dotted #d0d5e8;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .toc-list li .num {
+    font-weight: 700;
+    color: #e94560;
+    font-size: 10pt;
+    min-width: 28px;
+  }
+  .toc-list li .title { font-size: 11pt; color: #1a1a2e; flex: 1; }
+  .toc-list li .part {
+    font-size: 8pt;
+    background: #f0f3ff;
+    color: #0f3460;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 600;
+  }
+
+  /* ── SECCIONES ── */
+  .section { margin-bottom: 40px; }
+  .part-header {
+    background: linear-gradient(90deg, #0f3460, #16213e);
+    color: #fff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    margin: 40px 0 24px;
+    page-break-before: always;
+  }
+  .part-header:first-child { page-break-before: avoid; }
+  .part-header .part-label {
+    font-size: 8pt;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #e94560;
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .part-header h2 {
+    font-size: 18pt;
+    font-weight: 800;
+    color: #fff;
+  }
+
+  /* ── PASOS ── */
+  .step {
+    margin-bottom: 36px;
+    border-left: 4px solid #e94560;
+    padding-left: 20px;
+  }
+  .step-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 12px;
+  }
+  .step-num {
+    background: #e94560;
+    color: #fff;
+    font-weight: 800;
+    font-size: 10pt;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .step h3 {
+    font-size: 14pt;
+    font-weight: 700;
+    color: #0f3460;
+  }
+  .step p { color: #444; margin-bottom: 10px; }
+  .step ul, .step ol { margin-left: 20px; margin-bottom: 10px; color: #444; }
+  .step li { margin-bottom: 5px; }
+
+  /* ── ALERTAS ── */
+  .alert {
+    padding: 14px 18px;
+    border-radius: 8px;
+    margin: 14px 0;
+    font-size: 10pt;
+  }
+  .alert-red {
+    background: #fff0f0;
+    border-left: 4px solid #e94560;
+    color: #8b0000;
+  }
+  .alert-blue {
+    background: #f0f4ff;
+    border-left: 4px solid #0f3460;
+    color: #0f3460;
+  }
+  .alert-green {
+    background: #f0fff4;
+    border-left: 4px solid #38a169;
+    color: #276749;
+  }
+  .alert-yellow {
+    background: #fffbeb;
+    border-left: 4px solid #d97706;
+    color: #7c4a00;
+  }
+  .alert strong { font-weight: 700; }
+
+  /* ── TABLAS ── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 9.5pt;
+  }
+  th {
+    background: #0f3460;
+    color: #fff;
+    padding: 9px 12px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 9pt;
+  }
+  td {
+    padding: 8px 12px;
+    border-bottom: 1px solid #e8ecf5;
+    vertical-align: top;
+  }
+  tr:nth-child(even) td { background: #f7f9ff; }
+  tr:hover td { background: #eef1fb; }
+  td .check-yes { color: #38a169; font-weight: 700; }
+  td .check-no  { color: #e94560; font-weight: 700; }
+
+  /* ── CÓDIGO ── */
+  pre {
+    background: #1a1a2e;
+    color: #a8b2d8;
+    padding: 16px 20px;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 9pt;
+    margin: 14px 0;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
+  code {
+    background: #f0f3ff;
+    color: #0f3460;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 9pt;
+  }
+
+  /* ── BADGES ── */
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 8pt;
+    font-weight: 700;
+  }
+  .badge-red    { background: #fff0f0; color: #e94560; }
+  .badge-orange { background: #fff7ed; color: #d97706; }
+  .badge-green  { background: #f0fff4; color: #38a169; }
+  .badge-blue   { background: #f0f4ff; color: #0f3460; }
+
+  /* ── RESUMEN EJECUTIVO ── */
+  .exec-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .exec-card {
+    padding: 18px;
+    border-radius: 10px;
+    border: 1px solid #e8ecf5;
+  }
+  .exec-card .ec-label {
+    font-size: 8pt;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #6b7db3;
+    margin-bottom: 6px;
+  }
+  .exec-card .ec-value {
+    font-size: 16pt;
+    font-weight: 800;
+    color: #0f3460;
+  }
+  .exec-card .ec-desc {
+    font-size: 9pt;
+    color: #666;
+    margin-top: 4px;
+  }
+
+  /* ── FOOTER ── */
+  .page-footer {
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 2px solid #e8ecf5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 8pt;
+    color: #999;
+  }
+
+  /* ── PRINT ── */
+  @media print {
+    @page {
+      size: A4;
+      margin: 15mm 18mm 18mm 18mm;
+    }
+    @page :first { margin: 0; }
+    body { font-size: 10pt; }
+    .cover { min-height: 297mm; page-break-after: always; }
+    .part-header { page-break-before: always; page-break-inside: avoid; }
+    .step { page-break-inside: avoid; }
+    table { page-break-inside: avoid; }
+    pre { page-break-inside: avoid; }
+    h3 { page-break-after: avoid; }
+    a { color: #0f3460; text-decoration: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     PORTADA
+══════════════════════════════════════════ -->
+<div class="cover">
+  <div class="cover-logo">Akira Travel</div>
+  <div class="cover-divider"></div>
+  <h1>Plan Maestro<br><span>SEO + GEO</span><br>2026</h1>
+  <p class="cover-subtitle">Estrategia completa de posicionamiento en Google y motores de Inteligencia Artificial</p>
+  <div class="cover-meta">
+    <div class="cover-meta-item">
+      <span class="label">Elaborado para</span>
+      <span class="value">Akira Travel</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="label">Dominio</span>
+      <span class="value">akiratravel.com</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="label">Fecha</span>
+      <span class="value">Mayo 2026</span>
+    </div>
+    <div class="cover-meta-item">
+      <span class="label">Versión</span>
+      <span class="value">1.0</span>
+    </div>
+  </div>
+  <div class="cover-badge">Confidencial — Uso Interno</div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     CONTENIDO
+══════════════════════════════════════════ -->
+<div class="content">
+
+<!-- ÍNDICE -->
+<div class="toc">
+  <h2>Tabla de Contenido</h2>
+  <ul class="toc-list">
+    <li><span class="num">01</span><span class="title">Diagnóstico inicial y estado actual</span><span class="part">Diagnóstico</span></li>
+    <li><span class="num">02</span><span class="title">Benchmark — Comparación con competidores</span><span class="part">Diagnóstico</span></li>
+    <li><span class="num">03</span><span class="title">Resumen ejecutivo de hallazgos</span><span class="part">Diagnóstico</span></li>
+    <li><span class="num">04</span><span class="title">Acceder a Google Search Console</span><span class="part">Técnico</span></li>
+    <li><span class="num">05</span><span class="title">Corregir versión canónica del dominio (HTTPS)</span><span class="part">Técnico</span></li>
+    <li><span class="num">06</span><span class="title">Verificar y corregir robots.txt</span><span class="part">Técnico</span></li>
+    <li><span class="num">07</span><span class="title">Crear o corregir sitemap XML</span><span class="part">Técnico</span></li>
+    <li><span class="num">08</span><span class="title">Medir velocidad — Core Web Vitals</span><span class="part">Técnico</span></li>
+    <li><span class="num">09</span><span class="title">Migración de URLs: de /project/ a estructura limpia</span><span class="part">On-Page</span></li>
+    <li><span class="num">10</span><span class="title">Títulos meta y meta descriptions</span><span class="part">On-Page</span></li>
+    <li><span class="num">11</span><span class="title">Estructura de encabezados H1/H2/H3</span><span class="part">On-Page</span></li>
+    <li><span class="num">12</span><span class="title">Crear landing pages por destino</span><span class="part">On-Page</span></li>
+    <li><span class="num">13</span><span class="title">Mapa de palabras clave prioritarias</span><span class="part">On-Page</span></li>
+    <li><span class="num">14</span><span class="title">Crear blog con contenido informacional</span><span class="part">Contenido</span></li>
+    <li><span class="num">15</span><span class="title">Permitir bots de IA en robots.txt</span><span class="part">GEO</span></li>
+    <li><span class="num">16</span><span class="title">Implementar Schema Markup</span><span class="part">GEO</span></li>
+    <li><span class="num">17</span><span class="title">Contenido optimizado para ser citado por IA</span><span class="part">GEO</span></li>
+    <li><span class="num">18</span><span class="title">Presencia externa y señales de consenso</span><span class="part">GEO</span></li>
+    <li><span class="num">19</span><span class="title">Google Business Profile — SEO Local</span><span class="part">Local</span></li>
+    <li><span class="num">20</span><span class="title">Estrategia de reseñas y testimonios</span><span class="part">Local</span></li>
+    <li><span class="num">21</span><span class="title">Backlinks y autoridad de dominio</span><span class="part">Autoridad</span></li>
+    <li><span class="num">22</span><span class="title">Cronograma de implementación</span><span class="part">Plan</span></li>
+    <li><span class="num">23</span><span class="title">KPIs y métricas de seguimiento</span><span class="part">Plan</span></li>
+    <li><span class="num">24</span><span class="title">Herramientas gratuitas recomendadas</span><span class="part">Plan</span></li>
+  </ul>
+</div>
+
+<!-- ══ DIAGNÓSTICO ══ -->
+<div class="part-header">
+  <div class="part-label">Parte 1</div>
+  <h2>Diagnóstico Inicial</h2>
+</div>
+
+<div class="step">
+  <div class="step-header">
+    <div class="step-num">01</div>
+    <h3>Estado actual de akiratravel.com</h3>
+  </div>
+  <div class="alert alert-red">
+    <strong>🚨 Problema crítico detectado:</strong> El servidor devuelve error HTTP 403 (Acceso Denegado) a rastreadores externos. Si Googlebot recibe este mismo error, la indexación del sitio está severamente comprometida.
+  </div>
+  <p>Adicionalmente, Google tiene indexadas <strong>3 versiones distintas</strong> del mismo dominio, lo que divide la autoridad acumulada:</p>
+  <ul>
+    <li><code>http://www.akiratravel.com/</code></li>
+    <li><code>https://www.akiratravel.com/</code></li>
+    <li><code>https://akiratravel.com/</code></li>
+  </ul>
+  <div class="alert alert-yellow">
+    <strong>⚠️ Impacto:</strong> Cada URL duplicada recibe solo una fracción de la autoridad total. En lugar de tener 100% de fuerza en una URL, el dominio está repartido en 3, reduciendo el poder de posicionamiento.
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-header">
+    <div class="step-num">02</div>
+    <h3>Benchmark — Comparación con competidores top</h3>
+  </div>
+  <p>Análisis de los 5 competidores mejor posicionados para <strong>"viajes a Europa desde Colombia 2026"</strong>:</p>
+  <table>
+    <tr>
+      <th>Factor SEO</th>
+      <th>Travel Viajes</th>
+      <th>Paipa Tours</th>
+      <th>Viajes Éxito</th>
+      <th>Colombia de Lujo</th>
+      <th>Akira Travel</th>
+    </tr>
+    <tr>
+      <td>URL limpia <code>/viajes-a-europa</code></td>
+      <td><span class="check-yes">✓</span></td>
+      <td><span class="check-yes">✓</span></td>
+      <td><span class="check-yes">✓</span></td>
+      <td><span class="check-yes">✓</span></td>
+      <td><span class="check-no">✗</span></td>
+    </tr>
+    <tr>
+      <td>Año en título (2026-2027)</td>
+      <td><span class="check-yes">✓</span></td>
+      <td><span class="check-yes">✓</span></td>
+      <td><span class="check-yes">✓</span></td>
+      <td><span class="check-yes">✓</span></td>
+      <td><span class="check-no">✗</span></td>
+    </tr>
+    <tr>
+      <td>Landing dedicada por destino</td>
+      <td><span class="check-yes">✓</span></td>
+      <td><span class="check-yes">✓</span></td>
+      <td><span class="check-yes">✓</span></td>
+      <td><span class="check-yes">✓</span></td>
+      <td><span class="check-no">Parcial</span></td>
+    </tr>
+    <tr>
+      <td>Blog con contenido informacional</td>
+      <td><span class="check-yes">✓</span></td>
+      <td><span class="check-yes">✓</span></td>
+      <td><span class="check-yes">✓</span></td>
+      <td><span class="check-yes">✓</span></td>
+      <td><span class="check-no">✗</span></td>
+    </tr>
+    <tr>
+      <td>FAQ visible en páginas</td>
+      <td><span class="check-yes">✓</span></td>
+      <td><span class="check-yes">✓</span></td>
+      <td><span class="check-yes">✓</span></td>
+      <td><span class="check-yes">✓</span></td>
+      <td><span class="check-no">✗</span></td>
+    </tr>
+    <tr>
+      <td>Schema Markup TravelAgency</td>
+      <td><span class="check-yes">✓</span></td>
+      <td><span class="check-yes">✓</span></td>
+      <td><span class="check-yes">✓</span></td>
+      <td><span class="check-yes">✓</span></td>
+      <td><span class="check-no">?</span></td>
+    </tr>
+    <tr>
+      <td>Itinerario día a día detallado</td>
+      <td><span class="check-yes">✓</span></td>
+      <td><span class="check-yes">✓</span></td>
+      <td><span class="check-yes">✓</span></td>
+      <td><span class="check-yes">✓</span></td>
+      <td><span class="check-no">Parcial</span></td>
+    </tr>
+    <tr>
+      <td>Testimonios/reseñas visibles</td>
+      <td><span class="check-yes">✓</span></td>
+      <td><span class="check-yes">✓</span></td>
+      <td><span class="check-yes">✓</span></td>
+      <td><span class="check-yes">✓</span></td>
+      <td><span class="check-no">?</span></td>
+    </tr>
+  </table>
+</div>
+
+<div class="step">
+  <div class="step-header">
+    <div class="step-num">03</div>
+    <h3>Resumen ejecutivo de hallazgos</h3>
+  </div>
+  <table>
+    <tr>
+      <th>Área</th>
+      <th>Problema</th>
+      <th>Impacto</th>
+      <th>Urgencia</th>
+    </tr>
+    <tr>
+      <td><strong>SEO Técnico</strong></td>
+      <td>HTTP/HTTPS mixto + posible bloqueo de bots</td>
+      <td>Pérdida de autoridad de dominio</td>
+      <td><span class="badge badge-red">🔴 Urgente</span></td>
+    </tr>
+    <tr>
+      <td><strong>URLs</strong></td>
+      <td>Estructura <code>/project/</code> no optimizada</td>
+      <td>Menor relevancia para keywords</td>
+      <td><span class="badge badge-orange">🟠 Alta</span></td>
+    </tr>
+    <tr>
+      <td><strong>On-page</strong></td>
+      <td>Sin año en títulos, H1 sin keyword</td>
+      <td>No compite con resultados top</td>
+      <td><span class="badge badge-orange">🟠 Alta</span></td>
+    </tr>
+    <tr>
+      <td><strong>Contenido</strong></td>
+      <td>Sin blog informacional</td>
+      <td>Pierde 70% del tráfico potencial</td>
+      <td><span class="badge badge-orange">🟠 Alta</span></td>
+    </tr>
+    <tr>
+      <td><strong>Schema / GEO</strong></td>
+      <td>Sin datos estructurados visibles</td>
+      <td>Invisible para motores de IA</td>
+      <td><span class="badge badge-orange">🟠 Alta</span></td>
+    </tr>
+    <tr>
+      <td><strong>Local SEO</strong></td>
+      <td>Google Business sin optimizar</td>
+      <td>Invisible en búsquedas locales</td>
+      <td><span class="badge badge-blue">🟡 Media</span></td>
+    </tr>
+    <tr>
+      <td><strong>Backlinks</strong></td>
+      <td>Autoridad de dominio baja vs. competidores</td>
+      <td>Rankings más bajos</td>
+      <td><span class="badge badge-blue">🟡 Media</span></td>
+    </tr>
+  </table>
+  <div class="exec-grid">
+    <div class="exec-card">
+      <div class="ec-label">Tiempo para ver resultados</div>
+      <div class="ec-value">2 – 4 meses</div>
+      <div class="ec-desc">Para mejoras significativas de ranking tras implementación</div>
+    </div>
+    <div class="exec-card">
+      <div class="ec-label">Horas de implementación (3 meses)</div>
+      <div class="ec-value">80 – 100 h</div>
+      <div class="ec-desc">Total estimado para implementar todas las acciones del plan</div>
+    </div>
+    <div class="exec-card">
+      <div class="ec-label">Herramientas de pago necesarias</div>
+      <div class="ec-value">$0</div>
+      <div class="ec-desc">Todo el plan puede ejecutarse con herramientas gratuitas</div>
+    </div>
+    <div class="exec-card">
+      <div class="ec-label">Viajeros que usan IA para planear viajes</div>
+      <div class="ec-value">83%</div>
+      <div class="ec-desc">Fuente: TravelBoom Leisure Travel Study 2026</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ TÉCNICO ══ -->
+<div class="part-header">
+  <div class="part-label">Parte 2</div>
+  <h2>SEO Técnico — Fundamentos</h2>
+</div>
+
+<div class="step">
+  <div class="step-header"><div class="step-num">04</div><h3>Conectar Google Search Console</h3></div>
+  <p><strong>¿Qué es?</strong> La herramienta gratuita de Google que muestra exactamente cómo ve Google tu sitio: qué páginas indexa, qué errores encuentra y qué keywords generan clics.</p>
+  <div class="alert alert-blue"><strong>URL:</strong> search.google.com/search-console</div>
+  <p><strong>Pasos:</strong></p>
+  <ol>
+    <li>Ir a Search Console → "Añadir propiedad" → ingresar <code>akiratravel.com</code></li>
+    <li>Elegir verificación por <strong>DNS</strong> (la más confiable) o archivo HTML</li>
+    <li>Esperar 24-48 horas para datos completos</li>
+    <li>Revisar inmediatamente: <strong>Cobertura → páginas con error 404, páginas excluidas, páginas indexadas</strong></li>
+    <li>Revisar: <strong>Core Web Vitals → estado móvil y desktop</strong></li>
+    <li>Ir a Sitemaps → añadir <code>akiratravel.com/sitemap.xml</code></li>
+  </ol>
+</div>
+
+<div class="step">
+  <div class="step-header"><div class="step-num">05</div><h3>Corregir versión canónica del dominio</h3></div>
+  <p><strong>Versión correcta objetivo:</strong> <code>https://akiratravel.com</code> (HTTPS, sin www)</p>
+  <p>Agregar en el archivo <code>.htaccess</code> del servidor (o configurar en cPanel/hosting):</p>
+  <pre>RewriteEngine On
+
+# Redirigir HTTP → HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Eliminar www
+RewriteCond %{HTTP_HOST} ^www\.akiratravel\.com [NC]
+RewriteRule ^(.*)$ https://akiratravel.com/$1 [L,R=301]</pre>
+  <div class="alert alert-green"><strong>✓ Resultado:</strong> Toda la autoridad acumulada en URLs antiguas se concentra en la versión correcta.</div>
+</div>
+
+<div class="step">
+  <div class="step-header"><div class="step-num">06</div><h3>Verificar y corregir robots.txt</h3></div>
+  <p>El robots.txt controla qué pueden rastrear los bots. Verificar en: <code>akiratravel.com/robots.txt</code></p>
+  <p><strong>Contenido correcto del archivo:</strong></p>
+  <pre>User-agent: *
+Allow: /
+
+# Bots de búsqueda tradicional
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Bots de IA — CRÍTICO para aparecer en ChatGPT, Perplexity, etc.
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://akiratravel.com/sitemap.xml</pre>
+  <div class="alert alert-red"><strong>🚨 Nunca debe aparecer:</strong> <code>Disallow: /</code> de forma general ni bloqueando carpetas de tours o productos.</div>
+</div>
+
+<div class="step">
+  <div class="step-header"><div class="step-num">07</div><h3>Crear o corregir Sitemap XML</h3></div>
+  <p>El sitemap le dice a Google exactamente qué páginas existen. En WordPress: instalar <strong>Yoast SEO</strong> o <strong>RankMath</strong> (gratuitos) — el sitemap se genera automáticamente.</p>
+  <p>Luego enviar en Google Search Console → Sitemaps → añadir <code>sitemap.xml</code></p>
+  <div class="alert alert-blue"><strong>Meta:</strong> El sitemap debe incluir todas las páginas de destinos, tours y artículos del blog. Verificar que no incluya páginas con <code>noindex</code>.</div>
+</div>
+
+<div class="step">
+  <div class="step-header"><div class="step-num">08</div><h3>Medir velocidad — Core Web Vitals</h3></div>
+  <p><strong>URL:</strong> pagespeed.web.dev → ingresar <code>https://akiratravel.com</code></p>
+  <table>
+    <tr><th>Métrica</th><th>Qué mide</th><th>Meta Google</th><th>Si falla</th></tr>
+    <tr><td><strong>LCP</strong></td><td>Velocidad de carga del elemento principal</td><td>&lt; 2.5 seg</td><td>Penalización de ranking</td></tr>
+    <tr><td><strong>INP</strong></td><td>Respuesta a clics e interacciones</td><td>&lt; 200ms</td><td>Ranking inferior</td></tr>
+    <tr><td><strong>CLS</strong></td><td>Estabilidad visual (elementos que se mueven)</td><td>&lt; 0.1</td><td>Penalización de ranking</td></tr>
+  </table>
+  <p><strong>Soluciones más comunes para agencias de viajes:</strong></p>
+  <table>
+    <tr><th>Problema frecuente</th><th>Solución</th></tr>
+    <tr><td>Imágenes muy pesadas (&gt; 500KB)</td><td>Convertir todas las imágenes a formato <strong>WebP</strong></td></tr>
+    <tr><td>Sin lazy loading</td><td>Agregar <code>loading="lazy"</code> a imágenes</td></tr>
+    <tr><td>Sliders/carruseles pesados</td><td>Reemplazar por imagen estática en hero</td></tr>
+    <tr><td>Sin CDN</td><td>Activar <strong>Cloudflare</strong> (gratuito)</td></tr>
+    <tr><td>JavaScript bloqueante</td><td>Diferir JS con atributo <code>defer</code></td></tr>
+  </table>
+</div>
+
+<!-- ══ ON-PAGE ══ -->
+<div class="part-header">
+  <div class="part-label">Parte 3</div>
+  <h2>SEO On-Page — Contenido Optimizado</h2>
+</div>
+
+<div class="step">
+  <div class="step-header"><div class="step-num">09</div><h3>Migración de URLs: de /project/ a estructura limpia</h3></div>
+  <div class="alert alert-red"><strong>⚠️ SIEMPRE hacer este cambio con redirecciones 301.</strong> Sin ellas se pierde el ranking actual de cada página.</div>
+  <table>
+    <tr><th>URL actual</th><th>URL objetivo</th></tr>
+    <tr><td><code>/project/viajes-por-europa-...</code></td><td><code>/tours/europa/viajes-europa-colombia/</code></td></tr>
+    <tr><td><code>/project/turquia-dubai-...</code></td><td><code>/tours/medio-oriente/turquia-dubai/</code></td></tr>
+    <tr><td><code>/project/tours-por-georgia-...</code></td><td><code>/tours/medio-oriente/georgia-armenia/</code></td></tr>
+    <tr><td><code>/project/viajes-para-el-fin-de-ano/</code></td><td><code>/tours/especiales/fin-de-ano/</code></td></tr>
+  </table>
+</div>
+
+<div class="step">
+  <div class="step-header"><div class="step-num">10</div><h3>Fórmula para títulos meta y meta descriptions</h3></div>
+  <p><strong>Fórmula para títulos:</strong> <code>[Keyword + año] | [Propuesta de valor] | Akira Travel</code></p>
+  <table>
+    <tr><th>Página</th><th>Título actual</th><th>Título optimizado</th></tr>
+    <tr>
+      <td>Europa</td>
+      <td>Viajes Europa desde Colombia | Akira Travel</td>
+      <td>Viajes a Europa desde Colombia 2026-2027 | Paquetes con Vuelo Incluido | Akira Travel</td>
+    </tr>
+    <tr>
+      <td>Turquía</td>
+      <td>Tours Turquía y Dubai | Akira Travel</td>
+      <td>Tours a Turquía y Dubái desde Colombia 2026 | Mayorista Certificado | Akira Travel</td>
+    </tr>
+    <tr>
+      <td>Principal</td>
+      <td>Agencia de Viajes Mayorista desde Colombia | Akira Travel</td>
+      <td>Akira Travel | Agencia Mayorista Colombia | Tours Europa, Asia y Medio Oriente 2026</td>
+    </tr>
+  </table>
+  <p><strong>Meta description modelo:</strong></p>
+  <pre>Paquetes a Europa desde Colombia con vuelo incluido. Mayorista certificado
+(RNT 24740) con salidas grupales todo el año desde Bogotá y Medellín.
+Guía en español. Consulta disponibilidad hoy. ☎</pre>
+</div>
+
+<div class="step">
+  <div class="step-header"><div class="step-num">11</div><h3>Estructura correcta de encabezados H1/H2/H3</h3></div>
+  <div class="alert alert-blue"><strong>Regla de oro:</strong> Solo UN H1 por página. Debe contener la keyword principal con el año.</div>
+  <pre>&lt;h1&gt;Viajes a Europa desde Colombia 2026 — Paquetes Todo Incluido&lt;/h1&gt;
+
+&lt;h2&gt;¿Qué incluyen nuestros paquetes a Europa?&lt;/h2&gt;
+  &lt;h3&gt;Vuelos internacionales incluidos&lt;/h3&gt;
+  &lt;h3&gt;Hoteles 3 y 4 estrellas seleccionados&lt;/h3&gt;
+  &lt;h3&gt;Guía en español durante todo el recorrido&lt;/h3&gt;
+
+&lt;h2&gt;Destinos más populares en Europa desde Colombia&lt;/h2&gt;
+&lt;h2&gt;Itinerario día a día&lt;/h2&gt;
+&lt;h2&gt;Preguntas frecuentes sobre viajes a Europa&lt;/h2&gt;</pre>
+</div>
+
+<div class="step">
+  <div class="step-header"><div class="step-num">12</div><h3>Landing pages prioritarias a crear</h3></div>
+  <p>Cada destino necesita su propia página con mínimo <strong>1.200 palabras</strong>.</p>
+  <table>
+    <tr><th>Página</th><th>Keyword objetivo</th><th>Competidor a superar</th></tr>
+    <tr><td><code>/destinos/europa/</code></td><td>viajes a Europa desde Colombia 2026</td><td>travelviajes.co</td></tr>
+    <tr><td><code>/destinos/turquia/</code></td><td>tours Turquía desde Colombia 2026</td><td>gftravelcolombia.com</td></tr>
+    <tr><td><code>/destinos/dubai/</code></td><td>viajes a Dubái desde Colombia</td><td>paipatours.com</td></tr>
+    <tr><td><code>/destinos/japon/</code></td><td>tours Japón desde Colombia 2026</td><td>almar.com.co</td></tr>
+    <tr><td><code>/destinos/asia/</code></td><td>paquetes Asia desde Colombia</td><td>aviaturmayorista.com</td></tr>
+    <tr><td><code>/destinos/medio-oriente/</code></td><td>viajes Medio Oriente Colombia</td><td>megatravel.co</td></tr>
+  </table>
+  <p><strong>Estructura de cada landing:</strong></p>
+  <ol>
+    <li>Hero: imagen impactante + H1 + CTA a WhatsApp</li>
+    <li>¿Por qué viajar a [destino]? — 3 razones emocionales</li>
+    <li>Qué incluye el paquete — lista detallada</li>
+    <li>Itinerario día a día — mínimo 5 días descritos</li>
+    <li>Destinos que visitarás — fotos + descripciones</li>
+    <li>Testimonios de viajeros colombianos</li>
+    <li>Preguntas frecuentes — mínimo 5 preguntas</li>
+    <li>Formulario o CTA a WhatsApp</li>
+  </ol>
+</div>
+
+<div class="step">
+  <div class="step-header"><div class="step-num">13</div><h3>Mapa de palabras clave prioritarias</h3></div>
+  <table>
+    <tr><th>Keyword</th><th>Intención</th><th>Prioridad</th><th>Página</th></tr>
+    <tr><td>viajes a Europa desde Colombia 2026</td><td>Transaccional</td><td><span class="badge badge-red">Alta</span></td><td>/destinos/europa/</td></tr>
+    <tr><td>paquetes Europa todo incluido Colombia</td><td>Transaccional</td><td><span class="badge badge-red">Alta</span></td><td>/destinos/europa/</td></tr>
+    <tr><td>tours Turquía desde Colombia</td><td>Transaccional</td><td><span class="badge badge-red">Alta</span></td><td>/destinos/turquia/</td></tr>
+    <tr><td>agencia mayorista viajes Colombia</td><td>Transaccional B2B</td><td><span class="badge badge-red">Alta</span></td><td>/mayorista/</td></tr>
+    <tr><td>cuánto cuesta viajar a Europa desde Colombia</td><td>Informacional</td><td><span class="badge badge-orange">Media</span></td><td>/blog/presupuesto-europa/</td></tr>
+    <tr><td>requisitos visa Europa para colombianos</td><td>Informacional</td><td><span class="badge badge-orange">Media</span></td><td>/blog/visa-schengen/</td></tr>
+    <tr><td>viajes a Japón desde Colombia 2026</td><td>Transaccional</td><td><span class="badge badge-orange">Media</span></td><td>/destinos/japon/</td></tr>
+    <tr><td>qué ver en Turquía en 10 días</td><td>Informacional</td><td><span class="badge badge-orange">Media</span></td><td>/blog/itinerario-turquia/</td></tr>
+  </table>
+</div>
+
+<!-- ══ CONTENIDO ══ -->
+<div class="part-header">
+  <div class="part-label">Parte 4</div>
+  <h2>Arquitectura de Contenido — Blog</h2>
+</div>
+
+<div class="step">
+  <div class="step-header"><div class="step-num">14</div><h3>Crear el Blog de Akira Travel</h3></div>
+  <p>Las agencias con blog activo reciben <strong>3-4 veces más tráfico orgánico</strong> que las que no tienen. El blog captura viajeros en fase de investigación y los convierte en leads.</p>
+  <p><strong>Ratio recomendado de publicación:</strong> 70% informacional · 30% comercial</p>
+  <table>
+    <tr><th>#</th><th>Artículo</th><th>Keyword objetivo</th><th>Prioridad</th></tr>
+    <tr><td>1</td><td>Cuánto cuesta viajar a Europa desde Colombia en 2026</td><td>presupuesto Europa Colombia</td><td><span class="badge badge-red">Alta</span></td></tr>
+    <tr><td>2</td><td>Visa Schengen para colombianos 2026: guía paso a paso</td><td>visa europa colombianos</td><td><span class="badge badge-red">Alta</span></td></tr>
+    <tr><td>3</td><td>10 mejores destinos de Europa para colombianos</td><td>destinos Europa colombianos</td><td><span class="badge badge-orange">Media</span></td></tr>
+    <tr><td>4</td><td>Qué ver en Turquía en 10 días: itinerario completo</td><td>itinerario Turquía Colombia</td><td><span class="badge badge-orange">Media</span></td></tr>
+    <tr><td>5</td><td>Japón desde Colombia: guía completa 2026</td><td>viaje Japón Colombia</td><td><span class="badge badge-orange">Media</span></td></tr>
+    <tr><td>6</td><td>Georgia y Armenia: el destino que los colombianos están descubriendo</td><td>viajes Georgia Armenia Colombia</td><td><span class="badge badge-blue">Media-Baja</span></td></tr>
+  </table>
+</div>
+
+<!-- ══ GEO ══ -->
+<div class="part-header">
+  <div class="part-label">Parte 5</div>
+  <h2>GEO — Optimización para IA</h2>
+</div>
+
+<div class="step">
+  <div class="step-header"><div class="step-num">15</div><h3>Permitir bots de IA en robots.txt</h3></div>
+  <div class="alert alert-red"><strong>🚨 Paso más urgente para GEO.</strong> Si los bots de IA no pueden rastrear el sitio, Akira Travel nunca aparecerá en respuestas de ChatGPT, Perplexity o Google AI.</div>
+  <table>
+    <tr><th>Bot</th><th>Plataforma</th><th>Alcance 2026</th></tr>
+    <tr><td><code>GPTBot</code></td><td>ChatGPT (OpenAI)</td><td>900M usuarios semanales</td></tr>
+    <tr><td><code>ChatGPT-User</code></td><td>ChatGPT con búsqueda web</td><td>Mayor plataforma IA</td></tr>
+    <tr><td><code>PerplexityBot</code></td><td>Perplexity AI</td><td>El más agresivo en citar fuentes</td></tr>
+    <tr><td><code>ClaudeBot</code></td><td>Claude (Anthropic)</td><td>Crecimiento acelerado</td></tr>
+    <tr><td><code>Google-Extended</code></td><td>Gemini + AI Overviews</td><td>Aparece en 45% de búsquedas Google</td></tr>
+  </table>
+</div>
+
+<div class="step">
+  <div class="step-header"><div class="step-num">16</div><h3>Implementar Schema Markup (datos estructurados)</h3></div>
+  <p>El schema markup aumenta la visibilidad en IA entre un <strong>30-40%</strong>. Se implementa como código JSON-LD en el <code>&lt;head&gt;</code> de cada página.</p>
+  <p><strong>Schema TravelAgency</strong> — Página principal:</p>
+  <pre>{
+  "@context": "https://schema.org",
+  "@type": "TravelAgency",
+  "name": "Akira Travel",
+  "description": "Agencia mayorista de viajes con sede en Medellín. Especialistas en paquetes a Europa, Asia y Medio Oriente desde Colombia.",
+  "url": "https://akiratravel.com",
+  "telephone": "+57-XXXXXXXXX",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Medellín",
+    "addressRegion": "Antioquia",
+    "addressCountry": "CO"
+  },
+  "identifier": { "@type": "PropertyValue", "name": "RNT", "value": "24740" },
+  "areaServed": "Colombia"
+}</pre>
+  <p><strong>Schema FAQPage</strong> — Cada landing de destino:</p>
+  <pre>{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "¿Cuánto cuesta un paquete a Europa desde Colombia?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Los paquetes a Europa desde Colombia en Akira Travel parten desde USD $1.671
+               por persona en acomodación doble, incluyendo vuelo, hotel 3-4 estrellas
+               y guía en español."
+    }
+  }]
+}</pre>
+  <div class="alert alert-green"><strong>Cómo implementar en WordPress:</strong> Instalar plugin RankMath (gratuito) → Schema → añadir tipo TravelAgency. Verificar en: search.google.com/test/rich-results</div>
+</div>
+
+<div class="step">
+  <div class="step-header"><div class="step-num">17</div><h3>Contenido optimizado para ser citado por IA</h3></div>
+  <p>Las IAs extraen <strong>bloques de texto autocontenidos</strong> de 40-60 palabras. Cada sección debe poder leerse sola y responder una pregunta completa.</p>
+  <table>
+    <tr><th>Método</th><th>Aumento de visibilidad en IA</th></tr>
+    <tr><td>Citar fuentes con datos reales</td><td>+40%</td></tr>
+    <tr><td>Incluir estadísticas concretas</td><td>+37%</td></tr>
+    <tr><td>Citas de expertos con nombre y cargo</td><td>+30%</td></tr>
+    <tr><td>Tono de autoridad demostrada</td><td>+25%</td></tr>
+    <tr><td>Claridad y simplicidad</td><td>+20%</td></tr>
+    <tr><td>Keyword stuffing (exceso de palabras clave)</td><td>-10%</td></tr>
+  </table>
+  <p><em>Fuente: Princeton GEO Research, KDD 2024 — estudiado en Perplexity.ai</em></p>
+</div>
+
+<div class="step">
+  <div class="step-header"><div class="step-num">18</div><h3>Presencia externa — Señales de consenso</h3></div>
+  <p>Las IAs recomiendan marcas que aparecen <strong>consistentemente en múltiples fuentes independientes</strong>.</p>
+  <table>
+    <tr><th>Plataforma</th><th>Acción</th><th>Impacto GEO</th></tr>
+    <tr><td>TripAdvisor</td><td>Crear perfil de agencia con reseñas</td><td><span class="badge badge-red">Alto</span></td></tr>
+    <tr><td>ANATO</td><td>Aparecer en directorio oficial de agencias</td><td><span class="badge badge-red">Alto</span></td></tr>
+    <tr><td>ProColombia</td><td>Registro como operador de turismo receptivo</td><td><span class="badge badge-red">Alto</span></td></tr>
+    <tr><td>YouTube</td><td>Canal con videos de destinos</td><td><span class="badge badge-red">Alto</span></td></tr>
+    <tr><td>Google Business Profile</td><td>Perfil completo y activo</td><td><span class="badge badge-red">Alto</span></td></tr>
+    <tr><td>Medios de viaje colombianos</td><td>Notas de prensa con datos propios</td><td><span class="badge badge-orange">Medio-Alto</span></td></tr>
+    <tr><td>LinkedIn empresa</td><td>Perfil completo con publicaciones</td><td><span class="badge badge-blue">Medio</span></td></tr>
+  </table>
+</div>
+
+<!-- ══ LOCAL ══ -->
+<div class="part-header">
+  <div class="part-label">Parte 6</div>
+  <h2>SEO Local + Reseñas</h2>
+</div>
+
+<div class="step">
+  <div class="step-header"><div class="step-num">19</div><h3>Optimizar Google Business Profile</h3></div>
+  <p>El perfil de Google Business es lo que aparece en Google Maps y en el panel lateral cuando alguien busca "Akira Travel" o "agencia de viajes Medellín".</p>
+  <ol>
+    <li>Ir a <strong>business.google.com</strong> → reclamar o crear el perfil</li>
+    <li>Categoría principal: <strong>Agencia de viajes</strong> · Secundaria: <strong>Operador turístico</strong></li>
+    <li>Descripción (750 caracteres): incluir "mayorista", "RNT 24740", "Medellín", destinos principales</li>
+    <li>Subir mínimo <strong>20 fotos</strong>: oficina, equipo, destinos, grupos de viajeros</li>
+    <li>Verificar que nombre, dirección y teléfono sean <strong>idénticos</strong> en el sitio web y en Google Business</li>
+    <li>Publicar actualizaciones semanales en Google Business (mismas que Instagram)</li>
+    <li>Responder <strong>todas las reseñas</strong> en menos de 48 horas</li>
+  </ol>
+</div>
+
+<div class="step">
+  <div class="step-header"><div class="step-num">20</div><h3>Estrategia de reseñas</h3></div>
+  <p><strong>Meta:</strong> 50+ reseñas con calificación promedio > 4.7 en los próximos 6 meses.</p>
+  <p><strong>Mensaje de solicitud post-viaje (WhatsApp):</strong></p>
+  <pre>Hola [nombre], ¡esperamos que hayas llegado bien de [destino]! 🌍
+Tu opinión nos ayuda a crecer y a llevar a más colombianos al mundo.
+¿Nos regalás 2 minutos para dejar una reseña en Google?
+[enlace directo al perfil]
+¡Mil gracias! 🙏</pre>
+  <p>El enlace directo se obtiene desde Google Business → "Obtener más reseñas" → copiar URL corta.</p>
+</div>
+
+<!-- ══ BACKLINKS ══ -->
+<div class="part-header">
+  <div class="part-label">Parte 7</div>
+  <h2>Autoridad y Backlinks</h2>
+</div>
+
+<div class="step">
+  <div class="step-header"><div class="step-num">21</div><h3>Conseguir backlinks de calidad</h3></div>
+  <table>
+    <tr><th>Fuente</th><th>Cómo conseguirlo</th><th>Valor SEO</th></tr>
+    <tr><td><strong>ANATO</strong> (anato.org)</td><td>Ser miembro activo, aparecer en directorio</td><td><span class="badge badge-red">Muy alto</span></td></tr>
+    <tr><td><strong>ProColombia</strong></td><td>Registrarse como operador exportador de servicios</td><td><span class="badge badge-red">Alto</span></td></tr>
+    <tr><td><strong>El Colombiano / El Tiempo</strong></td><td>Nota de prensa sobre tendencias de viaje + datos propios</td><td><span class="badge badge-red">Alto</span></td></tr>
+    <tr><td><strong>Medios de turismo</strong></td><td>Artículos como experto: Skyscanner blog, Viajeros.com</td><td><span class="badge badge-red">Alto</span></td></tr>
+    <tr><td><strong>Cámara de Comercio Medellín</strong></td><td>Directorio de empresas asociadas</td><td><span class="badge badge-orange">Medio</span></td></tr>
+    <tr><td><strong>YouTube travel vloggers</strong></td><td>Colaborar con creadores de contenido colombianos</td><td><span class="badge badge-red">Alto</span></td></tr>
+    <tr><td><strong>Hoteles en destino</strong></td><td>Solicitar ser listado en página de "agencias aliadas"</td><td><span class="badge badge-orange">Medio</span></td></tr>
+  </table>
+</div>
+
+<!-- ══ CRONOGRAMA ══ -->
+<div class="part-header">
+  <div class="part-label">Parte 8</div>
+  <h2>Cronograma y Métricas</h2>
+</div>
+
+<div class="step">
+  <div class="step-header"><div class="step-num">22</div><h3>Cronograma de implementación</h3></div>
+  <p><strong>Semana 1-2 — Fundamentos técnicos (urgente):</strong></p>
+  <table>
+    <tr><th>Tarea</th><th>Responsable</th><th>Herramienta</th></tr>
+    <tr><td>Conectar Google Search Console</td><td>Marketing / Dev</td><td>search.google.com/search-console</td></tr>
+    <tr><td>Verificar y corregir robots.txt</td><td>Desarrollador</td><td>Acceso al servidor</td></tr>
+    <tr><td>Forzar HTTPS + eliminar www (301)</td><td>Desarrollador</td><td>.htaccess / cPanel</td></tr>
+    <tr><td>Crear y enviar sitemap.xml</td><td>Dev / WordPress</td><td>Yoast SEO o RankMath</td></tr>
+    <tr><td>Medir Core Web Vitals</td><td>Marketing</td><td>pagespeed.web.dev</td></tr>
+    <tr><td>Optimizar Google Business Profile</td><td>Marketing</td><td>business.google.com</td></tr>
+  </table>
+  <p><strong>Semana 3-4 — On-page crítico:</strong></p>
+  <table>
+    <tr><th>Tarea</th><th>Tiempo estimado</th></tr>
+    <tr><td>Actualizar title + meta description de 10 páginas</td><td>4 horas</td></tr>
+    <tr><td>Agregar H1 con keyword en cada landing</td><td>3 horas</td></tr>
+    <tr><td>Implementar schema TravelAgency en página principal</td><td>2 horas</td></tr>
+    <tr><td>Crear landing page /destinos/europa/ optimizada</td><td>8 horas</td></tr>
+    <tr><td>Crear landing page /destinos/turquia/</td><td>6 horas</td></tr>
+  </table>
+  <p><strong>Mes 2 — Contenido y GEO:</strong></p>
+  <table>
+    <tr><th>Tarea</th><th>Tiempo estimado</th></tr>
+    <tr><td>Publicar artículo: "Cuánto cuesta viajar a Europa desde Colombia"</td><td>8 horas</td></tr>
+    <tr><td>Publicar artículo: "Visa Schengen para colombianos 2026"</td><td>6 horas</td></tr>
+    <tr><td>Agregar FAQ con schema en 5 landing pages</td><td>4 horas</td></tr>
+    <tr><td>Crear perfiles en TripAdvisor, ANATO, ProColombia</td><td>4 horas</td></tr>
+    <tr><td>Lanzar protocolo de solicitud de reseñas</td><td>2 horas</td></tr>
+  </table>
+</div>
+
+<div class="step">
+  <div class="step-header"><div class="step-num">23</div><h3>KPIs y métricas de seguimiento</h3></div>
+  <table>
+    <tr><th>Métrica</th><th>Herramienta</th><th>Meta 3 meses</th><th>Meta 6 meses</th></tr>
+    <tr><td>Páginas indexadas en Google</td><td>Search Console</td><td>+50%</td><td>+100%</td></tr>
+    <tr><td>Clics orgánicos mensuales</td><td>Search Console</td><td>+30%</td><td>+80%</td></tr>
+    <tr><td>Posición promedio keywords</td><td>Search Console</td><td>Top 10</td><td>Top 5</td></tr>
+    <tr><td>Core Web Vitals — LCP</td><td>PageSpeed Insights</td><td>&lt; 2.5s</td><td>&lt; 2s</td></tr>
+    <tr><td>Reseñas en Google</td><td>Google Business</td><td>30+ reseñas</td><td>70+ reseñas</td></tr>
+    <tr><td>Calificación promedio</td><td>Google Business</td><td>&gt; 4.6</td><td>&gt; 4.8</td></tr>
+    <tr><td>Menciones en ChatGPT/Perplexity</td><td>Manual</td><td>1-2 menciones</td><td>5+ menciones</td></tr>
+  </table>
+</div>
+
+<div class="step">
+  <div class="step-header"><div class="step-num">24</div><h3>Herramientas gratuitas recomendadas</h3></div>
+  <table>
+    <tr><th>Herramienta</th><th>Para qué</th><th>URL</th></tr>
+    <tr><td><strong>Google Search Console</strong></td><td>Indexación, errores, keywords</td><td>search.google.com/search-console</td></tr>
+    <tr><td><strong>Google Analytics 4</strong></td><td>Tráfico y comportamiento de usuarios</td><td>analytics.google.com</td></tr>
+    <tr><td><strong>PageSpeed Insights</strong></td><td>Core Web Vitals y velocidad</td><td>pagespeed.web.dev</td></tr>
+    <tr><td><strong>Google Rich Results Test</strong></td><td>Verificar schema markup</td><td>search.google.com/test/rich-results</td></tr>
+    <tr><td><strong>Ahrefs Webmaster Tools</strong></td><td>Backlinks y keywords (gratuito)</td><td>ahrefs.com/webmaster-tools</td></tr>
+    <tr><td><strong>Screaming Frog</strong></td><td>Auditoría técnica (500 URLs gratis)</td><td>screamingfrog.co.uk</td></tr>
+    <tr><td><strong>SSL Checker</strong></td><td>Verificar certificado HTTPS</td><td>sslshopper.com/ssl-checker.html</td></tr>
+    <tr><td><strong>Schemantra</strong></td><td>Generar schema markup</td><td>schemantra.com</td></tr>
+  </table>
+</div>
+
+<!-- FOOTER -->
+<div class="page-footer">
+  <span>Akira Travel — Plan SEO + GEO 2026</span>
+  <span>Elaborado por el equipo de Marketing · Mayo 2026</span>
+  <span>Confidencial</span>
+</div>
+
+</div><!-- /content -->
+</body>
+</html>

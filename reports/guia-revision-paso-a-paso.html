@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guía de Revisión Paso a Paso — Akira Travel SEO</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 11pt;
+    color: #1a1a2e;
+    background: #fff;
+    line-height: 1.6;
+  }
+
+  /* PORTADA */
+  .cover {
+    width: 100%; min-height: 100vh;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 60px 40px; text-align: center;
+    page-break-after: always;
+  }
+  .cover-tag {
+    font-size: 9pt; letter-spacing: 4px; text-transform: uppercase;
+    color: #53d8fb; font-weight: 700; margin-bottom: 20px;
+  }
+  .cover h1 { font-size: 30pt; font-weight: 800; color: #fff; line-height: 1.2; margin-bottom: 14px; }
+  .cover h1 span { color: #53d8fb; }
+  .cover-sub { font-size: 12pt; color: #8892b0; max-width: 520px; margin-bottom: 50px; }
+  .cover-desc {
+    background: rgba(83,216,251,0.1); border: 1px solid rgba(83,216,251,0.3);
+    border-radius: 12px; padding: 20px 32px; max-width: 560px;
+    color: #ccd6f6; font-size: 10pt; line-height: 1.8;
+  }
+  .cover-desc strong { color: #53d8fb; }
+
+  /* LAYOUT */
+  .content { max-width: 900px; margin: 0 auto; padding: 40px 50px; }
+
+  /* MÓDULOS */
+  .module {
+    margin-bottom: 50px;
+    page-break-inside: avoid;
+  }
+  .module-header {
+    background: linear-gradient(90deg, #0f3460, #1a1a2e);
+    padding: 18px 24px; border-radius: 10px 10px 0 0;
+    display: flex; align-items: center; gap: 16px;
+  }
+  .module-num {
+    background: #53d8fb; color: #1a1a2e;
+    font-weight: 800; font-size: 11pt;
+    width: 36px; height: 36px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .module-header h2 { font-size: 14pt; font-weight: 700; color: #fff; }
+  .module-header .module-tag {
+    margin-left: auto; background: rgba(83,216,251,0.2);
+    color: #53d8fb; font-size: 8pt; font-weight: 700;
+    padding: 3px 10px; border-radius: 10px; letter-spacing: 1px;
+    text-transform: uppercase; white-space: nowrap;
+  }
+  .module-body {
+    border: 1px solid #e0e6f5; border-top: none;
+    border-radius: 0 0 10px 10px; padding: 24px;
+  }
+
+  /* OBJETIVO */
+  .objetivo {
+    background: #f0f9ff; border-left: 4px solid #53d8fb;
+    padding: 12px 16px; border-radius: 0 8px 8px 0;
+    margin-bottom: 20px; font-size: 10pt; color: #0f3460;
+  }
+  .objetivo strong { font-weight: 700; }
+
+  /* PASOS */
+  .paso {
+    margin-bottom: 22px;
+    border: 1px solid #e8ecf5; border-radius: 8px; overflow: hidden;
+  }
+  .paso-header {
+    background: #f7f9ff; padding: 10px 16px;
+    display: flex; align-items: center; gap: 10px;
+    border-bottom: 1px solid #e8ecf5;
+  }
+  .paso-num {
+    background: #0f3460; color: #fff;
+    font-size: 8pt; font-weight: 700;
+    width: 22px; height: 22px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .paso-header h3 { font-size: 11pt; font-weight: 700; color: #0f3460; }
+  .paso-body { padding: 14px 16px; }
+  .paso-body p { color: #444; margin-bottom: 8px; font-size: 10pt; }
+  .paso-body ol, .paso-body ul { margin-left: 20px; margin-bottom: 8px; }
+  .paso-body li { color: #444; font-size: 10pt; margin-bottom: 5px; }
+
+  /* URL BOX */
+  .url-box {
+    background: #1a1a2e; color: #53d8fb;
+    padding: 10px 16px; border-radius: 6px;
+    font-family: 'Courier New', monospace; font-size: 10pt;
+    margin: 10px 0; word-break: break-all;
+  }
+
+  /* CÓDIGO */
+  pre {
+    background: #1a1a2e; color: #a8b2d8;
+    padding: 14px 16px; border-radius: 8px;
+    font-family: 'Courier New', monospace; font-size: 9pt;
+    margin: 10px 0; white-space: pre-wrap; word-break: break-all;
+  }
+  code {
+    background: #f0f3ff; color: #0f3460;
+    padding: 2px 6px; border-radius: 4px;
+    font-family: 'Courier New', monospace; font-size: 9pt;
+  }
+
+  /* ALERTAS */
+  .alert {
+    padding: 11px 15px; border-radius: 6px;
+    margin: 10px 0; font-size: 10pt;
+  }
+  .alert-red    { background: #fff0f0; border-left: 4px solid #e94560; color: #8b0000; }
+  .alert-green  { background: #f0fff4; border-left: 4px solid #38a169; color: #276749; }
+  .alert-blue   { background: #f0f4ff; border-left: 4px solid #0f3460; color: #0f3460; }
+  .alert-yellow { background: #fffbeb; border-left: 4px solid #d97706; color: #7c4a00; }
+
+  /* RESULTADO ESPERADO */
+  .resultado {
+    background: #f0fff4; border: 1px solid #9ae6b4;
+    border-radius: 8px; padding: 12px 16px; margin-top: 12px;
+  }
+  .resultado .r-label {
+    font-size: 8pt; letter-spacing: 2px; text-transform: uppercase;
+    color: #38a169; font-weight: 700; margin-bottom: 5px;
+  }
+  .resultado p { color: #276749; font-size: 10pt; }
+
+  /* PROBLEMAS */
+  .problema {
+    background: #fff0f0; border: 1px solid #feb2b2;
+    border-radius: 8px; padding: 12px 16px; margin-top: 10px;
+  }
+  .problema .p-label {
+    font-size: 8pt; letter-spacing: 2px; text-transform: uppercase;
+    color: #e94560; font-weight: 700; margin-bottom: 5px;
+  }
+  .problema p { color: #8b0000; font-size: 10pt; }
+
+  /* TABLA DE VERIFICACIÓN */
+  .checklist { list-style: none; margin: 12px 0; }
+  .checklist li {
+    padding: 8px 12px;
+    border-bottom: 1px solid #f0f3ff;
+    display: flex; align-items: flex-start; gap: 10px;
+    font-size: 10pt; color: #333;
+  }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li::before {
+    content: "□";
+    color: #0f3460; font-size: 13pt;
+    line-height: 1; flex-shrink: 0; margin-top: 2px;
+  }
+
+  /* TABLAS */
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 9.5pt; }
+  th { background: #0f3460; color: #fff; padding: 8px 12px; text-align: left; font-size: 9pt; }
+  td { padding: 7px 12px; border-bottom: 1px solid #e8ecf5; vertical-align: top; }
+  tr:nth-child(even) td { background: #f7f9ff; }
+
+  /* SCREENSHOT PLACEHOLDER */
+  .screenshot {
+    border: 2px dashed #c0cadd; border-radius: 8px;
+    padding: 20px; text-align: center; margin: 12px 0;
+    background: #f8f9ff; color: #6b7db3; font-size: 9pt;
+  }
+  .screenshot .icon { font-size: 24pt; margin-bottom: 6px; }
+
+  /* BADGE */
+  .badge {
+    display: inline-block; padding: 2px 8px; border-radius: 10px;
+    font-size: 8pt; font-weight: 700;
+  }
+  .badge-red    { background: #fff0f0; color: #e94560; }
+  .badge-green  { background: #f0fff4; color: #38a169; }
+  .badge-blue   { background: #f0f4ff; color: #0f3460; }
+  .badge-orange { background: #fff7ed; color: #d97706; }
+
+  /* SEPARADOR DE SECCIÓN */
+  .section-title {
+    font-size: 16pt; font-weight: 800; color: #0f3460;
+    margin: 40px 0 20px; padding-bottom: 10px;
+    border-bottom: 3px solid #53d8fb;
+    page-break-before: always;
+  }
+  .section-title:first-child { page-break-before: avoid; }
+
+  /* FOOTER */
+  .footer {
+    margin-top: 60px; padding-top: 20px;
+    border-top: 2px solid #e8ecf5;
+    display: flex; justify-content: space-between;
+    font-size: 8pt; color: #999;
+  }
+
+  @media print {
+    @page { size: A4; margin: 15mm 18mm 18mm 18mm; }
+    @page :first { margin: 0; }
+    .cover { min-height: 297mm; page-break-after: always; }
+    .module { page-break-inside: avoid; }
+    .paso { page-break-inside: avoid; }
+    table { page-break-inside: avoid; }
+    pre { page-break-inside: avoid; }
+    .section-title { page-break-before: always; page-break-after: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<!-- PORTADA -->
+<div class="cover">
+  <div class="cover-tag">Akira Travel · Guía Técnica</div>
+  <h1>Revisión SEO<br><span>Paso a Paso</span></h1>
+  <p class="cover-sub">Manual de auditoría técnica detallada para cada herramienta y verificación del plan maestro SEO + GEO</p>
+  <div class="cover-desc">
+    Esta guía te lleva de la mano por <strong>cada revisión técnica</strong> necesaria:<br>
+    qué abrir, qué buscar, qué significa cada resultado<br>
+    y qué hacer cuando algo está mal.<br><br>
+    <strong>Nivel:</strong> No se requiere conocimiento técnico previo.
+  </div>
+</div>
+
+<!-- CONTENIDO -->
+<div class="content">
+
+<!-- ════════════════════════════════════ -->
+<div class="section-title">🔍 Bloque 1 — Google Search Console</div>
+<!-- ════════════════════════════════════ -->
+
+<div class="module">
+  <div class="module-header">
+    <div class="module-num">1</div>
+    <h2>Cómo conectar y usar Google Search Console</h2>
+    <span class="module-tag">Urgente</span>
+  </div>
+  <div class="module-body">
+    <div class="objetivo"><strong>Objetivo:</strong> Ver exactamente cómo ve Google tu sitio, qué páginas indexa, qué errores tiene y qué búsquedas generan clics.</div>
+
+    <div class="paso">
+      <div class="paso-header"><div class="paso-num">1</div><h3>Crear la cuenta en Search Console</h3></div>
+      <div class="paso-body">
+        <p>Abrir el navegador y escribir esta dirección:</p>
+        <div class="url-box">https://search.google.com/search-console</div>
+        <p>Iniciar sesión con la cuenta de Google de la empresa. Si no existe, crear una en gmail.com primero.</p>
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-header"><div class="paso-num">2</div><h3>Agregar el dominio de Akira Travel</h3></div>
+      <div class="paso-body">
+        <p>Una vez dentro, clic en el botón <strong>"Añadir propiedad"</strong> (o aparece automáticamente si es la primera vez).</p>
+        <p>Seleccionar <strong>"Prefijo de URL"</strong> (no "Dominio", porque el Dominio requiere acceso DNS).</p>
+        <p>Escribir exactamente: <code>https://akiratravel.com</code> → clic en <strong>"Continuar"</strong>.</p>
+        <div class="alert alert-blue">Usar siempre la versión HTTPS sin www. Después se puede añadir también la versión www para ver si hay duplicados.</div>
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-header"><div class="paso-num">3</div><h3>Verificar la propiedad (demostrar que eres el dueño)</h3></div>
+      <div class="paso-body">
+        <p>Google pedirá verificar que eres el propietario del sitio. Método más simple:</p>
+        <ol>
+          <li>Seleccionar <strong>"Etiqueta HTML"</strong></li>
+          <li>Google dará un código como: <code>&lt;meta name="google-site-verification" content="XXXXXX"/&gt;</code></li>
+          <li>Copiar ese código y pegarlo en el <code>&lt;head&gt;</code> de la página principal del sitio</li>
+          <li>En WordPress: ir a <strong>Apariencia → Editor de tema → header.php</strong> y pegar antes de <code>&lt;/head&gt;</code></li>
+          <li>O usar el plugin <strong>RankMath → General → Webmaster Tools → Google</strong> y pegar solo el valor del "content"</li>
+          <li>Volver a Search Console y clic en <strong>"Verificar"</strong></li>
+        </ol>
+        <div class="resultado">
+          <div class="r-label">✓ Resultado esperado</div>
+          <p>Aparece mensaje verde: <strong>"Se ha verificado la propiedad"</strong>. Los datos tardan 24-48 horas en aparecer.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-header"><div class="paso-num">4</div><h3>Revisar el informe de Cobertura (indexación)</h3></div>
+      <div class="paso-body">
+        <p>En el menú izquierdo: <strong>Índice → Páginas</strong></p>
+        <p><strong>Qué buscar en cada pestaña:</strong></p>
+        <table>
+          <tr><th>Pestaña</th><th>Qué significa</th><th>Acción</th></tr>
+          <tr><td><span class="badge badge-green">Páginas indexadas</span></td><td>Google las conoce y puede mostrarlas</td><td>Verificar que estén todas las páginas importantes</td></tr>
+          <tr><td><span class="badge badge-red">Error</span></td><td>Google intentó indexar pero falló</td><td>🚨 Corregir inmediatamente</td></tr>
+          <tr><td><span class="badge badge-orange">Válidas con advertencia</span></td><td>Indexadas pero con algún problema menor</td><td>Revisar y corregir cuando se pueda</td></tr>
+          <tr><td><span class="badge badge-blue">Excluidas</span></td><td>Google las encontró pero decidió no indexarlas</td><td>Revisar si hay páginas importantes excluidas por error</td></tr>
+        </table>
+        <div class="alert alert-red"><strong>🚨 Si el número de páginas indexadas es muy bajo</strong> (menos de 20 para un sitio con muchos tours) hay un problema de indexación grave. Buscar en la pestaña "Error" y "Excluidas" el motivo.</div>
+        <div class="alert alert-yellow"><strong>Errores comunes a buscar:</strong> "Página bloqueada por robots.txt", "Error de servidor (5xx)", "Página con redireccionamiento", "Página no encontrada (404)"</div>
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-header"><div class="paso-num">5</div><h3>Revisar el informe de Rendimiento (keywords y clics)</h3></div>
+      <div class="paso-body">
+        <p>En el menú: <strong>Rendimiento → Resultados de búsqueda</strong></p>
+        <p>Activar todas las casillas en la parte superior: <strong>Clics totales, Impresiones totales, CTR promedio, Posición promedio</strong>.</p>
+        <p><strong>Qué analizar:</strong></p>
+        <ul>
+          <li><strong>Consultas</strong> (pestaña): qué palabras buscan las personas y hacen clic en el sitio</li>
+          <li><strong>Páginas</strong> (pestaña): cuáles páginas del sitio reciben más clics</li>
+          <li><strong>Países</strong> (pestaña): verificar que el tráfico viene de Colombia principalmente</li>
+        </ul>
+        <div class="alert alert-blue"><strong>Búsqueda útil:</strong> En la pestaña "Consultas", ordenar por "Posición" de menor a mayor. Las keywords con posición entre 8-15 son oportunidades inmediatas de mejora: están cerca del top 5 y solo necesitan optimización de contenido.</div>
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-header"><div class="paso-num">6</div><h3>Revisar Core Web Vitals en Search Console</h3></div>
+      <div class="paso-body">
+        <p>En el menú: <strong>Experiencia → Señales de la página web → Core Web Vitals</strong></p>
+        <p>Hay dos reportes: <strong>Móvil</strong> y <strong>Escritorio</strong>. El móvil es más importante.</p>
+        <table>
+          <tr><th>Color en el reporte</th><th>Significado</th><th>Acción</th></tr>
+          <tr><td><span class="badge badge-green">Verde — Buenas</span></td><td>URLs con buena velocidad</td><td>Mantener así</td></tr>
+          <tr><td><span class="badge badge-orange">Naranja — Mejorar</span></td><td>URLs con velocidad regular</td><td>Optimizar en el siguiente mes</td></tr>
+          <tr><td><span class="badge badge-red">Rojo — Deficientes</span></td><td>URLs con velocidad mala</td><td>🚨 Prioridad alta</td></tr>
+        </table>
+        <p>Clic en cada problema → Google muestra exactamente qué URLs tienen el problema y cuál métrica falla (LCP, INP o CLS).</p>
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-header"><div class="paso-num">7</div><h3>Enviar el sitemap.xml</h3></div>
+      <div class="paso-body">
+        <p>En el menú: <strong>Índice → Sitemaps</strong></p>
+        <p>En el campo "Añadir un nuevo sitemap", escribir: <code>sitemap.xml</code> → clic en <strong>"Enviar"</strong>.</p>
+        <div class="resultado">
+          <div class="r-label">✓ Resultado esperado</div>
+          <p>El estado debe mostrar <strong>"Correcto"</strong> y un número de URLs descubiertas. Si dice "Error", verificar que la URL <code>https://akiratravel.com/sitemap.xml</code> existe y es accesible.</p>
+        </div>
+        <div class="problema">
+          <div class="p-label">Si dice "Error de lectura"</div>
+          <p>El archivo sitemap.xml no existe o no es accesible. Instalar el plugin Yoast SEO o RankMath en WordPress para generarlo automáticamente.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════ -->
+<div class="section-title">⚡ Bloque 2 — Velocidad (Core Web Vitals)</div>
+<!-- ════════════════════════════════════ -->
+
+<div class="module">
+  <div class="module-header">
+    <div class="module-num">2</div>
+    <h2>Cómo medir la velocidad del sitio con PageSpeed Insights</h2>
+    <span class="module-tag">Urgente</span>
+  </div>
+  <div class="module-body">
+    <div class="objetivo"><strong>Objetivo:</strong> Medir las 3 métricas de velocidad que usa Google como factor de ranking y entender qué está fallando.</div>
+
+    <div class="paso">
+      <div class="paso-header"><div class="paso-num">1</div><h3>Abrir PageSpeed Insights</h3></div>
+      <div class="paso-body">
+        <div class="url-box">https://pagespeed.web.dev</div>
+        <p>En el campo central, escribir: <code>https://akiratravel.com</code> → presionar Enter o clic en <strong>"Analizar"</strong>.</p>
+        <p>Esperar 30-60 segundos mientras Google analiza el sitio.</p>
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-header"><div class="paso-num">2</div><h3>Interpretar el puntaje general</h3></div>
+      <div class="paso-body">
+        <p>Aparecerá un número del 0 al 100. Hay dos pestañas: <strong>Móvil</strong> y <strong>Escritorio</strong>. Siempre revisar primero móvil.</p>
+        <table>
+          <tr><th>Puntaje</th><th>Color</th><th>Significado</th></tr>
+          <tr><td>90 – 100</td><td><span class="badge badge-green">Verde</span></td><td>Excelente. No hay problema de velocidad.</td></tr>
+          <tr><td>50 – 89</td><td><span class="badge badge-orange">Naranja</span></td><td>Regular. Hay oportunidades de mejora importantes.</td></tr>
+          <tr><td>0 – 49</td><td><span class="badge badge-red">Rojo</span></td><td>Malo. Google penaliza el ranking. Acción urgente.</td></tr>
+        </table>
+        <div class="alert alert-yellow">Los sitios de agencias de viajes con muchas imágenes suelen puntuar entre 30-60 en móvil. El objetivo mínimo es llegar a 75+.</div>
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-header"><div class="paso-num">3</div><h3>Revisar las métricas Core Web Vitals</h3></div>
+      <div class="paso-body">
+        <p>Debajo del puntaje aparecen las 3 métricas clave. Cada una tiene su propio semáforo:</p>
+        <table>
+          <tr><th>Métrica</th><th>Qué mide</th><th>Meta</th><th>Interpretación si falla</th></tr>
+          <tr><td><strong>LCP</strong><br>(Largest Contentful Paint)</td><td>Cuánto tarda en cargar la imagen o texto principal de la página</td><td>&lt; 2.5s</td><td>La imagen del hero o el banner principal es demasiado pesado. Convertir a WebP y reducir tamaño.</td></tr>
+          <tr><td><strong>INP</strong><br>(Interaction to Next Paint)</td><td>Cuánto tarda la página en responder cuando el usuario hace clic</td><td>&lt; 200ms</td><td>Hay demasiado JavaScript corriendo. Desactivar plugins innecesarios.</td></tr>
+          <tr><td><strong>CLS</strong><br>(Cumulative Layout Shift)</td><td>Si los elementos de la página se mueven mientras carga (frustrante para el usuario)</td><td>&lt; 0.1</td><td>Las imágenes no tienen dimensiones definidas o los banners cargan tarde y empujan el contenido.</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-header"><div class="paso-num">4</div><h3>Revisar las "Oportunidades" y "Diagnósticos"</h3></div>
+      <div class="paso-body">
+        <p>Más abajo en la página aparecen dos secciones importantes:</p>
+        <p><strong>Oportunidades</strong> (fondo naranja/amarillo): problemas que Google identifica con mayor impacto en la velocidad. Cada uno muestra cuántos segundos se ahorrarían al corregirlo. Priorizar los que tienen más ahorro.</p>
+        <p><strong>Diagnósticos</strong> (fondo gris): problemas técnicos adicionales.</p>
+        <p><strong>Los más comunes en sitios de agencias de viajes y cómo resolverlos:</strong></p>
+        <table>
+          <tr><th>Problema que aparece</th><th>Qué significa</th><th>Solución</th></tr>
+          <tr><td>"Eliminar recursos que bloquean el renderizado"</td><td>Archivos CSS o JS que hacen esperar al navegador</td><td>Plugin <strong>WP Rocket</strong> o <strong>Autoptimize</strong> en WordPress</td></tr>
+          <tr><td>"Oportunidades de usar imágenes en formatos de nueva generación"</td><td>Las imágenes son JPG/PNG, deberían ser WebP</td><td>Plugin <strong>ShortPixel</strong> o <strong>Imagify</strong> para convertir automáticamente</td></tr>
+          <tr><td>"Aplazar imágenes fuera de pantalla"</td><td>Las imágenes debajo del fold cargan aunque el usuario no las vea aún</td><td>Plugin <strong>a3 Lazy Load</strong> o activar lazy loading nativo</td></tr>
+          <tr><td>"Reducir el tiempo de respuesta del servidor"</td><td>El servidor tarda mucho en responder (TTFB alto)</td><td>Activar <strong>Cloudflare</strong> (gratuito) o mejorar plan de hosting</td></tr>
+          <tr><td>"Evitar encadenar solicitudes críticas"</td><td>Archivos que se cargan en cadena uno tras otro</td><td>Activar caché con <strong>W3 Total Cache</strong> o <strong>WP Super Cache</strong></td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-header"><div class="paso-num">5</div><h3>Verificar también páginas de tours específicos</h3></div>
+      <div class="paso-body">
+        <p>Repetir el análisis para las 3 páginas más importantes:</p>
+        <ul>
+          <li>La página de Europa: <code>https://akiratravel.com/project/viajes-por-europa-desde-colombia-16-dias-y-4-paises/</code></li>
+          <li>La página de Turquía/Dubái más visitada</li>
+          <li>La página de inicio</li>
+        </ul>
+        <p>Anotar los puntajes de cada una para tener un baseline antes de hacer cambios.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════ -->
+<div class="section-title">🔒 Bloque 3 — HTTPS y Dominio Canónico</div>
+<!-- ════════════════════════════════════ -->
+
+<div class="module">
+  <div class="module-header">
+    <div class="module-num">3</div>
+    <h2>Verificar HTTPS y versiones del dominio</h2>
+    <span class="module-tag">Urgente</span>
+  </div>
+  <div class="module-body">
+    <div class="objetivo"><strong>Objetivo:</strong> Confirmar que existe una sola versión del sitio (HTTPS sin www) y que todas las demás redireccionan automáticamente hacia ella.</div>
+
+    <div class="paso">
+      <div class="paso-header"><div class="paso-num">1</div><h3>Verificar el certificado SSL (candado verde)</h3></div>
+      <div class="paso-body">
+        <div class="url-box">https://www.sslshopper.com/ssl-checker.html</div>
+        <p>En el campo "Hostname", escribir: <code>akiratravel.com</code> → clic en <strong>"Check SSL"</strong>.</p>
+        <div class="resultado">
+          <div class="r-label">✓ Resultado esperado</div>
+          <p>Todos los indicadores en verde. Certificado válido con fecha de expiración futura. Sin errores de cadena de certificados.</p>
+        </div>
+        <div class="problema">
+          <div class="p-label">Si hay errores</div>
+          <p>Contactar el proveedor de hosting para renovar o corregir el certificado SSL. En cPanel suele ser automático con "AutoSSL".</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-header"><div class="paso-num">2</div><h3>Probar las 4 versiones del dominio manualmente</h3></div>
+      <div class="paso-body">
+        <p>Abrir 4 pestañas del navegador y escribir cada una. Todas deben terminar redirigiendo a <code>https://akiratravel.com/</code>:</p>
+        <table>
+          <tr><th>URL a probar</th><th>Debe redirigir a</th><th>Estado</th></tr>
+          <tr><td><code>http://akiratravel.com</code></td><td><code>https://akiratravel.com</code></td><td>☐ Verificar</td></tr>
+          <tr><td><code>http://www.akiratravel.com</code></td><td><code>https://akiratravel.com</code></td><td>☐ Verificar</td></tr>
+          <tr><td><code>https://www.akiratravel.com</code></td><td><code>https://akiratravel.com</code></td><td>☐ Verificar</td></tr>
+          <tr><td><code>https://akiratravel.com</code></td><td>Carga normal (esta es la correcta)</td><td>☐ Verificar</td></tr>
+        </table>
+        <p>Para verificar que el redireccionamiento es 301 (permanente, no 302): usar esta herramienta:</p>
+        <div class="url-box">https://httpstatus.io</div>
+        <p>Escribir cada URL y verificar que el código de respuesta sea <strong>301</strong> (no 302 ni 307).</p>
+        <div class="alert alert-red"><strong>Si alguna versión carga directamente sin redirigir:</strong> Google la está indexando como un sitio separado. Esto divide la autoridad del dominio. Reportar al desarrollador para agregar las redirecciones 301 en el archivo .htaccess.</div>
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-header"><div class="paso-num">3</div><h3>Verificar cuántas versiones del dominio están en Google</h3></div>
+      <div class="paso-body">
+        <p>Abrir Google y escribir estas búsquedas (una por una):</p>
+        <pre>site:www.akiratravel.com
+site:akiratravel.com
+site:http://akiratravel.com</pre>
+        <div class="resultado">
+          <div class="r-label">✓ Resultado esperado</div>
+          <p>Solo <code>site:akiratravel.com</code> debe mostrar resultados. Las otras búsquedas deben mostrar 0 resultados o las mismas páginas redirigidas.</p>
+        </div>
+        <div class="problema">
+          <div class="p-label">Si site:www.akiratravel.com muestra páginas separadas</div>
+          <p>Google tiene 2 versiones indexadas. Se pierde autoridad de dominio. Es urgente implementar las redirecciones 301 y la etiqueta canonical en todas las páginas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════ -->
+<div class="section-title">🤖 Bloque 4 — Robots.txt y Bots de IA</div>
+<!-- ════════════════════════════════════ -->
+
+<div class="module">
+  <div class="module-header">
+    <div class="module-num">4</div>
+    <h2>Verificar que Google y los bots de IA pueden rastrear el sitio</h2>
+    <span class="module-tag">Urgente</span>
+  </div>
+  <div class="module-body">
+    <div class="objetivo"><strong>Objetivo:</strong> Confirmar que el archivo robots.txt no bloquea a Googlebot ni a los bots de ChatGPT, Perplexity y otros motores de IA.</div>
+
+    <div class="paso">
+      <div class="paso-header"><div class="paso-num">1</div><h3>Abrir el archivo robots.txt directamente</h3></div>
+      <div class="paso-body">
+        <p>En el navegador, escribir exactamente:</p>
+        <div class="url-box">https://akiratravel.com/robots.txt</div>
+        <div class="resultado">
+          <div class="r-label">✓ Resultado esperado</div>
+          <p>Debe aparecer un archivo de texto plano. El contenido ideal debe decir <code>Allow: /</code> o no tener líneas <code>Disallow</code> que bloqueen carpetas importantes.</p>
+        </div>
+        <div class="problema">
+          <div class="p-label">Si aparece error 404 o 403</div>
+          <p>El archivo no existe o está bloqueado. Crearlo en la raíz del servidor con el contenido correcto (ver el Plan Maestro, Paso 3).</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-header"><div class="paso-num">2</div><h3>Analizar el contenido del robots.txt</h3></div>
+      <div class="paso-body">
+        <p>Revisar línea por línea buscando estas reglas peligrosas:</p>
+        <ul class="checklist">
+          <li><strong>¿Aparece <code>Disallow: /</code> solo?</strong> → Bloquea TODO el sitio para todos los bots. 🚨 Crítico.</li>
+          <li><strong>¿Aparece <code>Disallow: /project/</code>?</strong> → Bloquea todas las páginas de tours. 🚨 Crítico.</li>
+          <li><strong>¿Aparece <code>User-agent: GPTBot</code> con <code>Disallow: /</code>?</strong> → Bloquea ChatGPT. Akira no aparecerá en IA.</li>
+          <li><strong>¿Aparece <code>User-agent: Google-Extended</code> con <code>Disallow: /</code>?</strong> → Bloquea Gemini y Google AI Overviews.</li>
+          <li><strong>¿El archivo incluye <code>Sitemap:</code> al final?</strong> → Debe incluir la URL del sitemap.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-header"><div class="paso-num">3</div><h3>Probar el robots.txt con la herramienta de Google</h3></div>
+      <div class="paso-body">
+        <div class="url-box">https://search.google.com/search-console → Configuración → Probador de robots.txt</div>
+        <p>O directamente buscar "Google Robots.txt Tester" en Google.</p>
+        <p>Ingresar una URL de un tour, por ejemplo: <code>https://akiratravel.com/project/viajes-por-europa-desde-colombia-16-dias-y-4-paises/</code></p>
+        <div class="resultado">
+          <div class="r-label">✓ Resultado esperado</div>
+          <p>Debe decir: <strong>"Permitida"</strong> en color verde.</p>
+        </div>
+        <div class="problema">
+          <div class="p-label">Si dice "Bloqueada"</div>
+          <p>Google no puede rastrear esa página. Revisar qué regla del robots.txt la está bloqueando y corregir o eliminar esa regla.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-header"><div class="paso-num">4</div><h3>Usar "Inspección de URL" en Search Console para una prueba real</h3></div>
+      <div class="paso-body">
+        <p>En Search Console → barra de búsqueda superior → pegar la URL principal: <code>https://akiratravel.com</code></p>
+        <p>Clic en <strong>"Solicitar indexación"</strong> → esperar que Google pruebe si puede acceder.</p>
+        <div class="resultado">
+          <div class="r-label">✓ Resultado esperado</div>
+          <p>Debe decir: <strong>"La URL está en Google"</strong> o "La URL está disponible para Google". Si dice "La URL no está en Google", hay un problema serio de indexación.</p>
+        </div>
+        <p>Bajar para ver el <strong>resultado del renderizado</strong>: una captura de pantalla de cómo ve Google la página. Si aparece en blanco o con errores, hay problemas técnicos graves.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════ -->
+<div class="section-title">🏷️ Bloque 5 — Schema Markup (Datos Estructurados)</div>
+<!-- ════════════════════════════════════ -->
+
+<div class="module">
+  <div class="module-header">
+    <div class="module-num">5</div>
+    <h2>Verificar e implementar Schema Markup</h2>
+    <span class="module-tag">GEO</span>
+  </div>
+  <div class="module-body">
+    <div class="objetivo"><strong>Objetivo:</strong> Verificar si el sitio tiene datos estructurados (código invisible que le explica a Google y a la IA qué es cada cosa) y añadir los que falten.</div>
+
+    <div class="paso">
+      <div class="paso-header"><div class="paso-num">1</div><h3>Probar la página principal con Rich Results Test</h3></div>
+      <div class="paso-body">
+        <div class="url-box">https://search.google.com/test/rich-results</div>
+        <p>En el campo URL, escribir: <code>https://akiratravel.com</code> → clic en <strong>"Probar URL"</strong>.</p>
+        <div class="resultado">
+          <div class="r-label">✓ Resultado esperado</div>
+          <p>Debe aparecer al menos un tipo de schema detectado: <strong>TravelAgency, LocalBusiness, WebSite o Organization</strong>. Si hay resultados enriquecidos disponibles, Google los muestra en verde.</p>
+        </div>
+        <div class="problema">
+          <div class="p-label">Si dice "No se detectaron resultados enriquecidos"</div>
+          <p>El sitio no tiene schema markup. Esto es una oportunidad grande: implementar el schema TravelAgency dará visibilidad adicional en Google y en los motores de IA.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-header"><div class="paso-num">2</div><h3>Probar también una página de tour individual</h3></div>
+      <div class="paso-body">
+        <p>Repetir el mismo proceso con:</p>
+        <div class="url-box">https://akiratravel.com/turquia-dubai-estambul-y-sus-majestuosas-mezquitas/</div>
+        <p>Para las páginas de tours, el schema ideal es <strong>TouristTrip</strong>. Si no aparece, agregarlo siguiendo el código del Plan Maestro (Paso 16).</p>
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-header"><div class="paso-num">3</div><h3>Cómo implementar schema en WordPress (sin código)</h3></div>
+      <div class="paso-body">
+        <ol>
+          <li>En el panel de WordPress, ir a <strong>Plugins → Añadir nuevo</strong></li>
+          <li>Buscar <strong>"RankMath SEO"</strong> → Instalar y activar (es gratuito)</li>
+          <li>Ir a <strong>RankMath → Schema</strong> → usar el constructor visual</li>
+          <li>Para la página principal: seleccionar tipo <strong>"Local Business"</strong> y completar los campos: nombre, dirección, teléfono, horario</li>
+          <li>Para páginas de tours: seleccionar tipo <strong>"Event"</strong> o editar el schema personalizado con el código JSON-LD del Plan Maestro</li>
+          <li>Guardar y verificar nuevamente en Rich Results Test</li>
+        </ol>
+        <div class="alert alert-blue"><strong>Alternativa:</strong> Si no se usa WordPress, el código JSON-LD del Plan Maestro se puede agregar directamente en el HTML de cada página, dentro de las etiquetas <code>&lt;head&gt;&lt;/head&gt;</code>.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════ -->
+<div class="section-title">📍 Bloque 6 — Google Business Profile</div>
+<!-- ════════════════════════════════════ -->
+
+<div class="module">
+  <div class="module-header">
+    <div class="module-num">6</div>
+    <h2>Auditar y optimizar Google Business Profile</h2>
+    <span class="module-tag">Local SEO</span>
+  </div>
+  <div class="module-body">
+    <div class="objetivo"><strong>Objetivo:</strong> Que Akira Travel aparezca en Google Maps y en el panel lateral de Google cuando alguien busca "agencia de viajes Medellín" o "Akira Travel".</div>
+
+    <div class="paso">
+      <div class="paso-header"><div class="paso-num">1</div><h3>Verificar si existe el perfil</h3></div>
+      <div class="paso-body">
+        <p>Abrir Google y buscar: <code>Akira Travel Medellín</code></p>
+        <div class="resultado">
+          <div class="r-label">✓ Si aparece un panel a la derecha</div>
+          <p>El perfil existe. Hacer clic en <strong>"¿Eres el propietario?"</strong> o <strong>"Reclamar este negocio"</strong> para tomar control.</p>
+        </div>
+        <div class="problema">
+          <div class="p-label">Si no aparece ningún panel</div>
+          <p>El perfil no existe. Crearlo en <strong>business.google.com</strong> → "Añadir tu negocio a Google".</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-header"><div class="paso-num">2</div><h3>Lista de verificación del perfil completo</h3></div>
+      <div class="paso-body">
+        <p>Entrar a <strong>business.google.com</strong> con la cuenta de la empresa y verificar cada elemento:</p>
+        <ul class="checklist">
+          <li>Nombre del negocio exacto: <strong>Akira Travel</strong> (sin variaciones)</li>
+          <li>Categoría principal: <strong>Agencia de viajes</strong></li>
+          <li>Categoría secundaria: <strong>Operador turístico</strong></li>
+          <li>Dirección física completa y exacta en Medellín</li>
+          <li>Número de teléfono principal (el mismo que aparece en el sitio web)</li>
+          <li>Sitio web: <code>https://akiratravel.com</code></li>
+          <li>Horario de atención completo (lunes a sábado con horas exactas)</li>
+          <li>Descripción de 750 caracteres con keywords: "mayorista", "Europa", "Asia", "Colombia", "RNT 24740"</li>
+          <li>Mínimo 20 fotos subidas (fachada, equipo, destinos)</li>
+          <li>Al menos 1 publicación activa en los últimos 7 días</li>
+          <li>Reseñas respondidas (todas, sin excepción)</li>
+          <li>Atributos activos: "Citas online", "Accesible para sillas de ruedas" (si aplica)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-header"><div class="paso-num">3</div><h3>Probar búsquedas locales</h3></div>
+      <div class="paso-body">
+        <p>Desde un celular (no el computador de la empresa) buscar en Google:</p>
+        <ul>
+          <li><code>agencia de viajes mayorista Medellín</code></li>
+          <li><code>tours Europa desde Colombia</code></li>
+          <li><code>Akira Travel</code></li>
+        </ul>
+        <div class="resultado">
+          <div class="r-label">✓ Resultado esperado</div>
+          <p>Para la búsqueda de marca "Akira Travel" debe aparecer el panel de Google Business a la derecha. Para búsquedas genéricas, el objetivo es aparecer en el "Local Pack" (el mapa con 3 negocios).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════ -->
+<div class="section-title">🤖 Bloque 7 — Visibilidad en IA (GEO)</div>
+<!-- ════════════════════════════════════ -->
+
+<div class="module">
+  <div class="module-header">
+    <div class="module-num">7</div>
+    <h2>Verificar visibilidad actual en motores de IA</h2>
+    <span class="module-tag">GEO</span>
+  </div>
+  <div class="module-body">
+    <div class="objetivo"><strong>Objetivo:</strong> Saber si Akira Travel aparece hoy en las respuestas de ChatGPT, Perplexity y Google AI Overviews, y establecer un punto de partida para medir el progreso.</div>
+
+    <div class="paso">
+      <div class="paso-header"><div class="paso-num">1</div><h3>Probar en ChatGPT</h3></div>
+      <div class="paso-body">
+        <div class="url-box">https://chatgpt.com</div>
+        <p>Iniciar una nueva conversación (con la opción "Search" activada si está disponible) y hacer estas preguntas exactas:</p>
+        <ul>
+          <li><em>"¿Cuáles son las mejores agencias de viajes mayoristas de Colombia para ir a Europa?"</em></li>
+          <li><em>"¿Qué agencias de viaje en Medellín ofrecen tours a Europa y Asia?"</em></li>
+          <li><em>"¿Conoces la agencia Akira Travel de Medellín, Colombia?"</em></li>
+        </ul>
+        <p>Anotar si menciona Akira Travel o no, y qué agencias menciona en su lugar.</p>
+        <div class="alert alert-blue"><strong>Punto de partida:</strong> Es probable que hoy Akira Travel NO aparezca. El objetivo del plan GEO es cambiar esto en 2-3 meses.</div>
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-header"><div class="paso-num">2</div><h3>Probar en Perplexity</h3></div>
+      <div class="paso-body">
+        <div class="url-box">https://www.perplexity.ai</div>
+        <p>Hacer las mismas preguntas. Perplexity siempre cita fuentes, así que además observar:</p>
+        <ul>
+          <li>¿Aparece <code>akiratravel.com</code> como fuente citada?</li>
+          <li>¿Qué sitios SÍ son citados? (Esos son los competidores con mejor GEO)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-header"><div class="paso-num">3</div><h3>Probar en Google AI Overviews</h3></div>
+      <div class="paso-body">
+        <p>En Google (desde Colombia o con VPN a Colombia) buscar:</p>
+        <ul>
+          <li><code>mejores agencias de viajes mayoristas Colombia</code></li>
+          <li><code>tours Europa desde Colombia agencia</code></li>
+        </ul>
+        <p>Si aparece un bloque de texto generado por IA en la parte superior (con fondo celeste/azul): ese es el AI Overview. Verificar si cita a Akira Travel.</p>
+        <div class="alert alert-yellow"><strong>Nota:</strong> Los AI Overviews no siempre aparecen en todas las búsquedas. Si no aparece, la búsqueda no tiene AI Overview activo aún.</div>
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-header"><div class="paso-num">4</div><h3>Crear tabla de seguimiento mensual</h3></div>
+      <div class="paso-body">
+        <p>Copiar y guardar esta tabla para rellenar cada mes y medir el progreso:</p>
+        <table>
+          <tr><th>Pregunta</th><th>ChatGPT ¿cita Akira?</th><th>Perplexity ¿cita Akira?</th><th>Google AI ¿cita Akira?</th><th>Fecha</th></tr>
+          <tr><td>Agencias mayoristas Colombia</td><td>☐ Sí / ☐ No</td><td>☐ Sí / ☐ No</td><td>☐ Sí / ☐ No</td><td>___/___</td></tr>
+          <tr><td>Tours Europa Colombia</td><td>☐ Sí / ☐ No</td><td>☐ Sí / ☐ No</td><td>☐ Sí / ☐ No</td><td>___/___</td></tr>
+          <tr><td>Agencias viajes Medellín</td><td>☐ Sí / ☐ No</td><td>☐ Sí / ☐ No</td><td>☐ Sí / ☐ No</td><td>___/___</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════ -->
+<div class="section-title">🔗 Bloque 8 — Backlinks y Autoridad</div>
+<!-- ════════════════════════════════════ -->
+
+<div class="module">
+  <div class="module-header">
+    <div class="module-num">8</div>
+    <h2>Auditar los backlinks actuales con Ahrefs Webmaster Tools</h2>
+    <span class="module-tag">Autoridad</span>
+  </div>
+  <div class="module-body">
+    <div class="objetivo"><strong>Objetivo:</strong> Ver cuántos sitios externos enlazan hacia akiratravel.com y comparar con los competidores para entender la brecha de autoridad.</div>
+
+    <div class="paso">
+      <div class="paso-header"><div class="paso-num">1</div><h3>Crear cuenta en Ahrefs Webmaster Tools (gratis)</h3></div>
+      <div class="paso-body">
+        <div class="url-box">https://ahrefs.com/webmaster-tools</div>
+        <p>Clic en <strong>"Sign up for free"</strong> → crear cuenta con el email de la empresa.</p>
+        <p>Agregar el sitio: <code>akiratravel.com</code> → verificar con Google Search Console (se conecta automáticamente si ya está verificado).</p>
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-header"><div class="paso-num">2</div><h3>Revisar Domain Rating y backlinks</h3></div>
+      <div class="paso-body">
+        <p>Una vez dentro, ir a <strong>Site Explorer → Overview</strong>. Los datos más importantes:</p>
+        <table>
+          <tr><th>Métrica</th><th>Qué mide</th><th>Meta inicial</th></tr>
+          <tr><td><strong>Domain Rating (DR)</strong></td><td>Autoridad del dominio de 0-100</td><td>Competidores top: 30-50. Meta: aumentar 5-10 puntos en 6 meses</td></tr>
+          <tr><td><strong>Referring Domains</strong></td><td>Cuántos dominios diferentes enlazan al sitio</td><td>Comparar con competidores. Buscar al menos 30-50 dominios</td></tr>
+          <tr><td><strong>Backlinks</strong></td><td>Total de enlaces entrantes</td><td>Más es mejor, pero calidad > cantidad</td></tr>
+          <tr><td><strong>Organic Keywords</strong></td><td>Para cuántas keywords aparece en Google</td><td>Buscar aumentar 50% en 6 meses</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-header"><div class="paso-num">3</div><h3>Comparar con los competidores top</h3></div>
+      <div class="paso-body">
+        <p>En el campo de búsqueda de Ahrefs, escribir cada competidor y anotar su DR:</p>
+        <table>
+          <tr><th>Competidor</th><th>DR estimado</th><th>Comparación</th></tr>
+          <tr><td>travelviajes.co</td><td>Verificar</td><td>☐ Mayor ☐ Menor que Akira</td></tr>
+          <tr><td>paipatours.com</td><td>Verificar</td><td>☐ Mayor ☐ Menor que Akira</td></tr>
+          <tr><td>viajesexito.com</td><td>Verificar</td><td>☐ Mayor ☐ Menor que Akira</td></tr>
+          <tr><td>gftravelcolombia.com</td><td>Verificar</td><td>☐ Mayor ☐ Menor que Akira</td></tr>
+        </table>
+        <p>La diferencia de DR con los competidores que están en posición 1-3 explica gran parte de la brecha de ranking.</p>
+      </div>
+    </div>
+
+    <div class="paso">
+      <div class="paso-header"><div class="paso-num">4</div><h3>Identificar backlinks tóxicos (si existen)</h3></div>
+      <div class="paso-body">
+        <p>En Ahrefs → <strong>Backlinks</strong> → filtrar por DR del dominio enlazante < 10.</p>
+        <p>Si aparecen muchos enlaces de sitios spam, de baja calidad o en idiomas extraños irrelevantes: reportar al desarrollador para crear un archivo de "disavow" en Google Search Console y desautorizar esos enlaces.</p>
+        <div class="alert alert-blue">Para la mayoría de agencias de viajes colombianas no es un problema urgente. Solo actuar si hay más de 50 backlinks claramente spam.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════ -->
+<div class="section-title">📋 Checklist Final — Resumen de verificaciones</div>
+<!-- ════════════════════════════════════ -->
+
+<div class="module">
+  <div class="module-header">
+    <div class="module-num">9</div>
+    <h2>Checklist completo de todas las verificaciones</h2>
+    <span class="module-tag">Resumen</span>
+  </div>
+  <div class="module-body">
+    <p><strong>Usar esta lista para llevar control del estado de cada punto. Marcar cuando esté completado.</strong></p>
+
+    <p style="margin-top:16px; font-weight:700; color:#0f3460;">🔴 URGENTE — Semana 1</p>
+    <ul class="checklist">
+      <li>Google Search Console conectado y verificado para akiratravel.com</li>
+      <li>Sitemap.xml enviado en Search Console y sin errores</li>
+      <li>robots.txt revisado — sin bloqueos a Googlebot ni a bots de IA</li>
+      <li>Redirecciones 301: HTTP → HTTPS y www → sin-www funcionando</li>
+      <li>Prueba de 4 versiones del dominio: todas redirigen a https://akiratravel.com</li>
+      <li>Inspección de URL principal en Search Console: debe decir "Disponible para Google"</li>
+      <li>Core Web Vitals medidos con PageSpeed Insights — puntaje móvil registrado</li>
+      <li>Google Business Profile verificado y reclamado</li>
+    </ul>
+
+    <p style="margin-top:16px; font-weight:700; color:#d97706;">🟠 ALTA PRIORIDAD — Semana 2-3</p>
+    <ul class="checklist">
+      <li>Schema TravelAgency implementado en página principal — verificado con Rich Results Test</li>
+      <li>Title tags de las 10 páginas principales actualizados con keyword + año 2026</li>
+      <li>H1 con keyword en cada landing page de destino</li>
+      <li>Landing page /destinos/europa/ creada con mínimo 1.200 palabras</li>
+      <li>FAQ con mínimo 5 preguntas en la landing de Europa</li>
+      <li>Schema FAQPage implementado en la landing de Europa</li>
+      <li>Google Business Profile: 100% completo (descripción, horarios, fotos, categorías)</li>
+    </ul>
+
+    <p style="margin-top:16px; font-weight:700; color:#0f3460;">🟡 MEDIA PRIORIDAD — Mes 2</p>
+    <ul class="checklist">
+      <li>Primer artículo de blog publicado: "Cuánto cuesta viajar a Europa desde Colombia 2026"</li>
+      <li>Segundo artículo de blog: "Visa Schengen para colombianos — guía 2026"</li>
+      <li>Schema TouristTrip en las 5 páginas de tours más visitadas</li>
+      <li>Perfil creado y verificado en TripAdvisor</li>
+      <li>Registro en directorio ANATO completado</li>
+      <li>Protocolo de solicitud de reseñas activo — primeras 10 reseñas conseguidas</li>
+      <li>Akira Travel mencionado al menos 1 vez en respuesta de Perplexity o ChatGPT</li>
+    </ul>
+
+    <p style="margin-top:16px; font-weight:700; color:#38a169;">🟢 SEGUIMIENTO — Mes 3+</p>
+    <ul class="checklist">
+      <li>Landing pages para: Turquía, Dubái, Japón, Asia, Medio Oriente</li>
+      <li>4 artículos de blog publicados en total</li>
+      <li>30+ reseñas en Google con calificación > 4.7</li>
+      <li>Clics orgánicos mensuales aumentaron +30% vs mes de inicio</li>
+      <li>Al menos 3 backlinks nuevos de dominios de autoridad</li>
+      <li>Core Web Vitals móvil: LCP < 2.5s en página principal</li>
+      <li>Canal de YouTube creado con primer video de destino</li>
+    </ul>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <span>Akira Travel — Guía de Revisión SEO Paso a Paso</span>
+  <span>Mayo 2026 · Confidencial</span>
+  <span>Versión 1.0</span>
+</div>
+
+</div><!-- /content -->
+</body>
+</html>
