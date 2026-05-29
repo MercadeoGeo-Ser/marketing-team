@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plan Maestro SEO + GEO — Geo Tours 2026</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', Arial, sans-serif; font-size: 11pt; color: #1a1a2e; background: #fff; line-height: 1.6; }
+
+  .cover { width: 100%; min-height: 100vh; background: linear-gradient(135deg, #0f3460 0%, #16213e 60%, #1a1a2e 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 60px 40px; text-align: center; page-break-after: always; }
+  .cover-logo { font-size: 13pt; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: #e94560; margin-bottom: 16px; }
+  .cover-divider { width: 60px; height: 3px; background: #e94560; margin: 0 auto 40px; border-radius: 2px; }
+  .cover h1 { font-size: 30pt; font-weight: 800; color: #ffffff; line-height: 1.2; margin-bottom: 16px; max-width: 700px; }
+  .cover h1 span { color: #e94560; }
+  .cover-subtitle { font-size: 13pt; color: #a8b2d8; margin-bottom: 50px; max-width: 520px; }
+  .cover-meta { display: flex; gap: 40px; margin-top: 20px; flex-wrap: wrap; justify-content: center; }
+  .cover-meta-item .label { font-size: 8pt; letter-spacing: 2px; text-transform: uppercase; color: #6b7db3; margin-bottom: 4px; }
+  .cover-meta-item .value { font-size: 13pt; font-weight: 700; color: #fff; }
+  .cover-badges { display: flex; gap: 12px; margin-top: 40px; flex-wrap: wrap; justify-content: center; }
+  .badge { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: #a8b2d8; padding: 6px 16px; border-radius: 20px; font-size: 8pt; letter-spacing: 1px; text-transform: uppercase; }
+
+  .page { max-width: 900px; margin: 0 auto; padding: 40px 48px; }
+
+  .section-header { margin: 48px 0 28px; page-break-before: always; }
+  .section-header:first-child { page-break-before: auto; }
+  .section-num { font-size: 9pt; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #e94560; margin-bottom: 8px; }
+  .section-header h2 { font-size: 22pt; font-weight: 800; color: #0f3460; line-height: 1.2; margin-bottom: 12px; }
+  .section-header p { font-size: 11pt; color: #555; max-width: 700px; }
+  .section-divider { width: 100%; height: 2px; background: linear-gradient(90deg, #e94560, transparent); margin-top: 20px; }
+
+  h3 { font-size: 13pt; font-weight: 700; color: #0f3460; margin: 28px 0 12px; }
+  h4 { font-size: 11pt; font-weight: 700; color: #0f3460; margin: 20px 0 8px; }
+  p { margin-bottom: 12px; font-size: 10.5pt; color: #444; }
+
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 20px 0; }
+  .cards-2 { grid-template-columns: repeat(2, 1fr); }
+  .cards-4 { grid-template-columns: repeat(4, 1fr); }
+  .card { background: #f8f9ff; border-radius: 10px; padding: 18px 20px; border-left: 4px solid #e94560; }
+  .card.green { border-left-color: #27ae60; }
+  .card.orange { border-left-color: #f39c12; }
+  .card.blue { border-left-color: #2980b9; }
+  .card.purple { border-left-color: #8e44ad; }
+  .card-title { font-size: 8.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #0f3460; margin-bottom: 6px; }
+  .card-value { font-size: 20pt; font-weight: 800; color: #0f3460; line-height: 1; }
+  .card-desc { font-size: 8.5pt; color: #666; margin-top: 5px; }
+
+  .alert { border-radius: 8px; padding: 14px 18px; margin: 12px 0; display: flex; align-items: flex-start; gap: 12px; }
+  .alert-red { background: #fff5f5; border: 1px solid #ffcccc; }
+  .alert-orange { background: #fffbf0; border: 1px solid #ffe0a0; }
+  .alert-green { background: #f0fff4; border: 1px solid #a8e6c0; }
+  .alert-blue { background: #f0f7ff; border: 1px solid #b3d4f5; }
+  .alert-icon { font-size: 15pt; flex-shrink: 0; line-height: 1.4; }
+  .alert-title { font-size: 10pt; font-weight: 700; margin-bottom: 3px; }
+  .alert-red .alert-title { color: #c0392b; }
+  .alert-orange .alert-title { color: #d68910; }
+  .alert-green .alert-title { color: #1e8449; }
+  .alert-blue .alert-title { color: #1a5276; }
+  .alert-text { font-size: 9.5pt; color: #444; }
+
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 9.5pt; }
+  th { background: #0f3460; color: #fff; padding: 10px 14px; text-align: left; font-weight: 600; font-size: 9pt; }
+  td { padding: 9px 14px; border-bottom: 1px solid #e8ecf5; vertical-align: top; }
+  tr:nth-child(even) td { background: #f8f9ff; }
+  .td-red { color: #c0392b; font-weight: 600; }
+  .td-green { color: #1e8449; font-weight: 600; }
+  .td-orange { color: #d68910; font-weight: 600; }
+
+  .prob-list { list-style: none; margin: 16px 0; }
+  .prob-item { display: flex; gap: 16px; margin-bottom: 20px; padding: 16px 20px; background: #f8f9ff; border-radius: 10px; border-left: 4px solid #e74c3c; align-items: flex-start; }
+  .prob-item.orange { border-left-color: #f39c12; }
+  .prob-item.blue { border-left-color: #2980b9; }
+  .prob-num { background: #e94560; color: #fff; font-weight: 800; font-size: 10pt; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .prob-item.orange .prob-num { background: #f39c12; }
+  .prob-item.blue .prob-num { background: #2980b9; }
+  .prob-content { flex: 1; }
+  .prob-title { font-size: 11pt; font-weight: 700; color: #0f3460; margin-bottom: 4px; }
+  .prob-text { font-size: 9.5pt; color: #555; }
+  .prob-fix { font-size: 9pt; color: #1e8449; font-weight: 600; margin-top: 5px; }
+  .tag { display: inline-block; font-size: 7.5pt; font-weight: 700; padding: 2px 8px; border-radius: 10px; margin-left: 8px; vertical-align: middle; }
+  .tag-critico { background: #ffe5e5; color: #c0392b; }
+  .tag-alto { background: #fff3cd; color: #d68910; }
+  .tag-medio { background: #d4edda; color: #1e8449; }
+
+  pre { background: #1a1a2e; color: #a8b2d8; padding: 18px 22px; border-radius: 10px; font-size: 8pt; overflow-x: auto; margin: 14px 0; line-height: 1.7; }
+  .code-comment { color: #6b7db3; }
+  .code-tag { color: #e94560; }
+  .code-attr { color: #f0c040; }
+  .code-value { color: #7ecf7e; }
+
+  .roadmap-month { margin-bottom: 28px; }
+  .roadmap-month-title { font-size: 12pt; font-weight: 700; color: #fff; background: linear-gradient(90deg, #0f3460, #16213e); padding: 12px 20px; border-radius: 8px 8px 0 0; }
+  .roadmap-items { border: 1px solid #e8ecf5; border-top: none; border-radius: 0 0 8px 8px; overflow: hidden; }
+  .roadmap-item { display: flex; gap: 16px; padding: 12px 20px; border-bottom: 1px solid #e8ecf5; align-items: flex-start; }
+  .roadmap-item:last-child { border-bottom: none; }
+  .roadmap-week { font-size: 8pt; font-weight: 700; color: #e94560; min-width: 68px; text-transform: uppercase; letter-spacing: 1px; padding-top: 2px; }
+  .roadmap-content { flex: 1; }
+  .roadmap-task { font-size: 10pt; font-weight: 600; color: #0f3460; margin-bottom: 2px; }
+  .roadmap-detail { font-size: 9pt; color: #666; }
+  .roadmap-tags { display: flex; gap: 6px; margin-top: 5px; flex-wrap: wrap; }
+  .rtag { font-size: 7.5pt; padding: 2px 8px; border-radius: 10px; font-weight: 600; }
+  .rtag-dev { background: #e8f0fe; color: #1a5276; }
+  .rtag-content { background: #e8f8e8; color: #1e8449; }
+  .rtag-mkt { background: #fef9e7; color: #d68910; }
+  .rtag-seo { background: #fce8f3; color: #8e44ad; }
+
+  .kpi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 20px 0; }
+  .kpi-card { text-align: center; background: #f8f9ff; border-radius: 10px; padding: 20px 16px; }
+  .kpi-icon { font-size: 22pt; margin-bottom: 8px; }
+  .kpi-num { font-size: 20pt; font-weight: 800; color: #e94560; }
+  .kpi-label { font-size: 9pt; color: #555; margin-top: 4px; }
+  .kpi-target { font-size: 8.5pt; color: #27ae60; font-weight: 600; margin-top: 6px; }
+
+  .comp-card { background: #f8f9ff; border-radius: 10px; padding: 18px 22px; margin-bottom: 14px; border: 1px solid #e8ecf5; }
+  .comp-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 8px; }
+  .comp-name { font-size: 11.5pt; font-weight: 700; color: #0f3460; }
+  .comp-url { font-size: 9pt; color: #888; }
+  .comp-score { font-size: 8.5pt; font-weight: 700; padding: 4px 12px; border-radius: 20px; }
+  .score-high { background: #ffe5e5; color: #c0392b; }
+  .score-med { background: #fff3cd; color: #d68910; }
+  .comp-items { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; font-size: 9pt; }
+  .comp-item::before { content: "✓ "; color: #27ae60; font-weight: 700; }
+  .comp-item.miss::before { content: "✗ "; color: #e74c3c; }
+
+  .kw-block { margin-bottom: 28px; }
+  .kw-label { display: inline-block; font-size: 9pt; font-weight: 700; color: #fff; background: #e94560; padding: 5px 14px; border-radius: 20px; margin-bottom: 10px; }
+  .kw-label.blue { background: #0f3460; }
+  .kw-label.green { background: #27ae60; }
+  .kw-label.purple { background: #8e44ad; }
+  .kw-label.orange { background: #f39c12; }
+
+  .geo-block { background: linear-gradient(135deg, #1a1a2e, #0f3460); color: #fff; border-radius: 12px; padding: 24px 28px; margin: 20px 0; }
+  .geo-block h3 { color: #e94560; font-size: 12pt; margin-bottom: 12px; margin-top: 0; }
+  .geo-block p { color: #a8b2d8; font-size: 10pt; }
+  .geo-block ul { color: #a8b2d8; font-size: 10pt; padding-left: 20px; }
+  .geo-block ul li { margin-bottom: 6px; }
+  .geo-block ul li strong { color: #fff; }
+
+  @media print {
+    body { font-size: 10pt; }
+    .cover { min-height: auto; padding: 40px; page-break-after: always; }
+    .section-header { page-break-before: always; }
+    pre { font-size: 7.5pt; }
+    @page { margin: 18mm 14mm; size: A4; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════ PORTADA -->
+<div class="cover">
+  <div class="cover-logo">Geo Tours · Geoser</div>
+  <div class="cover-divider"></div>
+  <h1>Plan Maestro<br><span>SEO + GEO</span><br>Geo Tours 2026</h1>
+  <div class="cover-subtitle">Estrategia completa de posicionamiento orgánico y visibilidad en Inteligencia Artificial para viajesgeotours.com</div>
+  <div class="cover-meta">
+    <div class="cover-meta-item"><div class="label">Sitio Web</div><div class="value">viajesgeotours.com</div></div>
+    <div class="cover-meta-item"><div class="label">Fecha</div><div class="value">Mayo 2026</div></div>
+    <div class="cover-meta-item"><div class="label">Pasos</div><div class="value">26 acciones</div></div>
+    <div class="cover-meta-item"><div class="label">Plazo</div><div class="value">90 días</div></div>
+  </div>
+  <div class="cover-badges">
+    <span class="badge">B2C · Consumidor Final</span>
+    <span class="badge">Medellín + Bogotá</span>
+    <span class="badge">Europa · Turquía · Tailandia</span>
+    <span class="badge">RNT 9956 · IATA · ANATO</span>
+    <span class="badge">20+ años de experiencia</span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════ CONTENIDO -->
+<div class="page">
+
+<!-- ── SECCIÓN 1: DIAGNÓSTICO ACTUAL -->
+<div class="section-header">
+  <div class="section-num">Sección 01</div>
+  <h2>Diagnóstico del Sitio Actual</h2>
+  <p>Estado real de viajesgeotours.com antes de cualquier intervención. Esta radiografía muestra las oportunidades críticas que están costando tráfico y leads cada día.</p>
+  <div class="section-divider"></div>
+</div>
+
+<div class="cards cards-4">
+  <div class="card red">
+    <div class="card-title">URLs con ID numérico</div>
+    <div class="card-value">~60%</div>
+    <div class="card-desc">de páginas de paquetes con estructura /geotours/vp####/</div>
+  </div>
+  <div class="card orange">
+    <div class="card-title">Inconsistencia URL</div>
+    <div class="card-value">/destino vs /destinos</div>
+    <div class="card-desc">Páginas clave con estructura inconsistente</div>
+  </div>
+  <div class="card blue">
+    <div class="card-title">Blog estructurado</div>
+    <div class="card-value">No existe</div>
+    <div class="card-desc">Sin estrategia de contenido editorial activa</div>
+  </div>
+  <div class="card green">
+    <div class="card-title">Potencial de Keywords</div>
+    <div class="card-value">Alto</div>
+    <div class="card-desc">Nicho específico con competidores superables</div>
+  </div>
+</div>
+
+<h3>Estado Actual del Meta Title</h3>
+<table>
+  <tr><th>Página</th><th>Title Actual</th><th>Problema</th><th>Prioridad</th></tr>
+  <tr><td>Homepage</td><td>"Geo Tours - Viajes a Europa, Turquía, Tailandia, Cruceros"</td><td class="td-orange">Sin ciudad, sin diferenciador</td><td class="td-orange">Alta</td></tr>
+  <tr><td>/destinos/europa/</td><td>"Europa – Viajes a Europa, Tailandia, Turquía, Cruceros"</td><td class="td-red">Repite título genérico del home</td><td class="td-red">Crítica</td></tr>
+  <tr><td>/destinos/tailandia/</td><td>"Tailandia – Viajes a Europa, Tailandia, Turquía, Cruceros"</td><td class="td-red">Mismo patrón repetitivo</td><td class="td-red">Crítica</td></tr>
+  <tr><td>/destinos/cruceros/</td><td>"Cruceros – Viajes a Europa, Tailandia, Turquía, Cruceros"</td><td class="td-red">La palabra "Cruceros" aparece dos veces</td><td class="td-red">Crítica</td></tr>
+  <tr><td>/destino/punta-cana/</td><td>No confirmada</td><td class="td-orange">URL en singular vs. /destinos/ en plural</td><td class="td-orange">Alta</td></tr>
+  <tr><td>Páginas de paquetes</td><td>Variable por paquete</td><td class="td-red">URLs tipo /geotours/vp6381/sp/ofertas-a-europ (TRUNCADA)</td><td class="td-red">Crítica</td></tr>
+</table>
+
+<div class="alert alert-red">
+  <div class="alert-icon">🚨</div>
+  <div>
+    <div class="alert-title">URL TRUNCADA DETECTADA</div>
+    <div class="alert-text">La URL <strong>/geotours/vp6381/sp/ofertas-a-europ</strong> está cortada — "europa" aparece como "europ". Esto es un error técnico activo que puede estar generando errores 404 y confundiendo al crawler de Google. Requiere corrección inmediata.</div>
+  </div>
+</div>
+
+<div class="alert alert-orange">
+  <div class="alert-icon">⚠️</div>
+  <div>
+    <div class="alert-title">DOMINIO DUPLICADO DETECTADO</div>
+    <div class="alert-text">Existe tanto <strong>viajesgeotours.com</strong> como <strong>viajesgeotours.com.co</strong>. Si ambos dominios sirven el mismo contenido sin redirección 301 canónica, Google está dividiendo la autoridad entre los dos dominios. Verificar y consolidar urgente.</div>
+  </div>
+</div>
+
+<h3>Estructura de URLs — Problemas Identificados</h3>
+<table>
+  <tr><th>URL Actual</th><th>Tipo de Problema</th><th>URL Recomendada</th></tr>
+  <tr><td>/geotours/vp6795/sp/ofertas-a-estados-unidos</td><td class="td-red">ID numérico + ruta innecesaria</td><td>/destinos/estados-unidos/</td></tr>
+  <tr><td>/geotours/vp6823/sp/</td><td class="td-red">Sin slug descriptivo</td><td>/blog/donde-comprar-paquetes-europa-colombia/</td></tr>
+  <tr><td>/geotours/vp5755/sp/turquia-costa-azul-con-troya-15-das</td><td class="td-red">Caracteres mal codificados ("das" en vez de "días")</td><td>/destinos/turquia/paquete-turquia-costa-azul-15-dias/</td></tr>
+  <tr><td>/geotours/vp6381/sp/ofertas-a-europ</td><td class="td-red">URL TRUNCADA</td><td>/destinos/europa/ofertas/</td></tr>
+  <tr><td>/destino/punta-cana/</td><td class="td-orange">Singular vs plural de otras páginas</td><td>/destinos/punta-cana/</td></tr>
+  <tr><td>/geotours/vp6850/sp/promocion-y-ofertas-a-europa-de-ultima-hora</td><td class="td-orange">ID numérico</td><td>/destinos/europa/ofertas-ultima-hora/</td></tr>
+</table>
+
+<!-- ── SECCIÓN 2: PROBLEMAS CRÍTICOS -->
+<div class="section-header">
+  <div class="section-num">Sección 02</div>
+  <h2>Los 10 Problemas Críticos a Resolver</h2>
+  <p>Ordenados por impacto en el posicionamiento. Los primeros 4 son emergencias que deben atenderse en la Semana 1.</p>
+  <div class="section-divider"></div>
+</div>
+
+<ul class="prob-list">
+  <li class="prob-item">
+    <div class="prob-num">1</div>
+    <div class="prob-content">
+      <div class="prob-title">URLs con IDs numéricos sin estructura semántica <span class="tag tag-critico">CRÍTICO</span></div>
+      <div class="prob-text">La mayoría de páginas de paquetes usan la estructura /geotours/vp####/sp/ heredada del CMS. Google no puede entender de qué trata la página por su URL. Esto reduce el peso de ranking en keywords de cola larga como "paquete turquía 15 días desde medellín".</div>
+      <div class="prob-fix">→ Solución: Crear nuevas URLs semánticas + redirects 301 permanentes desde las antiguas. Priorizar las 20 páginas de mayor tráfico.</div>
+    </div>
+  </li>
+  <li class="prob-item">
+    <div class="prob-num">2</div>
+    <div class="prob-content">
+      <div class="prob-title">Meta titles duplicados y genéricos en páginas de destinos <span class="tag tag-critico">CRÍTICO</span></div>
+      <div class="prob-text">Las páginas de Europa, Tailandia, Cruceros y Turquía comparten prácticamente el mismo meta title: "Viajes a Europa, Tailandia, Turquía, Cruceros". Google puede tratar estas páginas como contenido duplicado y elegir una sola para rankear, perjudicando a las demás.</div>
+      <div class="prob-fix">→ Solución: Título único por página incluyendo ciudad de salida, duración y keyword principal de cada destino.</div>
+    </div>
+  </li>
+  <li class="prob-item">
+    <div class="prob-num">3</div>
+    <div class="prob-content">
+      <div class="prob-title">URL truncada activa (/ofertas-a-europ) <span class="tag tag-critico">CRÍTICO</span></div>
+      <div class="prob-text">La URL /geotours/vp6381/sp/ofertas-a-europ está cortada. Esta página puede estar generando error 404 o accediendo a contenido incorrecto. Afecta la rastreabilidad del sitio y envía señales negativas a Google Search Console.</div>
+      <div class="prob-fix">→ Solución: Verificar en Search Console si genera error 404 o 200. Corregir URL y añadir redirect 301 desde la URL truncada.</div>
+    </div>
+  </li>
+  <li class="prob-item">
+    <div class="prob-num">4</div>
+    <div class="prob-content">
+      <div class="prob-title">Dominio duplicado sin resolver (viajesgeotours.com.co) <span class="tag tag-critico">CRÍTICO</span></div>
+      <div class="prob-text">Si viajesgeotours.com.co sirve el mismo contenido que viajesgeotours.com sin canonical tag, Google está dividiendo toda la autoridad de backlinks y señales de ranking entre dos dominios en vez de concentrarla en uno solo.</div>
+      <div class="prob-fix">→ Solución: Redirect 301 del .com.co al .com principal, o canonical tag apuntando al .com en todas las páginas del .com.co.</div>
+    </div>
+  </li>
+  <li class="prob-item orange">
+    <div class="prob-num">5</div>
+    <div class="prob-content">
+      <div class="prob-title">Sin schema markup en páginas de paquetes <span class="tag tag-alto">ALTO</span></div>
+      <div class="prob-text">Las páginas de paquetes turísticos no tienen Schema de TouristTrip ni Offer. Sin esto, Google no puede generar rich snippets (precio, fechas, calificaciones) en los resultados de búsqueda. Los competidores que sí tienen schema se ven más atractivos en los resultados.</div>
+      <div class="prob-fix">→ Solución: Implementar TravelAgency (home), TouristTrip (paquetes), AggregateRating (reviews), FAQPage (preguntas frecuentes).</div>
+    </div>
+  </li>
+  <li class="prob-item orange">
+    <div class="prob-num">6</div>
+    <div class="prob-content">
+      <div class="prob-title">Sin blog editorial estructurado <span class="tag tag-alto">ALTO</span></div>
+      <div class="prob-text">Existe una sección tipo blog (el artículo "Dónde comprar paquetes de viajes por Europa") pero con URL de paquete (/geotours/vp6823/sp/) y sin estructura editorial. Un blog real es la principal fuente de tráfico orgánico de largo plazo para agencias de viajes — atrae usuarios en fase de investigación antes de que estén listos para comprar.</div>
+      <div class="prob-fix">→ Solución: Crear sección /blog/ con mínimo 2 artículos al mes orientados a keywords de información como "qué llevar a Europa", "mejor época para viajar a Tailandia".</div>
+    </div>
+  </li>
+  <li class="prob-item orange">
+    <div class="prob-num">7</div>
+    <div class="prob-content">
+      <div class="prob-title">Google Business Profile no optimizado <span class="tag tag-alto">ALTO</span></div>
+      <div class="prob-text">Para una agencia física en Medellín y Bogotá, Google Business Profile es fundamental para aparecer en búsquedas locales como "agencia de viajes medellín" o "viajes a europa medellín". Sin fotos actualizadas, reseñas respondidas y posts semanales, se pierde visibilidad local crítica.</div>
+      <div class="prob-fix">→ Solución: Completar perfil al 100%, responder todas las reseñas, publicar 1 post semanal con ofertas, agregar preguntas frecuentes.</div>
+    </div>
+  </li>
+  <li class="prob-item orange">
+    <div class="prob-num">8</div>
+    <div class="prob-content">
+      <div class="prob-title">Inconsistencia en estructura de URLs (/destino vs /destinos) <span class="tag tag-alto">ALTO</span></div>
+      <div class="prob-text">Punta Cana usa /destino/ (singular) mientras Europa, Tailandia y Cruceros usan /destinos/ (plural). Esta inconsistencia confunde al crawler, dificulta el internal linking y puede generar canibalización entre páginas.</div>
+      <div class="prob-fix">→ Solución: Estandarizar toda la estructura bajo /destinos/ con redirect 301 desde las URLs en singular.</div>
+    </div>
+  </li>
+  <li class="prob-item blue">
+    <div class="prob-num">9</div>
+    <div class="prob-content">
+      <div class="prob-title">Subdominio portalpagos.viajesgeotours.com sin noindex <span class="tag tag-medio">MEDIO</span></div>
+      <div class="prob-text">El portal de pagos en un subdominio puede ser rastreado e indexado por Google. Las páginas de pagos/checkout no deben aparecer en resultados de búsqueda y pueden generar contenido duplicado o alertas de seguridad.</div>
+      <div class="prob-fix">→ Solución: Añadir robots.txt con Disallow o meta robots noindex en todas las páginas del subdominio de pagos.</div>
+    </div>
+  </li>
+  <li class="prob-item blue">
+    <div class="prob-num">10</div>
+    <div class="prob-content">
+      <div class="prob-title">Sin estrategia de GEO — invisible para ChatGPT, Perplexity y Google AI Overviews <span class="tag tag-medio">MEDIO</span></div>
+      <div class="prob-text">Cuando un usuario le pregunta a ChatGPT "¿cuál es la mejor agencia de viajes a Europa en Medellín?", Geo Tours no aparece porque no tiene señales estructuradas de autoridad que los modelos de IA puedan consumir y citar.</div>
+      <div class="prob-fix">→ Solución: Implementar bloque "¿Quiénes somos?" estructurado, permitir acceso a bots de IA en robots.txt, crear contenido con formato de respuesta directa (definición + lista + fuente).</div>
+    </div>
+  </li>
+</ul>
+
+<!-- ── SECCIÓN 3: BENCHMARK COMPETIDORES -->
+<div class="section-header">
+  <div class="section-num">Sección 03</div>
+  <h2>Benchmark vs. Competidores</h2>
+  <p>Análisis de los sitios mejor posicionados para las keywords objetivo de Geo Tours. Esto es lo que tienen ellos y vos todavía no.</p>
+  <div class="section-divider"></div>
+</div>
+
+<div class="comp-card">
+  <div class="comp-header">
+    <div><div class="comp-name">Viajes Éxito</div><div class="comp-url">viajesexito.com · Gran retailer nacional</div></div>
+    <div class="comp-score score-high">Competidor muy fuerte</div>
+  </div>
+  <div class="comp-items">
+    <div class="comp-item">Blog editorial activo con 50+ artículos</div>
+    <div class="comp-item">Schema TouristTrip en todas las páginas</div>
+    <div class="comp-item">URLs semánticas /circuitos/europa/</div>
+    <div class="comp-item">Filtros de búsqueda por duración y precio</div>
+    <div class="comp-item">Reseñas verificadas con AggregateRating</div>
+    <div class="comp-item">Integración con vuelos Avianca/Latam</div>
+    <div class="comp-item miss">Sin voz colombiana local (es nacional genérico)</div>
+    <div class="comp-item miss">Sin enfoque en salidas desde Medellín</div>
+  </div>
+</div>
+
+<div class="comp-card">
+  <div class="comp-header">
+    <div><div class="comp-name">Travel Viajes Medellín</div><div class="comp-url">travelviajesmedellin.com · Competidor directo</div></div>
+    <div class="comp-score score-high">Competidor directo fuerte</div>
+  </div>
+  <div class="comp-items">
+    <div class="comp-item">URL semántica /viajes-a-europa indexada</div>
+    <div class="comp-item">Página dedicada por destino</div>
+    <div class="comp-item">Título optimizado con ciudad de salida</div>
+    <div class="comp-item">Google Business activo en Medellín</div>
+    <div class="comp-item miss">Sin 20 años de historia como Geo Tours</div>
+    <div class="comp-item miss">Sin volumen de paquetes propios (mayorista)</div>
+    <div class="comp-item miss">Sin certificación IATA destacada</div>
+    <div class="comp-item miss">Sin testimonios con video</div>
+  </div>
+</div>
+
+<div class="comp-card">
+  <div class="comp-header">
+    <div><div class="comp-name">Megatravel Colombia</div><div class="comp-url">megatravel.co · Mayorista</div></div>
+    <div class="comp-score score-med">Competidor moderado</div>
+  </div>
+  <div class="comp-items">
+    <div class="comp-item">Páginas de destino con H1 optimizado</div>
+    <div class="comp-item">Estructura /viajes-europa/ limpia</div>
+    <div class="comp-item">Meta description con fecha y precio</div>
+    <div class="comp-item miss">Principalmente B2B, no B2C</div>
+    <div class="comp-item miss">Sin blog de inspiración para viajeros</div>
+    <div class="comp-item miss">Sin salidas confirmadas con fecha visible</div>
+    <div class="comp-item miss">Sin enfoque en Medellín</div>
+    <div class="comp-item miss">Sin reseñas de clientes finales</div>
+  </div>
+</div>
+
+<div class="alert alert-green">
+  <div class="alert-icon">💡</div>
+  <div>
+    <div class="alert-title">VENTAJA COMPETITIVA DE GEO TOURS</div>
+    <div class="alert-text">20+ años de experiencia, 15.000+ viajes realizados, certificación IATA, miembro ANATO, operación propia (mayorista Akira Travel), salidas confirmadas desde Medellín Y Bogotá. Ningún competidor directo tiene este perfil completo. La oportunidad es enorme — solo falta comunicarlo con la estructura correcta para que Google y la IA lo vean.</div>
+  </div>
+</div>
+
+<h3>Tabla Comparativa de Señales SEO</h3>
+<table>
+  <tr><th>Señal SEO</th><th>Geo Tours</th><th>Viajes Éxito</th><th>Travel Viajes MDE</th><th>Megatravel</th></tr>
+  <tr><td>URLs semánticas</td><td class="td-red">Parcial (IDs numéricos)</td><td class="td-green">Sí</td><td class="td-green">Sí</td><td class="td-green">Sí</td></tr>
+  <tr><td>Blog editorial</td><td class="td-red">No estructurado</td><td class="td-green">Sí (50+ posts)</td><td class="td-orange">Básico</td><td class="td-red">No</td></tr>
+  <tr><td>Schema TouristTrip</td><td class="td-red">No</td><td class="td-green">Sí</td><td class="td-orange">Parcial</td><td class="td-orange">Parcial</td></tr>
+  <tr><td>AggregateRating</td><td class="td-red">No</td><td class="td-green">Sí</td><td class="td-red">No</td><td class="td-red">No</td></tr>
+  <tr><td>Google Business optimizado</td><td class="td-orange">Básico</td><td class="td-green">Sí</td><td class="td-green">Sí</td><td class="td-orange">Básico</td></tr>
+  <tr><td>Años de historia / autoridad</td><td class="td-green">20+ años</td><td class="td-green">25+ años</td><td class="td-orange">10+ años</td><td class="td-orange">15+ años</td></tr>
+  <tr><td>Certificaciones visibles</td><td class="td-orange">IATA/ANATO (no destacadas)</td><td class="td-green">Destacadas</td><td class="td-orange">Parcial</td><td class="td-green">Sí</td></tr>
+  <tr><td>Reseñas verificadas</td><td class="td-orange">Testimonios en home</td><td class="td-green">Integradas con schema</td><td class="td-orange">Básicas</td><td class="td-red">No</td></tr>
+  <tr><td>GEO / Visibilidad IA</td><td class="td-red">No</td><td class="td-orange">Básico</td><td class="td-red">No</td><td class="td-red">No</td></tr>
+</table>
+
+<!-- ── SECCIÓN 4: ARQUITECTURA URL -->
+<div class="section-header">
+  <div class="section-num">Sección 04</div>
+  <h2>Nueva Arquitectura de URLs</h2>
+  <p>Estructura recomendada para que cada URL comunique claramente su contenido a Google. Todos los cambios requieren redirects 301 desde las URLs antiguas.</p>
+  <div class="section-divider"></div>
+</div>
+
+<div class="alert alert-blue">
+  <div class="alert-icon">📋</div>
+  <div>
+    <div class="alert-title">REGLA DE ORO PARA URLs</div>
+    <div class="alert-text">Cada URL debe responder una sola pregunta: ¿de qué trata esta página? Si la URL no tiene la keyword principal, Google la tiene que adivinar. Una URL como /destinos/europa/tour-europa-17-dias-desde-medellin/ ya le dice a Google exactamente qué clasificar.</div>
+  </div>
+</div>
+
+<table>
+  <tr><th>Sección</th><th>Estructura Recomendada</th><th>Ejemplo</th></tr>
+  <tr><td>Homepage</td><td>/</td><td>viajesgeotours.com/</td></tr>
+  <tr><td>Destinos (hub)</td><td>/destinos/</td><td>viajesgeotours.com/destinos/</td></tr>
+  <tr><td>Página de destino</td><td>/destinos/{destino}/</td><td>/destinos/europa/</td></tr>
+  <tr><td>Paquete específico</td><td>/destinos/{destino}/{nombre-paquete}/</td><td>/destinos/europa/tour-europa-dreams-17-dias/</td></tr>
+  <tr><td>Paquetes con salida</td><td>/destinos/{destino}/{paquete}-desde-{ciudad}/</td><td>/destinos/europa/tour-europa-19-dias-desde-medellin/</td></tr>
+  <tr><td>Ofertas</td><td>/destinos/{destino}/ofertas/</td><td>/destinos/europa/ofertas/</td></tr>
+  <tr><td>Blog</td><td>/blog/</td><td>viajesgeotours.com/blog/</td></tr>
+  <tr><td>Artículo de blog</td><td>/blog/{categoria}/{slug}/</td><td>/blog/europa/que-llevar-viaje-europa-colombia/</td></tr>
+  <tr><td>Sobre nosotros</td><td>/nosotros/</td><td>viajesgeotours.com/nosotros/</td></tr>
+  <tr><td>Preguntas frecuentes</td><td>/preguntas-frecuentes/</td><td>viajesgeotours.com/preguntas-frecuentes/</td></tr>
+  <tr><td>Contacto</td><td>/contacto/</td><td>viajesgeotours.com/contacto/</td></tr>
+</table>
+
+<!-- ── SECCIÓN 5: KEYWORDS -->
+<div class="section-header">
+  <div class="section-num">Sección 05</div>
+  <h2>Estrategia de Keywords</h2>
+  <p>Agrupadas por clústeres temáticos. Cada clúster debe tener una página hub y páginas de paquetes que la soporten internamente.</p>
+  <div class="section-divider"></div>
+</div>
+
+<div class="kw-block">
+  <div class="kw-label">Clúster 1 · Europa desde Colombia</div>
+  <table>
+    <tr><th>Keyword</th><th>Intención</th><th>Página objetivo</th></tr>
+    <tr><td>viajes a europa desde colombia</td><td>Transaccional</td><td>/destinos/europa/</td></tr>
+    <tr><td>paquetes europa desde medellín</td><td>Transaccional</td><td>/destinos/europa/</td></tr>
+    <tr><td>tour europa colombia todo incluido</td><td>Transaccional</td><td>/destinos/europa/</td></tr>
+    <tr><td>agencia viajes europa medellín</td><td>Navegacional</td><td>Homepage + /destinos/europa/</td></tr>
+    <tr><td>viaje a europa cuánto cuesta colombia</td><td>Informacional</td><td>/blog/europa/cuanto-cuesta-viaje-europa-colombia/</td></tr>
+    <tr><td>mejor época para viajar a europa desde colombia</td><td>Informacional</td><td>/blog/europa/mejor-epoca-viajar-europa/</td></tr>
+  </table>
+</div>
+
+<div class="kw-block">
+  <div class="kw-label blue">Clúster 2 · Turquía desde Colombia</div>
+  <table>
+    <tr><th>Keyword</th><th>Intención</th><th>Página objetivo</th></tr>
+    <tr><td>viajes a turquía desde colombia</td><td>Transaccional</td><td>/destinos/turquia/</td></tr>
+    <tr><td>paquetes turquía medellín bogotá</td><td>Transaccional</td><td>/destinos/turquia/</td></tr>
+    <tr><td>tour turquía 15 días todo incluido</td><td>Transaccional</td><td>/destinos/turquia/tour-turquia-15-dias/</td></tr>
+    <tr><td>turquía o grecia cuál elegir colombia</td><td>Informacional</td><td>/blog/turquia/turquia-o-grecia-colombia/</td></tr>
+    <tr><td>visa turquía colombianos 2026</td><td>Informacional</td><td>/blog/turquia/visa-turquia-colombianos/</td></tr>
+  </table>
+</div>
+
+<div class="kw-block">
+  <div class="kw-label green">Clúster 3 · Tailandia desde Colombia</div>
+  <table>
+    <tr><th>Keyword</th><th>Intención</th><th>Página objetivo</th></tr>
+    <tr><td>viajes a tailandia desde colombia</td><td>Transaccional</td><td>/destinos/tailandia/</td></tr>
+    <tr><td>paquete tailandia colombia precio</td><td>Transaccional</td><td>/destinos/tailandia/</td></tr>
+    <tr><td>tour tailandia 14 días desde medellín</td><td>Transaccional</td><td>/destinos/tailandia/tour-tailandia-14-dias/</td></tr>
+    <tr><td>tailandia cuántos días se necesitan</td><td>Informacional</td><td>/blog/tailandia/cuantos-dias-tailandia/</td></tr>
+  </table>
+</div>
+
+<div class="kw-block">
+  <div class="kw-label purple">Clúster 4 · Local SEO Medellín + Bogotá</div>
+  <table>
+    <tr><th>Keyword</th><th>Intención</th><th>Página objetivo</th></tr>
+    <tr><td>agencia de viajes medellín</td><td>Local/Navegacional</td><td>Homepage + Google Business</td></tr>
+    <tr><td>agencia de viajes bogotá confiable</td><td>Local/Navegacional</td><td>Homepage + Google Business</td></tr>
+    <tr><td>mejores agencias de viajes colombia europa</td><td>Comparativa</td><td>/nosotros/ + blog</td></tr>
+    <tr><td>paquetes viaje en pareja colombia</td><td>Transaccional</td><td>Landing especial parejas</td></tr>
+    <tr><td>viajes todo incluido colombia</td><td>Transaccional</td><td>Homepage</td></tr>
+  </table>
+</div>
+
+<div class="kw-block">
+  <div class="kw-label orange">Clúster 5 · Cruceros desde Colombia</div>
+  <table>
+    <tr><th>Keyword</th><th>Intención</th><th>Página objetivo</th></tr>
+    <tr><td>cruceros mediterráneo desde colombia</td><td>Transaccional</td><td>/destinos/cruceros/</td></tr>
+    <tr><td>cruceros todo incluido colombia 2026</td><td>Transaccional</td><td>/destinos/cruceros/</td></tr>
+    <tr><td>cuánto cuesta un crucero mediterráneo colombia</td><td>Informacional</td><td>/blog/cruceros/cuanto-cuesta-crucero-mediterraneo/</td></tr>
+  </table>
+</div>
+
+<!-- ── SECCIÓN 6: ON-PAGE -->
+<div class="section-header">
+  <div class="section-num">Sección 06</div>
+  <h2>Optimización On-Page</h2>
+  <p>Nuevos meta titles, meta descriptions y estructura de encabezados para las páginas principales. Estos cambios solos pueden aumentar el CTR en un 20-35%.</p>
+  <div class="section-divider"></div>
+</div>
+
+<table>
+  <tr><th>Página</th><th>Meta Title Recomendado (máx. 60 chars)</th><th>Meta Description Recomendada (máx. 155 chars)</th></tr>
+  <tr>
+    <td>Homepage</td>
+    <td>Geo Tours | Viajes a Europa desde Medellín y Bogotá</td>
+    <td>Agencia de viajes con 20 años de experiencia. Paquetes a Europa, Turquía, Tailandia y Cruceros desde Medellín y Bogotá. Tiquetes incluidos. ¡Consultá ya!</td>
+  </tr>
+  <tr>
+    <td>/destinos/europa/</td>
+    <td>Viajes a Europa desde Colombia 2026 | Geo Tours</td>
+    <td>Tours a Europa todo incluido desde Medellín y Bogotá. Madrid, París, Roma, Venecia y más. 8 a 19 días con Avianca. 15.000+ viajeros satisfechos. ¡Reservá ahora!</td>
+  </tr>
+  <tr>
+    <td>/destinos/turquia/</td>
+    <td>Viajes a Turquía desde Colombia | Tours Geo Tours</td>
+    <td>Paquetes a Turquía desde Medellín y Bogotá. Estambul, Capadocia, Costa Azul. 10 a 15 días todo incluido. Certificados IATA y ANATO. ¡Cotizá gratis!</td>
+  </tr>
+  <tr>
+    <td>/destinos/tailandia/</td>
+    <td>Paquetes a Tailandia desde Colombia | Geo Tours</td>
+    <td>Viajes a Tailandia desde Medellín y Bogotá. Bangkok, Chiang Mai, Phuket. Todo incluido con tiquetes Avianca. Partidas 2026. ¡Consultá disponibilidad!</td>
+  </tr>
+  <tr>
+    <td>/destinos/cruceros/</td>
+    <td>Cruceros Mediterráneo desde Colombia | Geo Tours</td>
+    <td>Cruceros todo incluido al Mediterráneo desde Colombia. Roma, Barcelona, Santorini y más. Salidas con fecha confirmada desde Medellín y Bogotá. ¡Reservá hoy!</td>
+  </tr>
+  <tr>
+    <td>/nosotros/</td>
+    <td>Quiénes Somos | Geo Tours Agencia de Viajes Colombia</td>
+    <td>Geo Tours: más de 20 años llevando colombianos al mundo. Agencia certificada IATA, miembro ANATO. +15.000 viajeros. Con salidas desde Medellín y Bogotá.</td>
+  </tr>
+</table>
+
+<h3>Estructura de Encabezados Recomendada</h3>
+<h4>Página de Destino — Europa (ejemplo)</h4>
+<table>
+  <tr><th>Nivel</th><th>Texto del encabezado</th></tr>
+  <tr><td>H1 (único)</td><td>Viajes a Europa desde Colombia — Paquetes Todo Incluido 2026</td></tr>
+  <tr><td>H2</td><td>Nuestros paquetes a Europa</td></tr>
+  <tr><td>H3</td><td>Europa en Tenis II — 8 días desde Medellín</td></tr>
+  <tr><td>H3</td><td>Europa Dreams — 17 días desde Bogotá</td></tr>
+  <tr><td>H3</td><td>Europa Total — 18 días desde Medellín</td></tr>
+  <tr><td>H2</td><td>¿Por qué viajar a Europa con Geo Tours?</td></tr>
+  <tr><td>H2</td><td>Lo que incluye tu viaje a Europa</td></tr>
+  <tr><td>H2</td><td>Preguntas frecuentes sobre viajes a Europa</td></tr>
+</table>
+
+<!-- ── SECCIÓN 7: SCHEMA -->
+<div class="section-header">
+  <div class="section-num">Sección 07</div>
+  <h2>Schema Markup — Datos Estructurados</h2>
+  <p>El schema le habla directamente a Google (y a los modelos de IA) sobre quiénes somos y qué ofrecemos. Sin esto, nunca habrá rich snippets en los resultados.</p>
+  <div class="section-divider"></div>
+</div>
+
+<h3>Schema 1 — TravelAgency (Homepage)</h3>
+<p>Insertar en el <code>&lt;head&gt;</code> del homepage. Comunica la identidad completa de Geo Tours a Google y a los bots de IA.</p>
+<pre><code><span class="code-tag">&lt;script</span> <span class="code-attr">type</span>=<span class="code-value">"application/ld+json"</span><span class="code-tag">&gt;</span>
+{
+  "@context": "https://schema.org",
+  "@type": "TravelAgency",
+  "name": "Geo Tours",
+  "legalName": "Promotora Geo de Servicios S.A.S.",
+  "url": "https://www.viajesgeotours.com",
+  "logo": "https://www.viajesgeotours.com/logo.png",
+  "description": "Agencia de viajes colombiana con más de 20 años de experiencia. Especializada en Europa, Turquía, Tailandia y Cruceros. Certificada IATA y miembro ANATO.",
+  "foundingDate": "2004",
+  "slogan": "Viajes Inolvidables desde Medellín y Bogotá",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Calle 35 82A-12",
+    "addressLocality": "Medellín",
+    "addressRegion": "Antioquia",
+    "addressCountry": "CO",
+    "postalCode": "050001"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "6.2442",
+    "longitude": "-75.5812"
+  },
+  "telephone": "+573162412664",
+  "email": "reservas@viajesgeotours.com",
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "18:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday"], "opens": "09:00", "closes": "13:00" }
+  ],
+  "areaServed": ["Medellín", "Bogotá", "Colombia"],
+  "currenciesAccepted": "COP",
+  "paymentAccepted": "Tarjeta de crédito, Transferencia bancaria, Efecty",
+  "hasCredential": [
+    { "@type": "EducationalOccupationalCredential", "credentialCategory": "IATA Certificado" },
+    { "@type": "EducationalOccupationalCredential", "credentialCategory": "Miembro ANATO" }
+  ],
+  "identifier": { "@type": "PropertyValue", "name": "RNT", "value": "9956" },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "350",
+    "bestRating": "5"
+  },
+  "sameAs": [
+    "https://www.facebook.com/viajesgeotours/",
+    "https://www.instagram.com/geotoursviajes/"
+  ]
+}
+<span class="code-tag">&lt;/script&gt;</span></code></pre>
+
+<h3>Schema 2 — TouristTrip (Página de Paquete)</h3>
+<p>Insertar en cada página de paquete individual. Reemplazar los valores entre llaves con los datos reales del paquete.</p>
+<pre><code><span class="code-tag">&lt;script</span> <span class="code-attr">type</span>=<span class="code-value">"application/ld+json"</span><span class="code-tag">&gt;</span>
+{
+  "@context": "https://schema.org",
+  "@type": "TouristTrip",
+  "name": "Europa Dreams — 17 días desde Medellín",
+  "description": "Tour a Europa todo incluido. Madrid, París, Venecia, Florencia, Roma y Barcelona en 17 días. Tiquetes Avianca incluidos, salida desde Medellín.",
+  "image": "https://www.viajesgeotours.com/images/europa-dreams.jpg",
+  "touristType": "Cultural, Parejas, Familiar",
+  "availableLanguage": "Spanish",
+  "duration": "P17D",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "COP",
+    "availability": "https://schema.org/InStock",
+    "validFrom": "2026-08-01",
+    "validThrough": "2026-10-31",
+    "seller": { "@type": "TravelAgency", "name": "Geo Tours" }
+  },
+  "itinerary": {
+    "@type": "ItemList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Madrid, España" },
+      { "@type": "ListItem", "position": 2, "name": "París, Francia" },
+      { "@type": "ListItem", "position": 3, "name": "Venecia, Italia" },
+      { "@type": "ListItem", "position": 4, "name": "Florencia, Italia" },
+      { "@type": "ListItem", "position": 5, "name": "Roma, Italia" },
+      { "@type": "ListItem", "position": 6, "name": "Barcelona, España" }
+    ]
+  },
+  "provider": {
+    "@type": "TravelAgency",
+    "name": "Geo Tours",
+    "url": "https://www.viajesgeotours.com"
+  }
+}
+<span class="code-tag">&lt;/script&gt;</span></code></pre>
+
+<h3>Schema 3 — FAQPage (Preguntas Frecuentes)</h3>
+<pre><code><span class="code-tag">&lt;script</span> <span class="code-attr">type</span>=<span class="code-value">"application/ld+json"</span><span class="code-tag">&gt;</span>
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué incluyen los paquetes de Geo Tours a Europa?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Todos nuestros paquetes a Europa incluyen tiquetes aéreos con Avianca, alojamiento en hoteles seleccionados, traslados terrestres, guía local en español, asistencia médica y eSIM para conectividad." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Desde qué ciudades de Colombia salen los viajes?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Geo Tours opera salidas desde Medellín y Bogotá para todos sus destinos internacionales. Consultá disponibilidad para tu ciudad de origen." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Geo Tours es una agencia certificada?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Geo Tours es agencia certificada IATA, miembro activo de ANATO y opera con RNT 9956 registrado ante el Ministerio de Comercio de Colombia. Llevamos más de 20 años operando y hemos realizado más de 15.000 viajes." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto tiempo de antelación debo reservar mi viaje?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Recomendamos reservar con mínimo 3 meses de anticipación para garantizar disponibilidad de tiquetes y cupos en los paquetes de temporada alta." }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Se puede financiar el viaje?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Sí. Ofrecemos opciones de pago con tarjeta de crédito en cuotas, transferencia bancaria y convenios con entidades financieras. Consultá las opciones con tu asesor." }
+    }
+  ]
+}
+<span class="code-tag">&lt;/script&gt;</span></code></pre>
+
+<!-- ── SECCIÓN 8: GEO -->
+<div class="section-header">
+  <div class="section-num">Sección 08</div>
+  <h2>Estrategia GEO — Visibilidad en IA</h2>
+  <p>GEO (Generative Engine Optimization) es el conjunto de acciones para aparecer cuando alguien le pregunta a ChatGPT, Perplexity, Gemini o Google AI Overviews sobre viajes a Europa desde Colombia.</p>
+  <div class="section-divider"></div>
+</div>
+
+<div class="geo-block">
+  <h3>¿Qué es GEO y por qué importa para Geo Tours?</h3>
+  <p>Cuando un usuario colombiano le pregunta a ChatGPT: <em>"¿cuál es la mejor agencia de viajes para ir a Europa desde Medellín?"</em>, el modelo de IA busca páginas con señales claras de autoridad, hechos verificables y contenido estructurado en formato de respuesta. Si Geo Tours no tiene esto, aparecerán los competidores.</p>
+  <ul>
+    <li><strong>Google AI Overview:</strong> Aparece en el 40% de búsquedas de viajes en Colombia 2026</li>
+    <li><strong>ChatGPT Search:</strong> 15M+ usuarios en Latinoamérica hacen preguntas de viajes mensualmente</li>
+    <li><strong>Perplexity:</strong> Principal motor de búsqueda IA para decisiones de compra de alto valor</li>
+  </ul>
+</div>
+
+<h3>Acción 1 — Acceso a bots de IA (robots.txt)</h3>
+<p>Verificar que el robots.txt NO bloquee a los crawlers de inteligencia artificial:</p>
+<pre><code><span class="code-comment"># robots.txt — Geo Tours</span>
+User-agent: *
+Allow: /
+
+<span class="code-comment"># Bloquear portal de pagos</span>
+User-agent: *
+Disallow: /geotours/vp*/checkout/
+Disallow: /geotours/vp*/pago/
+
+<span class="code-comment"># Permitir explícitamente bots de IA</span>
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+Sitemap: https://www.viajesgeotours.com/sitemap.xml</code></pre>
+
+<h3>Acción 2 — Bloque de Identidad Estructurado (Página /nosotros/)</h3>
+<p>Los modelos de IA leen páginas "Quiénes somos" para extraer hechos sobre una empresa. Este bloque debe estar en el HTML de la página /nosotros/ con etiquetas de encabezado correctas:</p>
+<pre><code><span class="code-comment">&lt;!-- Bloque optimizado para IA en /nosotros/ --&gt;</span>
+<span class="code-tag">&lt;section</span> <span class="code-attr">id</span>=<span class="code-value">"quienes-somos"</span><span class="code-tag">&gt;</span>
+  <span class="code-tag">&lt;h1&gt;</span>Quiénes Somos — Geo Tours<span class="code-tag">&lt;/h1&gt;</span>
+  <span class="code-tag">&lt;p&gt;</span><span class="code-value">Geo Tours es una agencia de viajes colombiana fundada en 2004,
+  con sede en Medellín, Colombia. Somos una empresa certificada IATA
+  y miembro activo de ANATO, con más de 20 años de experiencia
+  organizando viajes internacionales para familias y parejas
+  colombianas.</span><span class="code-tag">&lt;/p&gt;</span>
+  <span class="code-tag">&lt;h2&gt;</span>Datos verificables<span class="code-tag">&lt;/h2&gt;</span>
+  <span class="code-tag">&lt;ul&gt;</span>
+    <span class="code-tag">&lt;li&gt;</span>Más de 20 años de operación continua<span class="code-tag">&lt;/li&gt;</span>
+    <span class="code-tag">&lt;li&gt;</span>Más de 15.000 viajeros llevados al mundo<span class="code-tag">&lt;/li&gt;</span>
+    <span class="code-tag">&lt;li&gt;</span>Agencia certificada IATA<span class="code-tag">&lt;/li&gt;</span>
+    <span class="code-tag">&lt;li&gt;</span>Miembro de ANATO (Asociación Colombiana de Agencias de Viajes)<span class="code-tag">&lt;/li&gt;</span>
+    <span class="code-tag">&lt;li&gt;</span>RNT 9956 registrado ante el Ministerio de Comercio de Colombia<span class="code-tag">&lt;/li&gt;</span>
+    <span class="code-tag">&lt;li&gt;</span>Salidas confirmadas desde Medellín y Bogotá<span class="code-tag">&lt;/li&gt;</span>
+    <span class="code-tag">&lt;li&gt;</span>Destinos: Europa, Turquía, Tailandia, Cruceros Mediterráneo<span class="code-tag">&lt;/li&gt;</span>
+  <span class="code-tag">&lt;/ul&gt;</span>
+<span class="code-tag">&lt;/section&gt;</span></code></pre>
+
+<h3>Acción 3 — Contenido con Formato de Respuesta Directa</h3>
+<p>Los artículos del blog deben seguir este patrón para ser citados por IA:</p>
+<table>
+  <tr><th>Elemento</th><th>Descripción</th><th>Ejemplo</th></tr>
+  <tr><td>Definición directa</td><td>Primera oración responde la pregunta sin rodeos</td><td>"Un viaje a Europa desde Colombia cuesta entre X y Y pesos según el paquete elegido."</td></tr>
+  <tr><td>Lista numerada</td><td>Los pasos o puntos clave en formato de lista</td><td>"Los 5 documentos que necesitás para viajar a Europa desde Colombia"</td></tr>
+  <tr><td>Datos verificables</td><td>Estadísticas con año y fuente</td><td>"Según ANATO 2026, Colombia es el 3er país de Latinoamérica que más turistas envía a Europa."</td></tr>
+  <tr><td>Mención de marca</td><td>Citar explícitamente a Geo Tours en el contexto</td><td>"En Geo Tours, nuestros paquetes a Europa incluyen..." (en el blog propio)</td></tr>
+  <tr><td>FAQ al final</td><td>Sección de preguntas frecuentes con respuestas cortas</td><td>Mínimo 5 preguntas reales de usuarios</td></tr>
+</table>
+
+<h3>Acción 4 — Señales de Consenso (Link Building para IA)</h3>
+<p>Los modelos de IA tienen más confianza en una empresa cuando múltiples fuentes externas la mencionan. Objetivo: obtener menciones de Geo Tours en estas fuentes:</p>
+<table>
+  <tr><th>Fuente</th><th>Acción</th><th>Impacto IA</th></tr>
+  <tr><td>Google Business Profile</td><td>Perfil completo con 50+ reseñas verificadas</td><td class="td-green">Muy alto</td></tr>
+  <tr><td>Wikipedia / Wikidata</td><td>Crear o contribuir a la entrada de agencias de viajes colombianas</td><td class="td-green">Muy alto</td></tr>
+  <tr><td>TripAdvisor / Booking</td><td>Perfil activo con reseñas y respuestas</td><td class="td-green">Alto</td></tr>
+  <tr><td>El Colombiano / El Tiempo</td><td>Notas de prensa sobre Primatón y campañas</td><td class="td-green">Alto</td></tr>
+  <tr><td>ANATO.org</td><td>Menciones en directorio oficial ANATO</td><td class="td-orange">Medio-alto</td></tr>
+  <tr><td>Blogs de viajes colombianos</td><td>Colaboraciones y guest posts</td><td class="td-orange">Medio</td></tr>
+</table>
+
+<!-- ── SECCIÓN 9: ROADMAP 90 DÍAS -->
+<div class="section-header">
+  <div class="section-num">Sección 09</div>
+  <h2>Roadmap — Plan 90 Días</h2>
+  <p>Junio · Julio · Agosto 2026. Organizado de mayor a menor urgencia. Los primeros 30 días son los que más impactan el posicionamiento.</p>
+  <div class="section-divider"></div>
+</div>
+
+<div class="roadmap-month">
+  <div class="roadmap-month-title">MES 1 — JUNIO 2026 · Fundación Técnica (días 1–30)</div>
+  <div class="roadmap-items">
+    <div class="roadmap-item">
+      <div class="roadmap-week">Sem 1<br>Jun 2-6</div>
+      <div class="roadmap-content">
+        <div class="roadmap-task">Auditoría técnica completa + Search Console</div>
+        <div class="roadmap-detail">Instalar Google Search Console, revisar errores 404, rastrear URL truncada, verificar indexación, identificar páginas duplicadas con dominio .com.co</div>
+        <div class="roadmap-tags"><span class="rtag rtag-dev">Dev</span><span class="rtag rtag-seo">SEO</span></div>
+      </div>
+    </div>
+    <div class="roadmap-item">
+      <div class="roadmap-week">Sem 1<br>Jun 2-6</div>
+      <div class="roadmap-content">
+        <div class="roadmap-task">Resolver URL truncada + dominio duplicado</div>
+        <div class="roadmap-detail">Corregir /ofertas-a-europ, implementar redirect 301 del .com.co al .com, verificar canonical tags</div>
+        <div class="roadmap-tags"><span class="rtag rtag-dev">Dev</span></div>
+      </div>
+    </div>
+    <div class="roadmap-item">
+      <div class="roadmap-week">Sem 2<br>Jun 9-13</div>
+      <div class="roadmap-content">
+        <div class="roadmap-task">Bloquear subdominio de pagos con robots.txt</div>
+        <div class="roadmap-detail">Añadir Disallow para portalpagos.viajesgeotours.com. Verificar que páginas de checkout no aparecen en índice de Google.</div>
+        <div class="roadmap-tags"><span class="rtag rtag-dev">Dev</span><span class="rtag rtag-seo">SEO</span></div>
+      </div>
+    </div>
+    <div class="roadmap-item">
+      <div class="roadmap-week">Sem 2<br>Jun 9-13</div>
+      <div class="roadmap-content">
+        <div class="roadmap-task">Actualizar robots.txt para permitir bots de IA</div>
+        <div class="roadmap-detail">Agregar explícitamente GPTBot, ClaudeBot, PerplexityBot, Google-Extended con Allow: /</div>
+        <div class="roadmap-tags"><span class="rtag rtag-dev">Dev</span><span class="rtag rtag-seo">SEO</span></div>
+      </div>
+    </div>
+    <div class="roadmap-item">
+      <div class="roadmap-week">Sem 3<br>Jun 16-20</div>
+      <div class="roadmap-content">
+        <div class="roadmap-task">Nuevos meta titles y meta descriptions (páginas principales)</div>
+        <div class="roadmap-detail">Actualizar Homepage, /destinos/europa/, /destinos/turquia/, /destinos/tailandia/, /destinos/cruceros/, /nosotros/. Usar los titles recomendados en Sección 6.</div>
+        <div class="roadmap-tags"><span class="rtag rtag-seo">SEO</span><span class="rtag rtag-mkt">Marketing</span></div>
+      </div>
+    </div>
+    <div class="roadmap-item">
+      <div class="roadmap-week">Sem 3<br>Jun 16-20</div>
+      <div class="roadmap-content">
+        <div class="roadmap-task">Estandarizar URLs (/destinos/ + redirects 301)</div>
+        <div class="roadmap-detail">Corregir /destino/punta-cana/ a /destinos/punta-cana/. Crear mapa de redirects de las 20 páginas de paquetes más importantes (de /geotours/vp#### a URLs semánticas).</div>
+        <div class="roadmap-tags"><span class="rtag rtag-dev">Dev</span><span class="rtag rtag-seo">SEO</span></div>
+      </div>
+    </div>
+    <div class="roadmap-item">
+      <div class="roadmap-week">Sem 4<br>Jun 23-27</div>
+      <div class="roadmap-content">
+        <div class="roadmap-task">Implementar Schema TravelAgency en homepage</div>
+        <div class="roadmap-detail">Insertar el JSON-LD de TravelAgency con todos los datos de Geo Tours. Validar con Google Rich Results Test.</div>
+        <div class="roadmap-tags"><span class="rtag rtag-dev">Dev</span><span class="rtag rtag-seo">SEO</span></div>
+      </div>
+    </div>
+    <div class="roadmap-item">
+      <div class="roadmap-week">Sem 4<br>Jun 23-27</div>
+      <div class="roadmap-content">
+        <div class="roadmap-task">Optimizar Google Business Profile (Medellín + Bogotá)</div>
+        <div class="roadmap-detail">Completar al 100%: fotos profesionales, descripción con keywords, horarios, responder todas las reseñas existentes, crear primer post con oferta Primatón.</div>
+        <div class="roadmap-tags"><span class="rtag rtag-mkt">Marketing</span><span class="rtag rtag-seo">SEO</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="roadmap-month">
+  <div class="roadmap-month-title">MES 2 — JULIO 2026 · Contenido y Autoridad (días 31–60)</div>
+  <div class="roadmap-items">
+    <div class="roadmap-item">
+      <div class="roadmap-week">Sem 5<br>Jun 30-Jul 4</div>
+      <div class="roadmap-content">
+        <div class="roadmap-task">Lanzar blog /blog/ con primeros 2 artículos</div>
+        <div class="roadmap-detail">Artículo 1: "Cuánto cuesta un viaje a Europa desde Colombia en 2026" (keyword transaccional). Artículo 2: "Los mejores destinos de Europa para colombianos" (keyword informacional). Mínimo 1.200 palabras cada uno con FAQ al final.</div>
+        <div class="roadmap-tags"><span class="rtag rtag-content">Contenido</span><span class="rtag rtag-seo">SEO</span></div>
+      </div>
+    </div>
+    <div class="roadmap-item">
+      <div class="roadmap-week">Sem 5<br>Jun 30-Jul 4</div>
+      <div class="roadmap-content">
+        <div class="roadmap-task">Implementar Schema TouristTrip en top 10 paquetes</div>
+        <div class="roadmap-detail">Priorizar Europa Dreams, Europa One, Europa Top, Turquía Increíble, Tailandia, 2 cruceros. Validar con Google Rich Results Test.</div>
+        <div class="roadmap-tags"><span class="rtag rtag-dev">Dev</span><span class="rtag rtag-seo">SEO</span></div>
+      </div>
+    </div>
+    <div class="roadmap-item">
+      <div class="roadmap-week">Sem 6<br>Jul 7-11</div>
+      <div class="roadmap-content">
+        <div class="roadmap-task">Actualizar página /nosotros/ con bloque GEO</div>
+        <div class="roadmap-detail">Reescribir con el formato de identidad estructurado de la Sección 8. Incluir: fundación, años de experiencia, cantidad de viajeros, certificaciones, destinos, ciudades de salida.</div>
+        <div class="roadmap-tags"><span class="rtag rtag-content">Contenido</span><span class="rtag rtag-seo">SEO</span></div>
+      </div>
+    </div>
+    <div class="roadmap-item">
+      <div class="roadmap-week">Sem 6<br>Jul 7-11</div>
+      <div class="roadmap-content">
+        <div class="roadmap-task">Implementar Schema FAQPage en preguntas frecuentes</div>
+        <div class="roadmap-detail">Crear o actualizar la página /preguntas-frecuentes/ con mínimo 10 preguntas y el schema FAQPage del código en Sección 7.</div>
+        <div class="roadmap-tags"><span class="rtag rtag-dev">Dev</span><span class="rtag rtag-content">Contenido</span></div>
+      </div>
+    </div>
+    <div class="roadmap-item">
+      <div class="roadmap-week">Sem 7<br>Jul 14-18</div>
+      <div class="roadmap-content">
+        <div class="roadmap-task">2 artículos de blog adicionales + sitemap actualizado</div>
+        <div class="roadmap-detail">Artículo 3: "Visa Schengen para colombianos: todo lo que necesitás saber". Artículo 4: "Tailandia vs. Bali: cuál elegir desde Colombia". Actualizar sitemap.xml con todas las nuevas URLs.</div>
+        <div class="roadmap-tags"><span class="rtag rtag-content">Contenido</span><span class="rtag rtag-seo">SEO</span></div>
+      </div>
+    </div>
+    <div class="roadmap-item">
+      <div class="roadmap-week">Sem 8<br>Jul 21-25</div>
+      <div class="roadmap-content">
+        <div class="roadmap-task">Estrategia de reseñas + AggregateRating schema</div>
+        <div class="roadmap-detail">Campaña de WhatsApp a clientes recientes para solicitar reseñas en Google. Meta: llegar a 50 reseñas nuevas en 30 días. Implementar AggregateRating schema en homepage.</div>
+        <div class="roadmap-tags"><span class="rtag rtag-mkt">Marketing</span><span class="rtag rtag-dev">Dev</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="roadmap-month">
+  <div class="roadmap-month-title">MES 3 — AGOSTO 2026 · Escalamiento y Medición (días 61–90)</div>
+  <div class="roadmap-items">
+    <div class="roadmap-item">
+      <div class="roadmap-week">Sem 9<br>Jul 28-Aug 1</div>
+      <div class="roadmap-content">
+        <div class="roadmap-task">Outreach de link building — medios y blogs</div>
+        <div class="roadmap-detail">Enviar nota de prensa de la Primatón a El Colombiano y portales de turismo colombianos. Contactar 5 bloggers de viajes para colaboraciones o menciones. Meta: 3 backlinks de dominio autoritativo.</div>
+        <div class="roadmap-tags"><span class="rtag rtag-mkt">Marketing</span><span class="rtag rtag-seo">SEO</span></div>
+      </div>
+    </div>
+    <div class="roadmap-item">
+      <div class="roadmap-week">Sem 10<br>Aug 4-8</div>
+      <div class="roadmap-content">
+        <div class="roadmap-task">2 artículos más de blog + calendario editorial Q3</div>
+        <div class="roadmap-detail">Artículo 5: "Cómo financiar un viaje a Europa desde Colombia". Artículo 6: "Qué llevar a Europa: lista completa para colombianos". Planificar artículos hasta diciembre 2026.</div>
+        <div class="roadmap-tags"><span class="rtag rtag-content">Contenido</span></div>
+      </div>
+    </div>
+    <div class="roadmap-item">
+      <div class="roadmap-week">Sem 11<br>Aug 11-15</div>
+      <div class="roadmap-content">
+        <div class="roadmap-task">Revisión técnica + Core Web Vitals</div>
+        <div class="roadmap-detail">Correr PageSpeed Insights en las 5 páginas principales. Objetivo: LCP &lt; 2.5s, INP &lt; 200ms, CLS &lt; 0.1. Optimizar imágenes y lazy loading si es necesario.</div>
+        <div class="roadmap-tags"><span class="rtag rtag-dev">Dev</span><span class="rtag rtag-seo">SEO</span></div>
+      </div>
+    </div>
+    <div class="roadmap-item">
+      <div class="roadmap-week">Sem 12<br>Aug 18-22</div>
+      <div class="roadmap-content">
+        <div class="roadmap-task">Test de visibilidad en IA</div>
+        <div class="roadmap-detail">Preguntar a ChatGPT, Perplexity y Gemini: "¿Cuáles son las mejores agencias de viajes para ir a Europa desde Medellín?" — "¿Qué agencias de viajes colombianas venden paquetes a Turquía?" — Registrar resultados. Si Geo Tours no aparece, reforzar señales de consenso.</div>
+        <div class="roadmap-tags"><span class="rtag rtag-seo">SEO</span><span class="rtag rtag-mkt">Marketing</span></div>
+      </div>
+    </div>
+    <div class="roadmap-item">
+      <div class="roadmap-week">Sem 13<br>Aug 25-29</div>
+      <div class="roadmap-content">
+        <div class="roadmap-task">Reporte de resultados 90 días + plan Q4</div>
+        <div class="roadmap-detail">Medir: posiciones en Google para keywords objetivo, tráfico orgánico vs. mes anterior, conversiones desde búsqueda orgánica, posición en IA. Planificar acciones Q4 según resultados.</div>
+        <div class="roadmap-tags"><span class="rtag rtag-seo">SEO</span><span class="rtag rtag-mkt">Marketing</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── SECCIÓN 10: KPIs -->
+<div class="section-header">
+  <div class="section-num">Sección 10</div>
+  <h2>KPIs y Métricas de Éxito</h2>
+  <p>Indicadores medibles para cada fase del plan. Sin métricas no hay forma de saber si la estrategia está funcionando.</p>
+  <div class="section-divider"></div>
+</div>
+
+<div class="kpi-grid">
+  <div class="kpi-card">
+    <div class="kpi-icon">📈</div>
+    <div class="kpi-num">+40%</div>
+    <div class="kpi-label">Tráfico orgánico</div>
+    <div class="kpi-target">Meta: mes 3 vs mes 0</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-icon">🔍</div>
+    <div class="kpi-num">Top 5</div>
+    <div class="kpi-label">Posición en Google</div>
+    <div class="kpi-target">Para "viajes a europa desde colombia"</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-icon">⭐</div>
+    <div class="kpi-num">50+</div>
+    <div class="kpi-label">Reseñas nuevas</div>
+    <div class="kpi-target">Google Business Profile en 90 días</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-icon">🤖</div>
+    <div class="kpi-num">3/3</div>
+    <div class="kpi-label">Aparece en IA</div>
+    <div class="kpi-target">ChatGPT + Perplexity + Gemini</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-icon">📝</div>
+    <div class="kpi-num">6</div>
+    <div class="kpi-label">Artículos de blog</div>
+    <div class="kpi-target">Publicados en 90 días</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-icon">🔗</div>
+    <div class="kpi-num">3+</div>
+    <div class="kpi-label">Backlinks nuevos</div>
+    <div class="kpi-target">De medios y blogs de turismo</div>
+  </div>
+</div>
+
+<h3>Herramientas de Medición</h3>
+<table>
+  <tr><th>Herramienta</th><th>Para qué usarla</th><th>Frecuencia</th></tr>
+  <tr><td>Google Search Console</td><td>Errores de rastreo, posiciones, impresiones, CTR</td><td>Semanal</td></tr>
+  <tr><td>Google Analytics 4</td><td>Tráfico orgánico, conversiones, sesiones por página</td><td>Semanal</td></tr>
+  <tr><td>PageSpeed Insights</td><td>Core Web Vitals (LCP, INP, CLS)</td><td>Mensual</td></tr>
+  <tr><td>Google Rich Results Test</td><td>Validar que los schema están funcionando</td><td>Tras cada implementación</td></tr>
+  <tr><td>Google Business Profile</td><td>Reseñas, fotos, interacciones, búsquedas</td><td>Semanal</td></tr>
+  <tr><td>Ahrefs / Semrush (free)</td><td>Backlinks, keywords rankeadas, competidores</td><td>Mensual</td></tr>
+  <tr><td>ChatGPT / Perplexity</td><td>Test de visibilidad en IA para keywords objetivo</td><td>Mensual</td></tr>
+</table>
+
+<div class="alert alert-green" style="margin-top: 40px;">
+  <div class="alert-icon">🚀</div>
+  <div>
+    <div class="alert-title">RESUMEN EJECUTIVO</div>
+    <div class="alert-text">Geo Tours tiene una base sólida — 20 años de experiencia, certificaciones IATA y ANATO, 15.000+ viajeros y dos ciudades de operación. El problema es técnico y de comunicación: las URLs no le hablan a Google, no hay schema que le muestre datos estructurados a la IA, y el blog que podría atraer tráfico informacional no existe como tal. Con las 26 acciones de este plan aplicadas en 90 días, el sitio puede pasar de invisible a competidor real en las primeras posiciones de Google para los términos de mayor valor en el mercado colombiano de viajes.</div>
+  </div>
+</div>
+
+<div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid #e8ecf5; text-align: center;">
+  <div style="font-size: 9pt; color: #999; margin-bottom: 4px;">Geo Tours · Geoser · Medellín, Colombia</div>
+  <div style="font-size: 9pt; color: #999;">Documento confidencial — Mayo 2026 · Preparado para presentación interna</div>
+</div>
+
+</div>
+</body>
+</html>
