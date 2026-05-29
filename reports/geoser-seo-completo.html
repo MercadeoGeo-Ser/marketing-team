@@ -1,0 +1,2519 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Geoser — SEO + GEO Completo 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Inter', Arial, sans-serif; font-size: 11pt; color: #1a1a2e; background: #f8f9ff; line-height: 1.6; }
+
+  /* ── TAB NAV ── */
+  #tab-nav {
+    position: sticky; top: 0; z-index: 100;
+    background: #0f3460;
+    display: flex; flex-wrap: wrap; gap: 0;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  }
+  .tab-btn {
+    padding: 14px 22px;
+    background: transparent;
+    color: #a8b2d8;
+    border: none; border-bottom: 3px solid transparent;
+    cursor: pointer;
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 10pt; font-weight: 600;
+    letter-spacing: 0.3px;
+    transition: all 0.2s;
+  }
+  .tab-btn:hover { color: #fff; background: rgba(255,255,255,0.07); }
+  .tab-btn.active { color: #fff; border-bottom-color: #e94560; background: rgba(233,69,96,0.12); }
+
+  /* ── TAB SECTIONS ── */
+  .tab-section { display: none; }
+  .tab-section:first-of-type { display: block; }
+
+  /* ── SECTION BANNER ── */
+  .tab-banner {
+    background: linear-gradient(135deg, #0f3460 0%, #16213e 60%, #1a1a2e 100%);
+    padding: 28px 48px 24px;
+    border-bottom: 3px solid #e94560;
+  }
+  .tab-banner .brand { font-size: 9pt; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #e94560; margin-bottom: 6px; }
+  .tab-banner h1 { font-size: 20pt; font-weight: 800; color: #fff; line-height: 1.2; }
+  .tab-banner .sub { font-size: 10pt; color: #a8b2d8; margin-top: 6px; }
+
+  /* ── CONTENT WRAPPER ── */
+  .content { max-width: 900px; margin: 0 auto; padding: 40px 50px; }
+  .page { max-width: 900px; margin: 0 auto; padding: 40px 48px; }
+
+  /* ── INDEX / TOC ── */
+  .toc { margin-bottom: 40px; }
+  .toc h2 { font-size: 20pt; font-weight: 800; color: #0f3460; margin-bottom: 30px; padding-bottom: 12px; border-bottom: 3px solid #e94560; }
+  .toc-list { list-style: none; }
+  .toc-list li { padding: 8px 0; border-bottom: 1px dotted #d0d5e8; display: flex; align-items: center; gap: 12px; }
+  .toc-list li .num { font-weight: 700; color: #e94560; font-size: 10pt; min-width: 28px; }
+  .toc-list li .title { font-size: 11pt; color: #1a1a2e; flex: 1; }
+  .toc-list li .part { font-size: 8pt; background: #f0f3ff; color: #0f3460; padding: 2px 8px; border-radius: 10px; font-weight: 600; }
+
+  /* ── PART HEADERS ── */
+  .part-header { background: linear-gradient(90deg, #0f3460, #16213e); color: #fff; padding: 20px 30px; border-radius: 10px; margin: 40px 0 24px; }
+  .part-header .part-label { font-size: 8pt; letter-spacing: 3px; text-transform: uppercase; color: #e94560; font-weight: 700; margin-bottom: 6px; }
+  .part-header h2 { font-size: 18pt; font-weight: 800; color: #fff; }
+
+  /* ── STEPS ── */
+  .step { margin-bottom: 36px; border-left: 4px solid #e94560; padding-left: 20px; }
+  .step-header { display: flex; align-items: center; gap: 14px; margin-bottom: 12px; }
+  .step-num { background: #e94560; color: #fff; font-weight: 800; font-size: 10pt; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .step h3 { font-size: 14pt; font-weight: 700; color: #0f3460; }
+  .step p { color: #444; margin-bottom: 10px; }
+  .step ul, .step ol { margin-left: 20px; margin-bottom: 10px; color: #444; }
+  .step li { margin-bottom: 5px; }
+
+  /* ── ALERTS ── */
+  .alert { padding: 14px 18px; border-radius: 8px; margin: 14px 0; font-size: 10pt; }
+  .alert-red { background: #fff0f0; border-left: 4px solid #e94560; color: #8b0000; }
+  .alert-blue { background: #f0f4ff; border-left: 4px solid #0f3460; color: #0f3460; }
+  .alert-green { background: #f0fff4; border-left: 4px solid #38a169; color: #276749; }
+  .alert-yellow { background: #fffbeb; border-left: 4px solid #d97706; color: #7c4a00; }
+  .alert-orange { background: #fffbf0; border: 1px solid #ffe0a0; display: flex; align-items: flex-start; gap: 10px; }
+  .alert strong { font-weight: 700; }
+  .alert-icon { font-size: 14pt; flex-shrink: 0; }
+  .alert-title { font-size: 9.5pt; font-weight: 700; margin-bottom: 2px; }
+  .alert-orange .alert-title { color: #d68910; }
+  .alert-text { font-size: 9pt; color: #444; }
+
+  /* ── TABLES ── */
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 9.5pt; }
+  th { background: #0f3460; color: #fff; padding: 9px 12px; text-align: left; font-weight: 600; font-size: 9pt; }
+  td { padding: 8px 12px; border-bottom: 1px solid #e8ecf5; vertical-align: top; }
+  tr:nth-child(even) td { background: #f7f9ff; }
+  tr:hover td { background: #eef1fb; }
+  td .check-yes { color: #38a169; font-weight: 700; }
+  td .check-no  { color: #e94560; font-weight: 700; }
+  .td-red { color: #c0392b; font-weight: 600; }
+  .td-green { color: #1e8449; font-weight: 600; }
+  .td-orange { color: #d68910; font-weight: 600; }
+
+  /* ── CODE ── */
+  pre { background: #1a1a2e; color: #a8b2d8; padding: 16px 20px; border-radius: 8px; font-family: 'Courier New', monospace; font-size: 9pt; margin: 14px 0; overflow-x: auto; white-space: pre-wrap; word-break: break-all; }
+  code { background: #f0f3ff; color: #0f3460; padding: 2px 6px; border-radius: 4px; font-family: 'Courier New', monospace; font-size: 9pt; }
+  .code-comment { color: #6b7db3; }
+  .code-tag { color: #e94560; }
+  .code-attr { color: #f0c040; }
+  .code-value { color: #7ecf7e; }
+
+  /* ── BADGES ── */
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 8pt; font-weight: 700; }
+  .badge-red    { background: #fff0f0; color: #e94560; }
+  .badge-orange { background: #fff7ed; color: #d97706; }
+  .badge-green  { background: #f0fff4; color: #38a169; }
+  .badge-blue   { background: #f0f4ff; color: #0f3460; }
+
+  /* ── EXEC GRID ── */
+  .exec-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 20px 0; }
+  .exec-card { padding: 18px; border-radius: 10px; border: 1px solid #e8ecf5; }
+  .exec-card .ec-label { font-size: 8pt; letter-spacing: 2px; text-transform: uppercase; color: #6b7db3; margin-bottom: 6px; }
+  .exec-card .ec-value { font-size: 16pt; font-weight: 800; color: #0f3460; }
+  .exec-card .ec-desc { font-size: 9pt; color: #666; margin-top: 4px; }
+
+  /* ── FOOTER ── */
+  .page-footer { margin-top: 60px; padding-top: 20px; border-top: 2px solid #e8ecf5; display: flex; justify-content: space-between; align-items: center; font-size: 8pt; color: #999; }
+
+  /* ── GEO TOURS PLAN STYLES ── */
+  .section-header { margin: 48px 0 28px; }
+  .section-num { font-size: 9pt; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #e94560; margin-bottom: 8px; }
+  .section-header h2 { font-size: 22pt; font-weight: 800; color: #0f3460; line-height: 1.2; margin-bottom: 12px; }
+  .section-header p { font-size: 11pt; color: #555; max-width: 700px; }
+  .section-divider { width: 100%; height: 2px; background: linear-gradient(90deg, #e94560, transparent); margin-top: 20px; }
+  h3 { font-size: 13pt; font-weight: 700; color: #0f3460; margin: 28px 0 12px; }
+  h4 { font-size: 11pt; font-weight: 700; color: #0f3460; margin: 20px 0 8px; }
+  p { margin-bottom: 12px; font-size: 10.5pt; color: #444; }
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 20px 0; }
+  .cards-2 { grid-template-columns: repeat(2, 1fr); }
+  .cards-4 { grid-template-columns: repeat(4, 1fr); }
+  .card { background: #f8f9ff; border-radius: 10px; padding: 18px 20px; border-left: 4px solid #e94560; }
+  .card.green { border-left-color: #27ae60; }
+  .card.orange { border-left-color: #f39c12; }
+  .card.blue { border-left-color: #2980b9; }
+  .card-title { font-size: 8.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #0f3460; margin-bottom: 6px; }
+  .card-value { font-size: 20pt; font-weight: 800; color: #0f3460; line-height: 1; }
+  .card-desc { font-size: 8.5pt; color: #666; margin-top: 5px; }
+  .prob-list { list-style: none; margin: 16px 0; }
+  .prob-item { display: flex; gap: 16px; margin-bottom: 20px; padding: 16px 20px; background: #f8f9ff; border-radius: 10px; border-left: 4px solid #e74c3c; align-items: flex-start; }
+  .prob-item.orange { border-left-color: #f39c12; }
+  .prob-item.blue { border-left-color: #2980b9; }
+  .prob-num { background: #e94560; color: #fff; font-weight: 800; font-size: 10pt; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .prob-item.orange .prob-num { background: #f39c12; }
+  .prob-item.blue .prob-num { background: #2980b9; }
+  .prob-content { flex: 1; }
+  .prob-title { font-size: 11pt; font-weight: 700; color: #0f3460; margin-bottom: 4px; }
+  .prob-text { font-size: 9.5pt; color: #555; }
+  .prob-fix { font-size: 9pt; color: #1e8449; font-weight: 600; margin-top: 5px; }
+  .tag { display: inline-block; font-size: 7.5pt; font-weight: 700; padding: 2px 8px; border-radius: 10px; margin-left: 8px; vertical-align: middle; }
+  .tag-critico { background: #ffe5e5; color: #c0392b; }
+  .tag-alto { background: #fff3cd; color: #d68910; }
+  .tag-medio { background: #d4edda; color: #1e8449; }
+  .comp-card { background: #f8f9ff; border-radius: 10px; padding: 18px 22px; margin-bottom: 14px; border: 1px solid #e8ecf5; }
+  .comp-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 8px; }
+  .comp-name { font-size: 11.5pt; font-weight: 700; color: #0f3460; }
+  .comp-url { font-size: 9pt; color: #888; }
+  .comp-score { font-size: 8.5pt; font-weight: 700; padding: 4px 12px; border-radius: 20px; }
+  .score-high { background: #ffe5e5; color: #c0392b; }
+  .score-med { background: #fff3cd; color: #d68910; }
+  .comp-items { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; font-size: 9pt; }
+  .comp-item::before { content: "✓ "; color: #27ae60; font-weight: 700; }
+  .comp-item.miss::before { content: "✗ "; color: #e74c3c; }
+  .kw-block { margin-bottom: 28px; }
+  .kw-label { display: inline-block; font-size: 9pt; font-weight: 700; color: #fff; background: #e94560; padding: 5px 14px; border-radius: 20px; margin-bottom: 10px; }
+  .kw-label.blue { background: #0f3460; }
+  .kw-label.green { background: #27ae60; }
+  .kw-label.purple { background: #8e44ad; }
+  .kw-label.orange { background: #f39c12; }
+  .geo-block { background: linear-gradient(135deg, #1a1a2e, #0f3460); color: #fff; border-radius: 12px; padding: 24px 28px; margin: 20px 0; }
+  .geo-block h3 { color: #e94560; font-size: 12pt; margin-bottom: 12px; margin-top: 0; }
+  .geo-block p { color: #a8b2d8; font-size: 10pt; }
+  .geo-block ul { color: #a8b2d8; font-size: 10pt; padding-left: 20px; }
+  .geo-block ul li { margin-bottom: 6px; }
+  .geo-block ul li strong { color: #fff; }
+  .roadmap-month { margin-bottom: 28px; }
+  .roadmap-month-title { font-size: 12pt; font-weight: 700; color: #fff; background: linear-gradient(90deg, #0f3460, #16213e); padding: 12px 20px; border-radius: 8px 8px 0 0; }
+  .roadmap-items { border: 1px solid #e8ecf5; border-top: none; border-radius: 0 0 8px 8px; overflow: hidden; }
+  .roadmap-item { display: flex; gap: 16px; padding: 12px 20px; border-bottom: 1px solid #e8ecf5; align-items: flex-start; }
+  .roadmap-item:last-child { border-bottom: none; }
+  .roadmap-week { font-size: 8pt; font-weight: 700; color: #e94560; min-width: 68px; text-transform: uppercase; letter-spacing: 1px; padding-top: 2px; }
+  .roadmap-content { flex: 1; }
+  .roadmap-task { font-size: 10pt; font-weight: 600; color: #0f3460; margin-bottom: 2px; }
+  .roadmap-detail { font-size: 9pt; color: #666; }
+  .roadmap-tags { display: flex; gap: 6px; margin-top: 5px; flex-wrap: wrap; }
+  .rtag { font-size: 7.5pt; padding: 2px 8px; border-radius: 10px; font-weight: 600; }
+  .rtag-dev { background: #e8f0fe; color: #1a5276; }
+  .rtag-content { background: #e8f8e8; color: #1e8449; }
+  .rtag-mkt { background: #fef9e7; color: #d68910; }
+  .rtag-seo { background: #fce8f3; color: #8e44ad; }
+  .kpi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 20px 0; }
+  .kpi-card { text-align: center; background: #f8f9ff; border-radius: 10px; padding: 20px 16px; }
+  .kpi-icon { font-size: 22pt; margin-bottom: 8px; }
+  .kpi-num { font-size: 20pt; font-weight: 800; color: #e94560; }
+  .kpi-label { font-size: 9pt; color: #555; margin-top: 4px; }
+  .kpi-target { font-size: 8.5pt; color: #27ae60; font-weight: 600; margin-top: 6px; }
+
+  /* ── GUIA STYLES ── */
+  .block-header { margin: 48px 0 24px; background: linear-gradient(90deg, #0f3460, #16213e); border-radius: 10px; padding: 20px 28px; color: #fff; }
+  .block-num { font-size: 8pt; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #e94560; margin-bottom: 6px; }
+  .block-header h2 { font-size: 17pt; font-weight: 800; color: #fff; line-height: 1.2; margin-bottom: 6px; }
+  .block-header .block-meta { font-size: 9pt; color: #a8b2d8; }
+  .task-card { border: 1px solid #e8ecf5; border-radius: 10px; margin-bottom: 20px; overflow: hidden; }
+  .task-header { display: flex; align-items: flex-start; gap: 16px; padding: 16px 20px; background: #f8f9ff; border-bottom: 1px solid #e8ecf5; }
+  .task-num { background: #e94560; color: #fff; font-weight: 800; font-size: 10pt; min-width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+  .task-header-info { flex: 1; }
+  .task-title { font-size: 12pt; font-weight: 700; color: #0f3460; margin-bottom: 4px; }
+  .task-meta { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+  .task-date { font-size: 8.5pt; font-weight: 600; color: #e94560; }
+  .task-time { font-size: 8.5pt; color: #555; background: #fff; padding: 2px 10px; border-radius: 20px; border: 1px solid #ddd; }
+  .task-resp { font-size: 8.5pt; padding: 2px 10px; border-radius: 20px; font-weight: 600; }
+  .resp-dev { background: #e8f0fe; color: #1a5276; }
+  .resp-seo { background: #fce8f3; color: #8e44ad; }
+  .resp-mkt { background: #fef9e7; color: #d68910; }
+  .resp-content { background: #e8f8e8; color: #1e8449; }
+  .task-body { padding: 16px 20px; }
+  .task-section { margin-bottom: 14px; }
+  .task-section:last-child { margin-bottom: 0; }
+  .task-section-title { font-size: 8.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #0f3460; margin-bottom: 6px; }
+  .task-steps { list-style: none; }
+  .task-steps li { font-size: 9.5pt; color: #444; padding: 4px 0 4px 20px; position: relative; border-bottom: 1px solid #f0f2f8; }
+  .task-steps li:last-child { border-bottom: none; }
+  .task-steps li::before { content: "→"; position: absolute; left: 0; color: #e94560; font-weight: 700; }
+  .task-tools { display: flex; gap: 8px; flex-wrap: wrap; }
+  .tool-tag { font-size: 8pt; background: #f0f4ff; color: #2c4a8a; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+  .task-result { font-size: 9.5pt; color: #1e8449; background: #f0fff4; border: 1px solid #a8e6c0; border-radius: 6px; padding: 8px 12px; }
+  .task-result::before { content: "✓ Resultado esperado: "; font-weight: 700; }
+  .priority-badge { font-size: 7.5pt; font-weight: 700; padding: 2px 8px; border-radius: 10px; }
+  .p-critico { background: #ffe5e5; color: #c0392b; }
+  .p-alto { background: #fff3cd; color: #d68910; }
+  .p-normal { background: #d4edda; color: #1e8449; }
+  .week-divider { background: #f8f9ff; border: 1px solid #e8ecf5; border-radius: 8px; padding: 10px 20px; margin: 24px 0 16px; display: flex; align-items: center; gap: 12px; }
+  .week-label { font-size: 9pt; font-weight: 700; color: #e94560; text-transform: uppercase; letter-spacing: 1px; }
+  .week-dates { font-size: 9pt; color: #555; }
+  .week-hours { font-size: 8.5pt; font-weight: 600; color: #0f3460; margin-left: auto; }
+  .checklist { list-style: none; margin: 16px 0; }
+  .checklist li { display: flex; gap: 10px; align-items: flex-start; padding: 8px 0; border-bottom: 1px solid #f0f2f8; font-size: 9.5pt; color: #444; }
+  .checklist li:last-child { border-bottom: none; }
+  .check-box { width: 18px; height: 18px; border: 2px solid #0f3460; border-radius: 4px; flex-shrink: 0; margin-top: 1px; }
+  .check-num { font-size: 8pt; font-weight: 700; color: #e94560; min-width: 22px; }
+  .summary-table table { font-size: 9pt; }
+  .summary-table th { font-size: 8.5pt; }
+</style>
+</head>
+<body>
+
+<!-- ══ TAB NAVIGATION ══ -->
+<div id="tab-nav">
+  <button onclick="showTab('akira-plan')" id="btn-akira-plan" class="tab-btn active">Akira · Plan Maestro</button>
+  <button onclick="showTab('akira-guia')" id="btn-akira-guia" class="tab-btn">Akira · Guía con Fechas</button>
+  <button onclick="showTab('geo-plan')" id="btn-geo-plan" class="tab-btn">Geo Tours · Plan Maestro</button>
+  <button onclick="showTab('geo-guia')" id="btn-geo-guia" class="tab-btn">Geo Tours · Guía con Fechas</button>
+</div>
+
+<!-- ══════════════════════════════════════════
+     TAB 1: AKIRA TRAVEL — PLAN MAESTRO SEO+GEO
+══════════════════════════════════════════ -->
+<div class="tab-section" id="akira-plan">
+  <div class="tab-banner">
+    <div class="brand">Akira Travel · B2B Mayorista</div>
+    <h1>Plan Maestro SEO + GEO 2026</h1>
+    <div class="sub">Estrategia completa de posicionamiento en Google y motores de Inteligencia Artificial · akiratravel.com</div>
+  </div>
+  <div class="content">
+
+<div class="toc">
+  <h2>Tabla de Contenido</h2>
+  <ul class="toc-list">
+    <li><span class="num">01</span><span class="title">Diagnóstico inicial y estado actual</span><span class="part">Diagnóstico</span></li>
+    <li><span class="num">02</span><span class="title">Benchmark — Comparación con competidores</span><span class="part">Diagnóstico</span></li>
+    <li><span class="num">03</span><span class="title">Resumen ejecutivo de hallazgos</span><span class="part">Diagnóstico</span></li>
+    <li><span class="num">04</span><span class="title">Acceder a Google Search Console</span><span class="part">Técnico</span></li>
+    <li><span class="num">05</span><span class="title">Corregir versión canónica del dominio (HTTPS)</span><span class="part">Técnico</span></li>
+    <li><span class="num">06</span><span class="title">Verificar y corregir robots.txt</span><span class="part">Técnico</span></li>
+    <li><span class="num">07</span><span class="title">Crear o corregir sitemap XML</span><span class="part">Técnico</span></li>
+    <li><span class="num">08</span><span class="title">Medir velocidad — Core Web Vitals</span><span class="part">Técnico</span></li>
+    <li><span class="num">09</span><span class="title">Migración de URLs: de /project/ a estructura limpia</span><span class="part">On-Page</span></li>
+    <li><span class="num">10</span><span class="title">Títulos meta y meta descriptions</span><span class="part">On-Page</span></li>
+    <li><span class="num">11</span><span class="title">Estructura de encabezados H1/H2/H3</span><span class="part">On-Page</span></li>
+    <li><span class="num">12</span><span class="title">Crear landing pages por destino</span><span class="part">On-Page</span></li>
+    <li><span class="num">13</span><span class="title">Mapa de palabras clave prioritarias</span><span class="part">On-Page</span></li>
+    <li><span class="num">14</span><span class="title">Crear blog con contenido informacional</span><span class="part">Contenido</span></li>
+    <li><span class="num">15</span><span class="title">Permitir bots de IA en robots.txt</span><span class="part">GEO</span></li>
+    <li><span class="num">16</span><span class="title">Implementar Schema Markup</span><span class="part">GEO</span></li>
+    <li><span class="num">17</span><span class="title">Contenido optimizado para ser citado por IA</span><span class="part">GEO</span></li>
+    <li><span class="num">18</span><span class="title">Presencia externa y señales de consenso</span><span class="part">GEO</span></li>
+    <li><span class="num">19</span><span class="title">Google Business Profile — SEO Local</span><span class="part">Local</span></li>
+    <li><span class="num">20</span><span class="title">Estrategia de reseñas y testimonios</span><span class="part">Local</span></li>
+    <li><span class="num">21</span><span class="title">Backlinks y autoridad de dominio</span><span class="part">Autoridad</span></li>
+    <li><span class="num">22</span><span class="title">Cronograma de implementación</span><span class="part">Plan</span></li>
+    <li><span class="num">23</span><span class="title">KPIs y métricas de seguimiento</span><span class="part">Plan</span></li>
+    <li><span class="num">24</span><span class="title">Herramientas gratuitas recomendadas</span><span class="part">Plan</span></li>
+  </ul>
+</div>
+
+<div class="part-header">
+  <div class="part-label">Parte 1</div>
+  <h2>Diagnóstico Inicial</h2>
+</div>
+
+<div class="step">
+  <div class="step-header"><div class="step-num">01</div><h3>Estado actual de akiratravel.com</h3></div>
+  <div class="alert alert-red"><strong>🚨 Problema crítico detectado:</strong> El servidor devuelve error HTTP 403 (Acceso Denegado) a rastreadores externos. Si Googlebot recibe este mismo error, la indexación del sitio está severamente comprometida.</div>
+  <p>Adicionalmente, Google tiene indexadas <strong>3 versiones distintas</strong> del mismo dominio, lo que divide la autoridad acumulada:</p>
+  <ul>
+    <li><code>http://www.akiratravel.com/</code></li>
+    <li><code>https://www.akiratravel.com/</code></li>
+    <li><code>https://akiratravel.com/</code></li>
+  </ul>
+  <div class="alert alert-yellow"><strong>⚠️ Impacto:</strong> Cada URL duplicada recibe solo una fracción de la autoridad total. En lugar de tener 100% de fuerza en una URL, el dominio está repartido en 3, reduciendo el poder de posicionamiento.</div>
+</div>
+
+<div class="step">
+  <div class="step-header"><div class="step-num">02</div><h3>Benchmark — Comparación con competidores top</h3></div>
+  <p>Análisis de los 5 competidores mejor posicionados para <strong>"viajes a Europa desde Colombia 2026"</strong>:</p>
+  <table>
+    <tr><th>Factor SEO</th><th>Travel Viajes</th><th>Paipa Tours</th><th>Viajes Éxito</th><th>Colombia de Lujo</th><th>Akira Travel</th></tr>
+    <tr><td>URL limpia <code>/viajes-a-europa</code></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-no">✗</span></td></tr>
+    <tr><td>Año en título (2026-2027)</td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-no">✗</span></td></tr>
+    <tr><td>Landing dedicada por destino</td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-no">Parcial</span></td></tr>
+    <tr><td>Blog con contenido informacional</td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-no">✗</span></td></tr>
+    <tr><td>FAQ visible en páginas</td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-no">✗</span></td></tr>
+    <tr><td>Schema Markup TravelAgency</td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-no">?</span></td></tr>
+    <tr><td>Itinerario día a día detallado</td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-no">Parcial</span></td></tr>
+    <tr><td>Testimonios/reseñas visibles</td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-yes">✓</span></td><td><span class="check-no">?</span></td></tr>
+  </table>
+</div>
+
+<div class="step">
+  <div class="step-header"><div class="step-num">03</div><h3>Resumen ejecutivo de hallazgos</h3></div>
+  <table>
+    <tr><th>Área</th><th>Problema</th><th>Impacto</th><th>Urgencia</th></tr>
+    <tr><td><strong>SEO Técnico</strong></td><td>HTTP/HTTPS mixto + posible bloqueo de bots</td><td>Pérdida de autoridad de dominio</td><td><span class="badge badge-red">🔴 Urgente</span></td></tr>
+    <tr><td><strong>URLs</strong></td><td>Estructura <code>/project/</code> no optimizada</td><td>Menor relevancia para keywords</td><td><span class="badge badge-orange">🟠 Alta</span></td></tr>
+    <tr><td><strong>On-page</strong></td><td>Sin año en títulos, H1 sin keyword</td><td>No compite con resultados top</td><td><span class="badge badge-orange">🟠 Alta</span></td></tr>
+    <tr><td><strong>Contenido</strong></td><td>Sin blog informacional</td><td>Pierde 70% del tráfico potencial</td><td><span class="badge badge-orange">🟠 Alta</span></td></tr>
+    <tr><td><strong>Schema / GEO</strong></td><td>Sin datos estructurados visibles</td><td>Invisible para motores de IA</td><td><span class="badge badge-orange">🟠 Alta</span></td></tr>
+    <tr><td><strong>Local SEO</strong></td><td>Google Business sin optimizar</td><td>Invisible en búsquedas locales</td><td><span class="badge badge-blue">🟡 Media</span></td></tr>
+    <tr><td><strong>Backlinks</strong></td><td>Autoridad de dominio baja vs. competidores</td><td>Rankings más bajos</td><td><span class="badge badge-blue">🟡 Media</span></td></tr>
+  </table>
+  <div class="exec-grid">
+    <div class="exec-card"><div class="ec-label">Tiempo para ver resultados</div><div class="ec-value">2 – 4 meses</div><div class="ec-desc">Para mejoras significativas de ranking tras implementación</div></div>
+    <div class="exec-card"><div class="ec-label">Horas de implementación (3 meses)</div><div class="ec-value">80 – 100 h</div><div class="ec-desc">Total estimado para implementar todas las acciones del plan</div></div>
+    <div class="exec-card"><div class="ec-label">Herramientas de pago necesarias</div><div class="ec-value">$0</div><div class="ec-desc">Todo el plan puede ejecutarse con herramientas gratuitas</div></div>
+    <div class="exec-card"><div class="ec-label">Viajeros que usan IA para planear viajes</div><div class="ec-value">83%</div><div class="ec-desc">Fuente: TravelBoom Leisure Travel Study 2026</div></div>
+  </div>
+</div>
+
+<div class="part-header"><div class="part-label">Parte 2</div><h2>SEO Técnico — Fundamentos</h2></div>
+
+<div class="step">
+  <div class="step-header"><div class="step-num">04</div><h3>Conectar Google Search Console</h3></div>
+  <p><strong>¿Qué es?</strong> La herramienta gratuita de Google que muestra exactamente cómo ve Google tu sitio: qué páginas indexa, qué errores encuentra y qué keywords generan clics.</p>
+  <div class="alert alert-blue"><strong>URL:</strong> search.google.com/search-console</div>
+  <ol>
+    <li>Ir a Search Console → "Añadir propiedad" → ingresar <code>akiratravel.com</code></li>
+    <li>Elegir verificación por <strong>DNS</strong> (la más confiable) o archivo HTML</li>
+    <li>Esperar 24-48 horas para datos completos</li>
+    <li>Revisar inmediatamente: <strong>Cobertura → páginas con error 404, páginas excluidas, páginas indexadas</strong></li>
+    <li>Revisar: <strong>Core Web Vitals → estado móvil y desktop</strong></li>
+    <li>Ir a Sitemaps → añadir <code>akiratravel.com/sitemap.xml</code></li>
+  </ol>
+</div>
+
+<div class="step">
+  <div class="step-header"><div class="step-num">05</div><h3>Corregir versión canónica del dominio</h3></div>
+  <p><strong>Versión correcta objetivo:</strong> <code>https://akiratravel.com</code> (HTTPS, sin www)</p>
+  <pre>RewriteEngine On
+
+# Redirigir HTTP → HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Eliminar www
+RewriteCond %{HTTP_HOST} ^www\.akiratravel\.com [NC]
+RewriteRule ^(.*)$ https://akiratravel.com/$1 [L,R=301]</pre>
+  <div class="alert alert-green"><strong>✓ Resultado:</strong> Toda la autoridad acumulada en URLs antiguas se concentra en la versión correcta.</div>
+</div>
+
+<div class="step">
+  <div class="step-header"><div class="step-num">06</div><h3>Verificar y corregir robots.txt</h3></div>
+  <p>El robots.txt controla qué pueden rastrear los bots. Verificar en: <code>akiratravel.com/robots.txt</code></p>
+  <pre>User-agent: *
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Bots de IA — CRÍTICO para aparecer en ChatGPT, Perplexity, etc.
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://akiratravel.com/sitemap.xml</pre>
+  <div class="alert alert-red"><strong>🚨 Nunca debe aparecer:</strong> <code>Disallow: /</code> de forma general ni bloqueando carpetas de tours o productos.</div>
+</div>
+
+<div class="step">
+  <div class="step-header"><div class="step-num">07</div><h3>Crear o corregir Sitemap XML</h3></div>
+  <p>El sitemap le dice a Google exactamente qué páginas existen. En WordPress: instalar <strong>Yoast SEO</strong> o <strong>RankMath</strong> (gratuitos) — el sitemap se genera automáticamente.</p>
+  <p>Luego enviar en Google Search Console → Sitemaps → añadir <code>sitemap.xml</code></p>
+  <div class="alert alert-blue"><strong>Meta:</strong> El sitemap debe incluir todas las páginas de destinos, tours y artículos del blog. Verificar que no incluya páginas con <code>noindex</code>.</div>
+</div>
+
+<div class="step">
+  <div class="step-header"><div class="step-num">08</div><h3>Medir velocidad — Core Web Vitals</h3></div>
+  <p><strong>URL:</strong> pagespeed.web.dev → ingresar <code>https://akiratravel.com</code></p>
+  <table>
+    <tr><th>Métrica</th><th>Qué mide</th><th>Meta Google</th><th>Si falla</th></tr>
+    <tr><td><strong>LCP</strong></td><td>Velocidad de carga del elemento principal</td><td>&lt; 2.5 seg</td><td>Penalización de ranking</td></tr>
+    <tr><td><strong>INP</strong></td><td>Respuesta a clics e interacciones</td><td>&lt; 200ms</td><td>Ranking inferior</td></tr>
+    <tr><td><strong>CLS</strong></td><td>Estabilidad visual (elementos que se mueven)</td><td>&lt; 0.1</td><td>Penalización de ranking</td></tr>
+  </table>
+  <table>
+    <tr><th>Problema frecuente</th><th>Solución</th></tr>
+    <tr><td>Imágenes muy pesadas (&gt; 500KB)</td><td>Convertir todas las imágenes a formato <strong>WebP</strong></td></tr>
+    <tr><td>Sin lazy loading</td><td>Agregar <code>loading="lazy"</code> a imágenes</td></tr>
+    <tr><td>Sliders/carruseles pesados</td><td>Reemplazar por imagen estática en hero</td></tr>
+    <tr><td>Sin CDN</td><td>Activar <strong>Cloudflare</strong> (gratuito)</td></tr>
+    <tr><td>JavaScript bloqueante</td><td>Diferir JS con atributo <code>defer</code></td></tr>
+  </table>
+</div>
+
+<div class="part-header"><div class="part-label">Parte 3</div><h2>SEO On-Page — Contenido Optimizado</h2></div>
+
+<div class="step">
+  <div class="step-header"><div class="step-num">09</div><h3>Migración de URLs: de /project/ a estructura limpia</h3></div>
+  <div class="alert alert-red"><strong>⚠️ SIEMPRE hacer este cambio con redirecciones 301.</strong> Sin ellas se pierde el ranking actual de cada página.</div>
+  <table>
+    <tr><th>URL actual</th><th>URL objetivo</th></tr>
+    <tr><td><code>/project/viajes-por-europa-...</code></td><td><code>/tours/europa/viajes-europa-colombia/</code></td></tr>
+    <tr><td><code>/project/turquia-dubai-...</code></td><td><code>/tours/medio-oriente/turquia-dubai/</code></td></tr>
+    <tr><td><code>/project/tours-por-georgia-...</code></td><td><code>/tours/medio-oriente/georgia-armenia/</code></td></tr>
+    <tr><td><code>/project/viajes-para-el-fin-de-ano/</code></td><td><code>/tours/especiales/fin-de-ano/</code></td></tr>
+  </table>
+</div>
+
+<div class="step">
+  <div class="step-header"><div class="step-num">10</div><h3>Fórmula para títulos meta y meta descriptions</h3></div>
+  <p><strong>Fórmula para títulos:</strong> <code>[Keyword + año] | [Propuesta de valor] | Akira Travel</code></p>
+  <table>
+    <tr><th>Página</th><th>Título actual</th><th>Título optimizado</th></tr>
+    <tr><td>Europa</td><td>Viajes Europa desde Colombia | Akira Travel</td><td>Viajes a Europa desde Colombia 2026-2027 | Paquetes con Vuelo Incluido | Akira Travel</td></tr>
+    <tr><td>Turquía</td><td>Tours Turquía y Dubai | Akira Travel</td><td>Tours a Turquía y Dubái desde Colombia 2026 | Mayorista Certificado | Akira Travel</td></tr>
+    <tr><td>Principal</td><td>Agencia de Viajes Mayorista desde Colombia | Akira Travel</td><td>Akira Travel | Agencia Mayorista Colombia | Tours Europa, Asia y Medio Oriente 2026</td></tr>
+  </table>
+  <p><strong>Meta description modelo:</strong></p>
+  <pre>Paquetes a Europa desde Colombia con vuelo incluido. Mayorista certificado
+(RNT 24740) con salidas grupales todo el año desde Bogotá y Medellín.
+Guía en español. Consulta disponibilidad hoy. ☎</pre>
+</div>
+
+<div class="step">
+  <div class="step-header"><div class="step-num">11</div><h3>Estructura correcta de encabezados H1/H2/H3</h3></div>
+  <div class="alert alert-blue"><strong>Regla de oro:</strong> Solo UN H1 por página. Debe contener la keyword principal con el año.</div>
+  <pre>&lt;h1&gt;Viajes a Europa desde Colombia 2026 — Paquetes Todo Incluido&lt;/h1&gt;
+
+&lt;h2&gt;¿Qué incluyen nuestros paquetes a Europa?&lt;/h2&gt;
+  &lt;h3&gt;Vuelos internacionales incluidos&lt;/h3&gt;
+  &lt;h3&gt;Hoteles 3 y 4 estrellas seleccionados&lt;/h3&gt;
+  &lt;h3&gt;Guía en español durante todo el recorrido&lt;/h3&gt;
+
+&lt;h2&gt;Destinos más populares en Europa desde Colombia&lt;/h2&gt;
+&lt;h2&gt;Itinerario día a día&lt;/h2&gt;
+&lt;h2&gt;Preguntas frecuentes sobre viajes a Europa&lt;/h2&gt;</pre>
+</div>
+
+<div class="step">
+  <div class="step-header"><div class="step-num">12</div><h3>Landing pages prioritarias a crear</h3></div>
+  <p>Cada destino necesita su propia página con mínimo <strong>1.200 palabras</strong>.</p>
+  <table>
+    <tr><th>Página</th><th>Keyword objetivo</th><th>Competidor a superar</th></tr>
+    <tr><td><code>/destinos/europa/</code></td><td>viajes a Europa desde Colombia 2026</td><td>travelviajes.co</td></tr>
+    <tr><td><code>/destinos/turquia/</code></td><td>tours Turquía desde Colombia 2026</td><td>gftravelcolombia.com</td></tr>
+    <tr><td><code>/destinos/dubai/</code></td><td>viajes a Dubái desde Colombia</td><td>paipatours.com</td></tr>
+    <tr><td><code>/destinos/japon/</code></td><td>tours Japón desde Colombia 2026</td><td>almar.com.co</td></tr>
+    <tr><td><code>/destinos/asia/</code></td><td>paquetes Asia desde Colombia</td><td>aviaturmayorista.com</td></tr>
+    <tr><td><code>/destinos/medio-oriente/</code></td><td>viajes Medio Oriente Colombia</td><td>megatravel.co</td></tr>
+  </table>
+</div>
+
+<div class="step">
+  <div class="step-header"><div class="step-num">13</div><h3>Mapa de palabras clave prioritarias</h3></div>
+  <table>
+    <tr><th>Keyword</th><th>Intención</th><th>Prioridad</th><th>Página</th></tr>
+    <tr><td>viajes a Europa desde Colombia 2026</td><td>Transaccional</td><td><span class="badge badge-red">Alta</span></td><td>/destinos/europa/</td></tr>
+    <tr><td>paquetes Europa todo incluido Colombia</td><td>Transaccional</td><td><span class="badge badge-red">Alta</span></td><td>/destinos/europa/</td></tr>
+    <tr><td>tours Turquía desde Colombia</td><td>Transaccional</td><td><span class="badge badge-red">Alta</span></td><td>/destinos/turquia/</td></tr>
+    <tr><td>agencia mayorista viajes Colombia</td><td>Transaccional B2B</td><td><span class="badge badge-red">Alta</span></td><td>/mayorista/</td></tr>
+    <tr><td>cuánto cuesta viajar a Europa desde Colombia</td><td>Informacional</td><td><span class="badge badge-orange">Media</span></td><td>/blog/presupuesto-europa/</td></tr>
+    <tr><td>requisitos visa Europa para colombianos</td><td>Informacional</td><td><span class="badge badge-orange">Media</span></td><td>/blog/visa-schengen/</td></tr>
+    <tr><td>mayorista de viajes colombia agencias</td><td>B2B Transaccional</td><td><span class="badge badge-red">Alta</span></td><td>/mayorista/</td></tr>
+    <tr><td>paquetes europa para agencias colombia</td><td>B2B Transaccional</td><td><span class="badge badge-red">Alta</span></td><td>/mayorista/europa/</td></tr>
+  </table>
+</div>
+
+<div class="part-header"><div class="part-label">Parte 4</div><h2>Arquitectura de Contenido — Blog</h2></div>
+
+<div class="step">
+  <div class="step-header"><div class="step-num">14</div><h3>Crear el Blog de Akira Travel</h3></div>
+  <p>Las agencias con blog activo reciben <strong>3-4 veces más tráfico orgánico</strong> que las que no tienen. El blog captura viajeros en fase de investigación y los convierte en leads.</p>
+  <p><strong>Ratio recomendado de publicación:</strong> 60% informacional · 40% B2B (recursos para agencias)</p>
+  <table>
+    <tr><th>#</th><th>Artículo</th><th>Keyword objetivo</th><th>Prioridad</th></tr>
+    <tr><td>1</td><td>Cuánto cuesta viajar a Europa desde Colombia en 2026</td><td>presupuesto Europa Colombia</td><td><span class="badge badge-red">Alta</span></td></tr>
+    <tr><td>2</td><td>Visa Schengen para colombianos 2026: guía paso a paso</td><td>visa europa colombianos</td><td><span class="badge badge-red">Alta</span></td></tr>
+    <tr><td>3</td><td>Cómo reservar paquetes a Europa al por mayor desde Colombia</td><td>paquetes europa mayorista agencias</td><td><span class="badge badge-red">Alta</span></td></tr>
+    <tr><td>4</td><td>Qué ver en Turquía en 10 días: itinerario completo</td><td>itinerario Turquía Colombia</td><td><span class="badge badge-orange">Media</span></td></tr>
+    <tr><td>5</td><td>Japón desde Colombia: guía completa 2026</td><td>viaje Japón Colombia</td><td><span class="badge badge-orange">Media</span></td></tr>
+    <tr><td>6</td><td>Georgia y Armenia: el destino que los colombianos están descubriendo</td><td>viajes Georgia Armenia Colombia</td><td><span class="badge badge-blue">Media-Baja</span></td></tr>
+  </table>
+</div>
+
+<div class="part-header"><div class="part-label">Parte 5</div><h2>GEO — Optimización para IA</h2></div>
+
+<div class="step">
+  <div class="step-header"><div class="step-num">15</div><h3>Permitir bots de IA en robots.txt</h3></div>
+  <div class="alert alert-red"><strong>🚨 Paso más urgente para GEO.</strong> Si los bots de IA no pueden rastrear el sitio, Akira Travel nunca aparecerá en respuestas de ChatGPT, Perplexity o Google AI.</div>
+  <table>
+    <tr><th>Bot</th><th>Plataforma</th><th>Alcance 2026</th></tr>
+    <tr><td><code>GPTBot</code></td><td>ChatGPT (OpenAI)</td><td>900M usuarios semanales</td></tr>
+    <tr><td><code>ChatGPT-User</code></td><td>ChatGPT con búsqueda web</td><td>Mayor plataforma IA</td></tr>
+    <tr><td><code>PerplexityBot</code></td><td>Perplexity AI</td><td>El más agresivo en citar fuentes</td></tr>
+    <tr><td><code>ClaudeBot</code></td><td>Claude (Anthropic)</td><td>Crecimiento acelerado</td></tr>
+    <tr><td><code>Google-Extended</code></td><td>Gemini + AI Overviews</td><td>Aparece en 45% de búsquedas Google</td></tr>
+  </table>
+</div>
+
+<div class="step">
+  <div class="step-header"><div class="step-num">16</div><h3>Implementar Schema Markup (datos estructurados)</h3></div>
+  <p>El schema markup aumenta la visibilidad en IA entre un <strong>30-40%</strong>. Se implementa como código JSON-LD en el <code>&lt;head&gt;</code> de cada página.</p>
+  <p><strong>Schema TravelAgency</strong> — Página principal:</p>
+  <pre>{
+  "@context": "https://schema.org",
+  "@type": "TravelAgency",
+  "name": "Akira Travel",
+  "description": "Agencia mayorista de viajes con sede en Medellín. Especialistas en paquetes a Europa, Asia y Medio Oriente desde Colombia.",
+  "url": "https://akiratravel.com",
+  "telephone": "+57-XXXXXXXXX",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Medellín",
+    "addressRegion": "Antioquia",
+    "addressCountry": "CO"
+  },
+  "identifier": { "@type": "PropertyValue", "name": "RNT", "value": "24740" },
+  "areaServed": "Colombia"
+}</pre>
+  <p><strong>Schema FAQPage</strong> — Cada landing de destino:</p>
+  <pre>{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "¿Cuánto cuesta un paquete a Europa desde Colombia?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Los paquetes a Europa desde Colombia en Akira Travel parten desde USD $1.671 por persona en acomodación doble, incluyendo vuelo, hotel 3-4 estrellas y guía en español."
+    }
+  }]
+}</pre>
+  <div class="alert alert-green"><strong>Cómo implementar en WordPress:</strong> Instalar plugin RankMath (gratuito) → Schema → añadir tipo TravelAgency. Verificar en: search.google.com/test/rich-results</div>
+</div>
+
+<div class="step">
+  <div class="step-header"><div class="step-num">17</div><h3>Contenido optimizado para ser citado por IA</h3></div>
+  <p>Las IAs extraen <strong>bloques de texto autocontenidos</strong> de 40-60 palabras. Cada sección debe poder leerse sola y responder una pregunta completa.</p>
+  <table>
+    <tr><th>Método</th><th>Aumento de visibilidad en IA</th></tr>
+    <tr><td>Citar fuentes con datos reales</td><td>+40%</td></tr>
+    <tr><td>Incluir estadísticas concretas</td><td>+37%</td></tr>
+    <tr><td>Citas de expertos con nombre y cargo</td><td>+30%</td></tr>
+    <tr><td>Tono de autoridad demostrada</td><td>+25%</td></tr>
+    <tr><td>Claridad y simplicidad</td><td>+20%</td></tr>
+    <tr><td>Keyword stuffing (exceso de palabras clave)</td><td>-10%</td></tr>
+  </table>
+  <p><em>Fuente: Princeton GEO Research, KDD 2024 — estudiado en Perplexity.ai</em></p>
+</div>
+
+<div class="step">
+  <div class="step-header"><div class="step-num">18</div><h3>Presencia externa — Señales de consenso</h3></div>
+  <p>Las IAs recomiendan marcas que aparecen <strong>consistentemente en múltiples fuentes independientes</strong>.</p>
+  <table>
+    <tr><th>Plataforma</th><th>Acción</th><th>Impacto GEO</th></tr>
+    <tr><td>TripAdvisor</td><td>Crear perfil de agencia con reseñas</td><td><span class="badge badge-red">Alto</span></td></tr>
+    <tr><td>ANATO</td><td>Aparecer en directorio oficial de agencias</td><td><span class="badge badge-red">Alto</span></td></tr>
+    <tr><td>ProColombia</td><td>Registro como operador de turismo receptivo</td><td><span class="badge badge-red">Alto</span></td></tr>
+    <tr><td>YouTube</td><td>Canal con videos de destinos</td><td><span class="badge badge-red">Alto</span></td></tr>
+    <tr><td>Google Business Profile</td><td>Perfil completo y activo</td><td><span class="badge badge-red">Alto</span></td></tr>
+    <tr><td>LinkedIn empresa</td><td>Perfil B2B con publicaciones para agencias</td><td><span class="badge badge-orange">Medio-Alto</span></td></tr>
+    <tr><td>Medios de viaje colombianos</td><td>Notas de prensa con datos propios</td><td><span class="badge badge-orange">Medio-Alto</span></td></tr>
+  </table>
+</div>
+
+<div class="part-header"><div class="part-label">Parte 6</div><h2>SEO Local + Reseñas</h2></div>
+
+<div class="step">
+  <div class="step-header"><div class="step-num">19</div><h3>Optimizar Google Business Profile</h3></div>
+  <ol>
+    <li>Ir a <strong>business.google.com</strong> → reclamar o crear el perfil</li>
+    <li>Categoría principal: <strong>Agencia de viajes</strong> · Secundaria: <strong>Operador turístico mayorista</strong></li>
+    <li>Descripción (750 caracteres): incluir "mayorista", "RNT 24740", "Medellín", destinos principales, "para agencias"</li>
+    <li>Subir mínimo <strong>20 fotos</strong>: oficina, equipo, destinos, grupos de viajeros</li>
+    <li>Verificar que nombre, dirección y teléfono sean <strong>idénticos</strong> en el sitio web y en Google Business</li>
+    <li>Publicar actualizaciones semanales en Google Business (dirigidas a agencias afiliadas)</li>
+    <li>Responder <strong>todas las reseñas</strong> en menos de 48 horas</li>
+  </ol>
+</div>
+
+<div class="step">
+  <div class="step-header"><div class="step-num">20</div><h3>Estrategia de reseñas</h3></div>
+  <p><strong>Meta:</strong> 50+ reseñas con calificación promedio > 4.7 en los próximos 6 meses.</p>
+  <p><strong>Mensaje de solicitud post-viaje (WhatsApp):</strong></p>
+  <pre>Hola [nombre], ¡esperamos que hayas llegado bien de [destino]! 🌍
+Tu opinión nos ayuda a crecer y a llevar a más colombianos al mundo.
+¿Nos regalás 2 minutos para dejar una reseña en Google?
+[enlace directo al perfil]
+¡Mil gracias! 🙏</pre>
+</div>
+
+<div class="part-header"><div class="part-label">Parte 7</div><h2>Autoridad y Backlinks</h2></div>
+
+<div class="step">
+  <div class="step-header"><div class="step-num">21</div><h3>Conseguir backlinks de calidad</h3></div>
+  <table>
+    <tr><th>Fuente</th><th>Cómo conseguirlo</th><th>Valor SEO</th></tr>
+    <tr><td><strong>ANATO</strong> (anato.org)</td><td>Ser miembro activo, aparecer en directorio</td><td><span class="badge badge-red">Muy alto</span></td></tr>
+    <tr><td><strong>ProColombia</strong></td><td>Registrarse como operador exportador de servicios</td><td><span class="badge badge-red">Alto</span></td></tr>
+    <tr><td><strong>Turismo y Negocios / Portafolio</strong></td><td>Nota de prensa sobre tendencias B2B de turismo</td><td><span class="badge badge-red">Alto</span></td></tr>
+    <tr><td><strong>Medios de turismo</strong></td><td>Artículos como experto en mayorismo</td><td><span class="badge badge-red">Alto</span></td></tr>
+    <tr><td><strong>Cámara de Comercio Medellín</strong></td><td>Directorio de empresas asociadas</td><td><span class="badge badge-orange">Medio</span></td></tr>
+    <tr><td><strong>LinkedIn outreach</strong></td><td>Publicaciones de contenido B2B para agencias</td><td><span class="badge badge-orange">Medio</span></td></tr>
+    <tr><td><strong>Hoteles en destino</strong></td><td>Solicitar ser listado en página de "agencias aliadas"</td><td><span class="badge badge-orange">Medio</span></td></tr>
+  </table>
+</div>
+
+<div class="part-header"><div class="part-label">Parte 8</div><h2>Cronograma y Métricas</h2></div>
+
+<div class="step">
+  <div class="step-header"><div class="step-num">22</div><h3>Cronograma de implementación</h3></div>
+  <p><strong>Semana 1-2 — Fundamentos técnicos (urgente):</strong></p>
+  <table>
+    <tr><th>Tarea</th><th>Responsable</th><th>Herramienta</th></tr>
+    <tr><td>Conectar Google Search Console</td><td>Marketing / Dev</td><td>search.google.com/search-console</td></tr>
+    <tr><td>Verificar y corregir robots.txt</td><td>Desarrollador</td><td>Acceso al servidor</td></tr>
+    <tr><td>Forzar HTTPS + eliminar www (301)</td><td>Desarrollador</td><td>.htaccess / cPanel</td></tr>
+    <tr><td>Crear y enviar sitemap.xml</td><td>Dev / WordPress</td><td>Yoast SEO o RankMath</td></tr>
+    <tr><td>Medir Core Web Vitals (5 páginas)</td><td>Marketing</td><td>pagespeed.web.dev</td></tr>
+    <tr><td>Optimizar Google Business Profile</td><td>Marketing</td><td>business.google.com</td></tr>
+  </table>
+  <p><strong>Semana 3-4 — On-page crítico:</strong></p>
+  <table>
+    <tr><th>Tarea</th><th>Tiempo estimado</th></tr>
+    <tr><td>Actualizar title + meta description de 10 páginas</td><td>4 horas</td></tr>
+    <tr><td>Agregar H1 con keyword en cada landing</td><td>3 horas</td></tr>
+    <tr><td>Implementar schema TravelAgency en página principal</td><td>2 horas</td></tr>
+    <tr><td>Crear landing page /destinos/europa/ optimizada</td><td>8 horas</td></tr>
+    <tr><td>Crear landing page /mayorista/ con enfoque B2B</td><td>6 horas</td></tr>
+  </table>
+  <p><strong>Mes 2 — Contenido y GEO:</strong></p>
+  <table>
+    <tr><th>Tarea</th><th>Tiempo estimado</th></tr>
+    <tr><td>Crear /recursos-para-agencias/ con fichas descargables</td><td>8 horas</td></tr>
+    <tr><td>Publicar artículo: "Cómo reservar paquetes a Europa al por mayor"</td><td>6 horas</td></tr>
+    <tr><td>Agregar FAQ con schema en 5 landing pages</td><td>4 horas</td></tr>
+    <tr><td>Registro en ANATO y directorio B2B</td><td>4 horas</td></tr>
+    <tr><td>Lanzar protocolo de solicitud de reseñas</td><td>2 horas</td></tr>
+  </table>
+</div>
+
+<div class="step">
+  <div class="step-header"><div class="step-num">23</div><h3>KPIs y métricas de seguimiento</h3></div>
+  <table>
+    <tr><th>Métrica</th><th>Herramienta</th><th>Meta 3 meses</th><th>Meta 6 meses</th></tr>
+    <tr><td>Páginas indexadas en Google</td><td>Search Console</td><td>+50%</td><td>+100%</td></tr>
+    <tr><td>Clics orgánicos mensuales</td><td>Search Console</td><td>+30%</td><td>+80%</td></tr>
+    <tr><td>Posición promedio keywords B2B</td><td>Search Console</td><td>Top 10</td><td>Top 5</td></tr>
+    <tr><td>Core Web Vitals — LCP</td><td>PageSpeed Insights</td><td>&lt; 2.5s</td><td>&lt; 2s</td></tr>
+    <tr><td>Reseñas en Google</td><td>Google Business</td><td>30+ reseñas</td><td>70+ reseñas</td></tr>
+    <tr><td>Menciones en ChatGPT/Perplexity</td><td>Manual</td><td>1-2 menciones</td><td>5+ menciones</td></tr>
+    <tr><td>Backlinks B2B conseguidos</td><td>Ahrefs free</td><td>3 backlinks</td><td>10+ backlinks</td></tr>
+  </table>
+</div>
+
+<div class="step">
+  <div class="step-header"><div class="step-num">24</div><h3>Herramientas gratuitas recomendadas</h3></div>
+  <table>
+    <tr><th>Herramienta</th><th>Para qué</th><th>URL</th></tr>
+    <tr><td><strong>Google Search Console</strong></td><td>Indexación, errores, keywords</td><td>search.google.com/search-console</td></tr>
+    <tr><td><strong>Google Analytics 4</strong></td><td>Tráfico y comportamiento de usuarios</td><td>analytics.google.com</td></tr>
+    <tr><td><strong>PageSpeed Insights</strong></td><td>Core Web Vitals y velocidad</td><td>pagespeed.web.dev</td></tr>
+    <tr><td><strong>Google Rich Results Test</strong></td><td>Verificar schema markup</td><td>search.google.com/test/rich-results</td></tr>
+    <tr><td><strong>Ahrefs Webmaster Tools</strong></td><td>Backlinks y keywords (gratuito)</td><td>ahrefs.com/webmaster-tools</td></tr>
+    <tr><td><strong>Screaming Frog</strong></td><td>Auditoría técnica (500 URLs gratis)</td><td>screamingfrog.co.uk</td></tr>
+    <tr><td><strong>SSL Checker</strong></td><td>Verificar certificado HTTPS</td><td>sslshopper.com/ssl-checker.html</td></tr>
+    <tr><td><strong>Schemantra</strong></td><td>Generar schema markup</td><td>schemantra.com</td></tr>
+  </table>
+</div>
+
+<div class="page-footer">
+  <span>Akira Travel — Plan SEO + GEO 2026</span>
+  <span>Elaborado por el equipo de Marketing · Mayo 2026</span>
+  <span>Confidencial</span>
+</div>
+
+  </div><!-- /content -->
+</div><!-- /tab akira-plan -->
+
+<!-- ══════════════════════════════════════════
+     TAB 2: AKIRA TRAVEL — GUÍA CON FECHAS
+══════════════════════════════════════════ -->
+<div class="tab-section" id="akira-guia">
+  <div class="tab-banner">
+    <div class="brand">Akira Travel · B2B Mayorista</div>
+    <h1>Guía de Implementación SEO + GEO con Fechas</h1>
+    <div class="sub">Instrucciones detalladas para ejecutar el Plan Maestro SEO+GEO de akiratravel.com en 90 días · Jun 2 – Ago 29, 2026</div>
+  </div>
+  <div class="page">
+
+<!-- Resumen de bloques -->
+<div style="margin: 0 0 40px;">
+  <h2 style="font-size:16pt; font-weight:800; color:#0f3460; margin-bottom:16px;">Resumen del Plan de 90 Días — Akira Travel</h2>
+  <div class="summary-table">
+    <table>
+      <tr><th>#</th><th>Bloque</th><th>Fechas</th><th>Semanas</th><th>Horas Est.</th><th>Responsable</th></tr>
+      <tr><td>1</td><td>Auditoría técnica y Search Console</td><td>Jun 2 – 6</td><td>Sem 1</td><td>6h</td><td>Dev + SEO</td></tr>
+      <tr><td>2</td><td>Correcciones técnicas urgentes</td><td>Jun 9 – 20</td><td>Sem 2–3</td><td>9h</td><td>Dev</td></tr>
+      <tr><td>3</td><td>Optimización On-Page B2B</td><td>Jun 16 – 27</td><td>Sem 3–4</td><td>6h</td><td>SEO + Marketing</td></tr>
+      <tr><td>4</td><td>Schema markup</td><td>Jun 23 – Jul 11</td><td>Sem 4–6</td><td>8h</td><td>Dev</td></tr>
+      <tr><td>5</td><td>Google Business Profile</td><td>Jun 23 – 27</td><td>Sem 4</td><td>4h</td><td>Marketing</td></tr>
+      <tr><td>6</td><td>Contenido para agencias + blog</td><td>Jun 30 – Ago 8</td><td>Sem 5–10</td><td>22h</td><td>Contenido + SEO</td></tr>
+      <tr><td>7</td><td>GEO B2B — Visibilidad en IA</td><td>Jul 7 – 18</td><td>Sem 6–7</td><td>4h</td><td>Dev + Contenido</td></tr>
+      <tr><td>8</td><td>Autoridad B2B — Backlinks y prensa</td><td>Jul 21 – Ago 1</td><td>Sem 8–9</td><td>6h</td><td>Marketing</td></tr>
+      <tr><td>9</td><td>Monitoreo y reporte final</td><td>Ago 4 – 29</td><td>Sem 10–13</td><td>4h</td><td>SEO + Marketing</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- BLOQUE 1 -->
+<div class="block-header">
+  <div class="block-num">Bloque 01</div>
+  <h2>Auditoría Técnica + Google Search Console</h2>
+  <div class="block-meta">📅 Semana 1 · Lunes 2 de junio al Viernes 6 de junio 2026 · Total: ~6 horas</div>
+</div>
+
+<div class="week-divider">
+  <div class="week-label">Semana 1</div>
+  <div class="week-dates">Lunes 2 jun – Viernes 6 jun 2026</div>
+  <div class="week-hours">⏱ 6 horas en total</div>
+</div>
+
+<div class="task-card">
+  <div class="task-header">
+    <div class="task-num">1</div>
+    <div class="task-header-info">
+      <div class="task-title">Instalar y configurar Google Search Console para akiratravel.com</div>
+      <div class="task-meta">
+        <span class="task-date">📅 Lunes 2 de junio</span>
+        <span class="task-time">⏱ 1.5 horas</span>
+        <span class="task-resp resp-dev">Dev</span>
+        <span class="task-resp resp-seo">SEO</span>
+        <span class="priority-badge p-critico">CRÍTICO</span>
+      </div>
+    </div>
+  </div>
+  <div class="task-body">
+    <div class="task-section">
+      <div class="task-section-title">Pasos a seguir</div>
+      <ul class="task-steps">
+        <li>Ir a <strong>search.google.com/search-console</strong> e iniciar sesión con cuenta de Google de Akira Travel</li>
+        <li>Clic en "Añadir propiedad" → elegir tipo "Dominio" → ingresar <strong>akiratravel.com</strong></li>
+        <li>Verificar mediante registro DNS TXT en el panel de hosting</li>
+        <li>Agregar también las propiedades <strong>www.akiratravel.com</strong> y <strong>http://akiratravel.com</strong> para ver errores en todas las versiones</li>
+        <li>Ir a Cobertura → anotar cuántas páginas están indexadas y cuántas tienen errores</li>
+        <li>Enviar sitemap: menú lateral → "Sitemaps" → ingresar <strong>https://akiratravel.com/sitemap.xml</strong></li>
+        <li>Si el sitemap no existe, anotar para crearlo en el Bloque 2</li>
+      </ul>
+    </div>
+    <div class="task-section">
+      <div class="task-section-title">Herramientas</div>
+      <div class="task-tools">
+        <span class="tool-tag">Google Search Console</span>
+        <span class="tool-tag">Panel de hosting (DNS)</span>
+      </div>
+    </div>
+    <div class="task-result">Search Console activo con datos fluyendo. Sitemap enviado. Las 3 versiones del dominio verificadas para diagnóstico.</div>
+  </div>
+</div>
+
+<div class="task-card">
+  <div class="task-header">
+    <div class="task-num">2</div>
+    <div class="task-header-info">
+      <div class="task-title">Instalar Google Analytics 4 + configurar línea base</div>
+      <div class="task-meta">
+        <span class="task-date">📅 Martes 3 de junio</span>
+        <span class="task-time">⏱ 1.5 horas</span>
+        <span class="task-resp resp-dev">Dev</span>
+        <span class="priority-badge p-alto">ALTO</span>
+      </div>
+    </div>
+  </div>
+  <div class="task-body">
+    <div class="task-section">
+      <div class="task-section-title">Pasos a seguir</div>
+      <ul class="task-steps">
+        <li>Ir a <strong>analytics.google.com</strong> → crear propiedad GA4 para akiratravel.com</li>
+        <li>Instalar el tag de GA4 en el &lt;head&gt; de todas las páginas (via GTM o directo en el CMS)</li>
+        <li>Verificar que los datos llegan: tiempo real → ver si aparecen visitas activas</li>
+        <li>Configurar evento de conversión "Formulario de agencia completado" o "Clic en WhatsApp"</li>
+        <li>Vincular GA4 con Google Search Console (admin → vincular productos)</li>
+        <li>Anotar el número de sesiones orgánicas del mes de mayo como <strong>LÍNEA BASE</strong> para medir avance</li>
+      </ul>
+    </div>
+    <div class="task-section">
+      <div class="task-section-title">Herramientas</div>
+      <div class="task-tools">
+        <span class="tool-tag">Google Analytics 4</span>
+        <span class="tool-tag">Google Tag Manager (opcional)</span>
+        <span class="tool-tag">CMS del sitio</span>
+      </div>
+    </div>
+    <div class="task-result">GA4 instalado y recibiendo datos. Línea base de tráfico orgánico documentada para comparar al mes 3.</div>
+  </div>
+</div>
+
+<div class="task-card">
+  <div class="task-header">
+    <div class="task-num">3</div>
+    <div class="task-header-info">
+      <div class="task-title">Test de velocidad PageSpeed Insights en 5 páginas</div>
+      <div class="task-meta">
+        <span class="task-date">📅 Miércoles 4 – Jueves 5 de junio</span>
+        <span class="task-time">⏱ 1 hora</span>
+        <span class="task-resp resp-dev">Dev</span>
+        <span class="priority-badge p-alto">ALTO</span>
+      </div>
+    </div>
+  </div>
+  <div class="task-body">
+    <div class="task-section">
+      <div class="task-section-title">Pasos a seguir</div>
+      <ul class="task-steps">
+        <li>Abrir <strong>pagespeed.web.dev</strong> y testear estas 5 URLs (móvil y desktop): homepage, página de Europa, página de Asia, página de mayorista/agencias, una página de paquete específico</li>
+        <li>Anotar en documento: puntaje móvil, desktop, LCP, INP, CLS para cada página</li>
+        <li><strong>Objetivo mínimo:</strong> Móvil ≥ 50, Desktop ≥ 80. Si algún valor está debajo, escalar prioridad en Bloque 2</li>
+        <li>Anotar las principales "oportunidades" que da PageSpeed para compartir con el developer</li>
+        <li>Verificar si las imágenes están en formato WebP — si no, anotar como corrección prioritaria</li>
+      </ul>
+    </div>
+    <div class="task-section">
+      <div class="task-section-title">Herramientas</div>
+      <div class="task-tools">
+        <span class="tool-tag">PageSpeed Insights (pagespeed.web.dev)</span>
+        <span class="tool-tag">Google Chrome DevTools</span>
+      </div>
+    </div>
+    <div class="task-result">Documento con puntajes actuales de velocidad para las 5 páginas. Línea base establecida para medir mejora en semana 11.</div>
+  </div>
+</div>
+
+<!-- BLOQUE 2 -->
+<div class="block-header">
+  <div class="block-num">Bloque 02</div>
+  <h2>Correcciones Técnicas Urgentes</h2>
+  <div class="block-meta">📅 Semanas 2–3 · Lunes 9 de junio al Viernes 20 de junio 2026 · Total: ~9 horas</div>
+</div>
+
+<div class="week-divider">
+  <div class="week-label">Semana 2</div>
+  <div class="week-dates">Lunes 9 jun – Viernes 13 jun 2026</div>
+  <div class="week-hours">⏱ 5 horas</div>
+</div>
+
+<div class="task-card">
+  <div class="task-header">
+    <div class="task-num">4</div>
+    <div class="task-header-info">
+      <div class="task-title">Verificar y corregir redirecciones HTTPS (http→https + eliminar www)</div>
+      <div class="task-meta">
+        <span class="task-date">📅 Lunes 9 de junio</span>
+        <span class="task-time">⏱ 2 horas</span>
+        <span class="task-resp resp-dev">Dev</span>
+        <span class="priority-badge p-critico">CRÍTICO</span>
+      </div>
+    </div>
+  </div>
+  <div class="task-body">
+    <div class="task-section">
+      <div class="task-section-title">Pasos a seguir</div>
+      <ul class="task-steps">
+        <li>Verificar con <strong>httpstatus.io</strong> que http://akiratravel.com devuelve código 301 → https://akiratravel.com</li>
+        <li>Verificar que https://www.akiratravel.com devuelve 301 → https://akiratravel.com (sin www)</li>
+        <li>Si las redirecciones no están activas: editar el archivo <strong>.htaccess</strong> en la raíz del servidor con el código del Plan Maestro (Sección 5)</li>
+        <li>Verificar el certificado SSL en <strong>sslshopper.com/ssl-checker.html</strong> — no debe tener errores ni fechas vencidas</li>
+        <li>Confirmar en Search Console que Google ya ve la versión HTTPS como canónica</li>
+        <li>Anotar: ¿el error 403 persiste para rastreadores externos? Si sí, escalar urgente con el hosting</li>
+      </ul>
+    </div>
+    <div class="task-section">
+      <div class="task-section-title">Herramientas</div>
+      <div class="task-tools">
+        <span class="tool-tag">httpstatus.io</span>
+        <span class="tool-tag">Editor .htaccess / cPanel</span>
+        <span class="tool-tag">sslshopper.com</span>
+        <span class="tool-tag">Google Search Console</span>
+      </div>
+    </div>
+    <div class="task-result">Una sola versión canónica https://akiratravel.com. Toda la autoridad de backlinks consolidada. Error 403 eliminado para rastreadores.</div>
+  </div>
+</div>
+
+<div class="task-card">
+  <div class="task-header">
+    <div class="task-num">5</div>
+    <div class="task-header-info">
+      <div class="task-title">Implementar canonical tags en todas las páginas</div>
+      <div class="task-meta">
+        <span class="task-date">📅 Martes 10 – Miércoles 11 de junio</span>
+        <span class="task-time">⏱ 1.5 horas</span>
+        <span class="task-resp resp-dev">Dev</span>
+        <span class="priority-badge p-critico">CRÍTICO</span>
+      </div>
+    </div>
+  </div>
+  <div class="task-body">
+    <div class="task-section">
+      <div class="task-section-title">Pasos a seguir</div>
+      <ul class="task-steps">
+        <li>En el CMS o plantilla del sitio, añadir la etiqueta canonical en el &lt;head&gt; de cada página: <code>&lt;link rel="canonical" href="https://akiratravel.com/[ruta-de-pagina]/"&gt;</code></li>
+        <li>Verificar que ninguna página apunta a una versión http:// o www. en su canonical</li>
+        <li>En WordPress: usar Yoast SEO o RankMath — generan canonicals automáticamente</li>
+        <li>Validar con Google Rich Results Test o Inspector de URL en Search Console</li>
+      </ul>
+    </div>
+    <div class="task-section">
+      <div class="task-section-title">Herramientas</div>
+      <div class="task-tools">
+        <span class="tool-tag">CMS / Yoast SEO / RankMath</span>
+        <span class="tool-tag">Google Search Console — Inspector de URL</span>
+      </div>
+    </div>
+    <div class="task-result">Todas las páginas con canonical tag apuntando a la versión HTTPS sin www. Eliminación del riesgo de contenido duplicado.</div>
+  </div>
+</div>
+
+<div class="task-card">
+  <div class="task-header">
+    <div class="task-num">6</div>
+    <div class="task-header-info">
+      <div class="task-title">Actualizar robots.txt — permitir bots de IA (GPTBot, ClaudeBot, PerplexityBot)</div>
+      <div class="task-meta">
+        <span class="task-date">📅 Jueves 12 de junio</span>
+        <span class="task-time">⏱ 30 min</span>
+        <span class="task-resp resp-dev">Dev</span>
+        <span class="priority-badge p-critico">CRÍTICO</span>
+      </div>
+    </div>
+  </div>
+  <div class="task-body">
+    <div class="task-section">
+      <div class="task-section-title">Pasos a seguir</div>
+      <ul class="task-steps">
+        <li>Verificar el archivo actual en <strong>akiratravel.com/robots.txt</strong></li>
+        <li>Asegurarse de que NO exista ningún <code>Disallow: /</code> global ni para carpetas de tours</li>
+        <li>Añadir explícitamente los bots de IA con Allow: / (ver código completo en Plan Maestro Sección 06)</li>
+        <li>Los bots a incluir: GPTBot, ChatGPT-User, PerplexityBot, ClaudeBot, anthropic-ai, Google-Extended</li>
+        <li>Verificar que la línea del Sitemap apunte a: <code>https://akiratravel.com/sitemap.xml</code></li>
+        <li>Validar el robots.txt en: Search Console → Inspector de URL → /robots.txt</li>
+      </ul>
+    </div>
+    <div class="task-section">
+      <div class="task-section-title">Herramientas</div>
+      <div class="task-tools">
+        <span class="tool-tag">Editor de texto / FTP / cPanel</span>
+        <span class="tool-tag">Google Search Console</span>
+      </div>
+    </div>
+    <div class="task-result">robots.txt actualizado permitiendo acceso a GPTBot, ClaudeBot, PerplexityBot y Google-Extended. Akira Travel elegible para aparecer en respuestas de IA.</div>
+  </div>
+</div>
+
+<div class="week-divider">
+  <div class="week-label">Semana 3</div>
+  <div class="week-dates">Lunes 16 jun – Viernes 20 jun 2026</div>
+  <div class="week-hours">⏱ 4 horas</div>
+</div>
+
+<div class="task-card">
+  <div class="task-header">
+    <div class="task-num">7</div>
+    <div class="task-header-info">
+      <div class="task-title">Corregir errores 404 detectados en Search Console</div>
+      <div class="task-meta">
+        <span class="task-date">📅 Lunes 16 – Miércoles 18 de junio</span>
+        <span class="task-time">⏱ 3 horas</span>
+        <span class="task-resp resp-dev">Dev</span>
+        <span class="task-resp resp-seo">SEO</span>
+        <span class="priority-badge p-alto">ALTO</span>
+      </div>
+    </div>
+  </div>
+  <div class="task-body">
+    <div class="task-section">
+      <div class="task-section-title">Pasos a seguir</div>
+      <ul class="task-steps">
+        <li>En Search Console → Cobertura → filtrar por "Error 404 / no encontrada" → descargar lista CSV</li>
+        <li>Para cada URL con 404: identificar si la página existe con otra URL o fue eliminada</li>
+        <li>Si la página existe en otra URL: crear redirect 301 desde la URL con 404 hacia la URL correcta</li>
+        <li>Si la página fue eliminada y no tiene equivalente: devolver 410 (gone) en lugar de 404</li>
+        <li>Verificar cada redirect con httpstatus.io — confirmar código 301, no 302</li>
+        <li>Crear documento Google Sheets con: URL con error | Tipo de error | Acción tomada | Fecha de corrección</li>
+        <li>Una vez corregidos, solicitar re-rastreo en Search Console para las URLs corregidas</li>
+      </ul>
+    </div>
+    <div class="task-section">
+      <div class="task-section-title">Herramientas</div>
+      <div class="task-tools">
+        <span class="tool-tag">Google Search Console</span>
+        <span class="tool-tag">httpstatus.io</span>
+        <span class="tool-tag">CMS / .htaccess</span>
+        <span class="tool-tag">Google Sheets</span>
+      </div>
+    </div>
+    <div class="task-result">Todos los errores 404 corregidos con redirects 301 o respuesta 410. Search Console muestra reducción de errores en 2-4 semanas.</div>
+  </div>
+</div>
+
+<!-- BLOQUE 3 -->
+<div class="block-header">
+  <div class="block-num">Bloque 03</div>
+  <h2>Optimización On-Page B2B — Titles, Metas y H1s</h2>
+  <div class="block-meta">📅 Semanas 3–4 · Lunes 16 de junio al Viernes 27 de junio 2026 · Total: ~6 horas</div>
+</div>
+
+<div class="task-card">
+  <div class="task-header">
+    <div class="task-num">8</div>
+    <div class="task-header-info">
+      <div class="task-title">Actualizar meta titles y descriptions con keywords B2B</div>
+      <div class="task-meta">
+        <span class="task-date">📅 Jueves 19 – Viernes 20 de junio</span>
+        <span class="task-time">⏱ 2 horas</span>
+        <span class="task-resp resp-seo">SEO</span>
+        <span class="task-resp resp-mkt">Marketing</span>
+        <span class="priority-badge p-critico">CRÍTICO</span>
+      </div>
+    </div>
+  </div>
+  <div class="task-body">
+    <div class="task-section">
+      <div class="task-section-title">Pasos a seguir</div>
+      <ul class="task-steps">
+        <li>Ingresar al CMS y actualizar las siguientes páginas con los nuevos meta titles y descriptions B2B:</li>
+        <li><strong>Homepage:</strong> "Akira Travel | Mayorista de Viajes Colombia | Paquetes Europa y Asia para Agencias 2026"</li>
+        <li><strong>/mayorista/ o /b2b/:</strong> "Akira Travel B2B | Paquetes Europa al por Mayor para Agencias Colombia"</li>
+        <li><strong>/destinos/europa/:</strong> "Paquetes a Europa para Agencias | Mayorista Certificado | Akira Travel 2026"</li>
+        <li><strong>/nosotros/:</strong> "Quiénes Somos | Akira Travel — Mayorista de Viajes RNT 24740 — Medellín"</li>
+        <li>Usar counter de caracteres en <strong>seomofo.com</strong>: titles máx 60 chars, descriptions máx 155 chars</li>
+        <li>Incluir en descriptions: "mayorista", "RNT 24740", ciudad, beneficio principal y CTA</li>
+      </ul>
+    </div>
+    <div class="task-section">
+      <div class="task-section-title">Herramientas</div>
+      <div class="task-tools">
+        <span class="tool-tag">CMS del sitio</span>
+        <span class="tool-tag">seomofo.com (contador de caracteres)</span>
+        <span class="tool-tag">Google Search Console</span>
+      </div>
+    </div>
+    <div class="task-result">Páginas principales con titles únicos B2B y descriptions optimizadas. Mejora visible en CTR en 3-4 semanas.</div>
+  </div>
+</div>
+
+<div class="task-card">
+  <div class="task-header">
+    <div class="task-num">9</div>
+    <div class="task-header-info">
+      <div class="task-title">Actualizar H1s en páginas de destinos con keywords B2B</div>
+      <div class="task-meta">
+        <span class="task-date">📅 Lunes 23 – Miércoles 25 de junio</span>
+        <span class="task-time">⏱ 2 horas</span>
+        <span class="task-resp resp-content">Contenido</span>
+        <span class="task-resp resp-seo">SEO</span>
+        <span class="priority-badge p-alto">ALTO</span>
+      </div>
+    </div>
+  </div>
+  <div class="task-body">
+    <div class="task-section">
+      <div class="task-section-title">Pasos a seguir</div>
+      <ul class="task-steps">
+        <li>Verificar que cada página de destino tiene exactamente <strong>UN H1</strong> — si tiene más, eliminar los extras o cambiarlos a H2</li>
+        <li>Actualizar H1 de Europa: "Paquetes a Europa para Agencias de Viaje — Mayorista Akira Travel 2026"</li>
+        <li>Actualizar H1 de Asia: "Tours a Asia para Agencias Colombia | Japón, Tailandia, India — Akira Travel 2026"</li>
+        <li>Actualizar H1 de homepage: "Akira Travel — Mayorista de Viajes Colombia | Paquetes para Agencias y Corporativos"</li>
+        <li>Añadir subtítulo (párrafo debajo del H1) de 40-60 palabras con keywords secundarias: "mayorista de viajes colombia", "paquetes europa para agencias", "akira travel b2b"</li>
+        <li>Verificar la estructura con Screaming Frog — exportar lista de H1s de todo el sitio</li>
+      </ul>
+    </div>
+    <div class="task-section">
+      <div class="task-section-title">Herramientas</div>
+      <div class="task-tools">
+        <span class="tool-tag">CMS del sitio</span>
+        <span class="tool-tag">Screaming Frog SEO Spider (gratis hasta 500 URLs)</span>
+      </div>
+    </div>
+    <div class="task-result">H1 único y optimizado en cada página de destino. Estructura de encabezados correcta en todo el sitio. Señal clara para Google sobre el tema de cada página.</div>
+  </div>
+</div>
+
+<!-- BLOQUE 4 -->
+<div class="block-header">
+  <div class="block-num">Bloque 04</div>
+  <h2>Schema Markup — Datos Estructurados</h2>
+  <div class="block-meta">📅 Semanas 4–6 · Lunes 23 de junio al Viernes 11 de julio 2026 · Total: ~8 horas</div>
+</div>
+
+<div class="task-card">
+  <div class="task-header">
+    <div class="task-num">10</div>
+    <div class="task-header-info">
+      <div class="task-title">Implementar Schema TravelAgency B2B en homepage</div>
+      <div class="task-meta">
+        <span class="task-date">📅 Jueves 26 – Viernes 27 de junio</span>
+        <span class="task-time">⏱ 1.5 horas</span>
+        <span class="task-resp resp-dev">Dev</span>
+        <span class="priority-badge p-critico">CRÍTICO</span>
+      </div>
+    </div>
+  </div>
+  <div class="task-body">
+    <div class="task-section">
+      <div class="task-section-title">Pasos a seguir</div>
+      <ul class="task-steps">
+        <li>Usar el código JSON-LD de TravelAgency del Plan Maestro (Sección 16) — adaptarlo con datos reales: logo, teléfono, email, horarios</li>
+        <li>Añadir en la descripción: "mayorista de viajes", "agencias de viaje", "turismo corporativo" para señal B2B</li>
+        <li>Incluir el campo <code>"knowsAbout": ["Turismo B2B", "Mayorista de viajes", "Paquetes Europa", "Paquetes Asia"]</code></li>
+        <li>Insertar el bloque &lt;script type="application/ld+json"&gt; en el &lt;head&gt; del homepage</li>
+        <li>Validar en: <strong>search.google.com/test/rich-results</strong> — debe mostrar "TravelAgency detectado" sin errores</li>
+        <li>Corregir cualquier error y re-validar</li>
+      </ul>
+    </div>
+    <div class="task-section">
+      <div class="task-section-title">Herramientas</div>
+      <div class="task-tools">
+        <span class="tool-tag">Google Rich Results Test</span>
+        <span class="tool-tag">Schema.org Validator</span>
+        <span class="tool-tag">CMS / editor HTML</span>
+      </div>
+    </div>
+    <div class="task-result">Schema TravelAgency validado sin errores. Google puede mostrar información de Akira Travel en Knowledge Panel y rich snippets.</div>
+  </div>
+</div>
+
+<div class="task-card">
+  <div class="task-header">
+    <div class="task-num">11</div>
+    <div class="task-header-info">
+      <div class="task-title">Implementar Schema TouristTrip en top 10 paquetes</div>
+      <div class="task-meta">
+        <span class="task-date">📅 Martes 30 de junio – Viernes 4 de julio</span>
+        <span class="task-time">⏱ 4 horas</span>
+        <span class="task-resp resp-dev">Dev</span>
+        <span class="priority-badge p-alto">ALTO</span>
+      </div>
+    </div>
+  </div>
+  <div class="task-body">
+    <div class="task-section">
+      <div class="task-section-title">Pasos a seguir</div>
+      <ul class="task-steps">
+        <li>Priorizar los 10 paquetes más visitados según Search Console → Rendimiento → Páginas</li>
+        <li>Para cada paquete: rellenar nombre, descripción (150 palabras), ciudades del itinerario, duración en días, fechas de salida disponibles</li>
+        <li>Añadir el campo <code>"touristType": "Agencias de viaje, Turismo corporativo"</code> para reforzar el perfil B2B</li>
+        <li>Insertar el JSON-LD en el &lt;head&gt; de cada página de paquete</li>
+        <li>Validar las 10 páginas en Google Rich Results Test — deben mostrar "TouristTrip detectado"</li>
+        <li>Documentar en Google Sheets qué páginas ya tienen schema y cuáles faltan</li>
+      </ul>
+    </div>
+    <div class="task-section">
+      <div class="task-section-title">Herramientas</div>
+      <div class="task-tools">
+        <span class="tool-tag">Google Rich Results Test</span>
+        <span class="tool-tag">JSON-LD Playground (jsonld.com)</span>
+        <span class="tool-tag">CMS del sitio</span>
+        <span class="tool-tag">Google Sheets</span>
+      </div>
+    </div>
+    <div class="task-result">10 páginas de paquetes con schema TouristTrip válido. Google puede generar rich snippets con itinerario y duración en resultados de búsqueda.</div>
+  </div>
+</div>
+
+<div class="task-card">
+  <div class="task-header">
+    <div class="task-num">12</div>
+    <div class="task-header-info">
+      <div class="task-title">Implementar Schema FAQPage para agencias</div>
+      <div class="task-meta">
+        <span class="task-date">📅 Lunes 7 – Martes 8 de julio</span>
+        <span class="task-time">⏱ 1.5 horas</span>
+        <span class="task-resp resp-dev">Dev</span>
+        <span class="task-resp resp-content">Contenido</span>
+        <span class="priority-badge p-alto">ALTO</span>
+      </div>
+    </div>
+  </div>
+  <div class="task-body">
+    <div class="task-section">
+      <div class="task-section-title">Pasos a seguir</div>
+      <ul class="task-steps">
+        <li>Crear o actualizar la página /preguntas-frecuentes-agencias/ con preguntas orientadas al canal B2B</li>
+        <li>Preguntas a incluir: "¿Cómo funciona el proceso de afiliación?", "¿Cuáles son las comisiones para agencias?", "¿Akira Travel tiene RNT?", "¿Qué destinos tiene disponibles para mayoreo?", "¿Cómo accedo al portal de reservas para agencias?"</li>
+        <li>El texto de las respuestas debe ser visible en el HTML (no oculto con JavaScript)</li>
+        <li>Insertar el JSON-LD de FAQPage en el &lt;head&gt; con todas las preguntas</li>
+        <li>Validar en Google Rich Results Test — debe mostrar "FAQPage detectado"</li>
+      </ul>
+    </div>
+    <div class="task-section">
+      <div class="task-section-title">Herramientas</div>
+      <div class="task-tools">
+        <span class="tool-tag">Google Rich Results Test</span>
+        <span class="tool-tag">CMS del sitio</span>
+        <span class="tool-tag">Google Docs (redacción de preguntas)</span>
+      </div>
+    </div>
+    <div class="task-result">Página de FAQ B2B con schema válido. Posibilidad de aparecer con FAQ expandida en resultados de búsqueda para keywords de agencias.</div>
+  </div>
+</div>
+
+<!-- BLOQUE 5 -->
+<div class="block-header">
+  <div class="block-num">Bloque 05</div>
+  <h2>Google Business Profile — Perfil B2B</h2>
+  <div class="block-meta">📅 Semana 4 · Lunes 23 de junio al Viernes 27 de junio 2026 · Total: ~4 horas</div>
+</div>
+
+<div class="task-card">
+  <div class="task-header">
+    <div class="task-num">13</div>
+    <div class="task-header-info">
+      <div class="task-title">Completar y optimizar Google Business Profile de Akira Travel</div>
+      <div class="task-meta">
+        <span class="task-date">📅 Lunes 23 – Martes 24 de junio</span>
+        <span class="task-time">⏱ 2.5 horas</span>
+        <span class="task-resp resp-mkt">Marketing</span>
+        <span class="priority-badge p-alto">ALTO</span>
+      </div>
+    </div>
+  </div>
+  <div class="task-body">
+    <div class="task-section">
+      <div class="task-section-title">Pasos a seguir</div>
+      <ul class="task-steps">
+        <li>Ir a <strong>business.google.com</strong> e ingresar con la cuenta de Akira Travel</li>
+        <li>Verificar nombre exacto: <strong>Akira Travel — Mayorista de Viajes</strong></li>
+        <li>Completar descripción (750 caracteres): incluir "mayorista de viajes colombia", "RNT 24740", "Europa", "Asia", "agencias afiliadas", "Medellín"</li>
+        <li>Categoría principal: <strong>Agencia de viajes</strong> — Secundaria: Operador turístico</li>
+        <li>Agregar atributos: horarios de atención, modalidad de servicio (A domicilio / presencial), idiomas</li>
+        <li>Subir mínimo 20 fotos: oficina, equipo, destinos, material promocional para agencias</li>
+        <li>Verificar que nombre, dirección y teléfono son <strong>idénticos</strong> al sitio web (NAP consistency)</li>
+        <li>Publicar primer Post orientado a agencias: "Nuevos paquetes para agencias — Europa 2026" con imagen y link al sitio</li>
+        <li>Responder TODAS las reseñas pendientes en menos de 48 horas</li>
+      </ul>
+    </div>
+    <div class="task-section">
+      <div class="task-section-title">Herramientas</div>
+      <div class="task-tools">
+        <span class="tool-tag">Google Business Profile</span>
+        <span class="tool-tag">Canva (fotos y banners)</span>
+      </div>
+    </div>
+    <div class="task-result">Perfil de Google Business al 100% con enfoque B2B. Aparición en búsquedas "mayorista de viajes medellín" mejorada en 2-4 semanas.</div>
+  </div>
+</div>
+
+<!-- BLOQUE 6 -->
+<div class="block-header">
+  <div class="block-num">Bloque 06</div>
+  <h2>Contenido para Agencias + Blog Editorial</h2>
+  <div class="block-meta">📅 Semanas 5–10 · Martes 1 de julio al Viernes 8 de agosto 2026 · Total: ~22 horas</div>
+</div>
+
+<div class="task-card">
+  <div class="task-header">
+    <div class="task-num">14</div>
+    <div class="task-header-info">
+      <div class="task-title">Crear página /recursos-para-agencias/ con fichas descargables</div>
+      <div class="task-meta">
+        <span class="task-date">📅 Martes 1 – Viernes 4 de julio</span>
+        <span class="task-time">⏱ 6 horas</span>
+        <span class="task-resp resp-content">Contenido</span>
+        <span class="task-resp resp-seo">SEO</span>
+        <span class="priority-badge p-alto">ALTO</span>
+      </div>
+    </div>
+  </div>
+  <div class="task-body">
+    <div class="task-section">
+      <div class="task-section-title">Paso 1: Crear la página /recursos-para-agencias/</div>
+      <ul class="task-steps">
+        <li>Meta title: "Recursos para Agencias de Viaje | Fichas de Destino y Materiales | Akira Travel"</li>
+        <li>H1: "Centro de Recursos para Agencias Afiliadas — Akira Travel"</li>
+        <li>Intro: párrafo de 100 palabras explicando qué es Akira Travel como mayorista y qué materiales hay disponibles</li>
+        <li>Enlazar desde el menú principal bajo "Para Agencias" o "B2B"</li>
+      </ul>
+    </div>
+    <div class="task-section">
+      <div class="task-section-title">Paso 2: Crear fichas descargables de destino (PDF)</div>
+      <ul class="task-steps">
+        <li>Crear fichas en Canva (1-2 páginas) para los 4 destinos principales: Europa, Asia, Medio Oriente, Colombia</li>
+        <li>Cada ficha incluye: descripción del destino, qué incluye el paquete, fechas de salida, RNT Akira, contacto para agencias</li>
+        <li>Subir los PDFs al servidor y añadir links de descarga en la página /recursos-para-agencias/</li>
+        <li>Anotar las URLs de las fichas en el sitemap para indexación</li>
+      </ul>
+    </div>
+    <div class="task-section">
+      <div class="task-section-title">Herramientas</div>
+      <div class="task-tools">
+        <span class="tool-tag">CMS del sitio</span>
+        <span class="tool-tag">Canva (fichas PDF)</span>
+        <span class="tool-tag">Google Docs</span>
+      </div>
+    </div>
+    <div class="task-result">Página /recursos-para-agencias/ activa con fichas descargables. Señal de contenido B2B para Google. Herramienta de venta para el equipo comercial.</div>
+  </div>
+</div>
+
+<div class="task-card">
+  <div class="task-header">
+    <div class="task-num">15</div>
+    <div class="task-header-info">
+      <div class="task-title">Artículos de blog 1 y 2 — keywords B2B y agencias</div>
+      <div class="task-meta">
+        <span class="task-date">📅 Lunes 7 – Viernes 11 de julio</span>
+        <span class="task-time">⏱ 6 horas</span>
+        <span class="task-resp resp-content">Contenido</span>
+        <span class="priority-badge p-alto">ALTO</span>
+      </div>
+    </div>
+  </div>
+  <div class="task-body">
+    <div class="task-section">
+      <div class="task-section-title">Artículo 1 — Cómo reservar paquetes a Europa al por mayor</div>
+      <ul class="task-steps">
+        <li>URL: /blog/agencias/como-reservar-paquetes-europa-al-por-mayor/</li>
+        <li>Keyword principal: "cómo reservar paquetes europa al por mayor"</li>
+        <li>Extensión: mínimo 1.200 palabras</li>
+        <li>Estructura: H1 → intro (respuesta directa 50 palabras) → H2 "¿Qué es un mayorista de viajes?" → H2 "Proceso de afiliación con Akira Travel" → H2 "Destinos disponibles para agencias" → H2 FAQ (5 preguntas) → CTA a WhatsApp/formulario</li>
+        <li>Fecha de publicación: 8 julio 2026</li>
+      </ul>
+    </div>
+    <div class="task-section">
+      <div class="task-section-title">Artículo 2 — Requisitos visa Schengen para clientes 2026</div>
+      <ul class="task-steps">
+        <li>URL: /blog/agencias/requisitos-visa-schengen-clientes-colombianos-2026/</li>
+        <li>Keyword principal: "requisitos visa schengen clientes 2026"</li>
+        <li>Extensión: mínimo 1.200 palabras</li>
+        <li>Incluir: checklist de documentos para agencias, tiempos de procesamiento, enlace a paquetes Europa</li>
+        <li>Fecha de publicación: 11 julio 2026</li>
+      </ul>
+    </div>
+    <div class="task-result">2 artículos de blog publicados con keywords B2B. Base de tráfico informacional para agencias que buscan información de destinos.</div>
+  </div>
+</div>
+
+<div class="task-card">
+  <div class="task-header">
+    <div class="task-num">16</div>
+    <div class="task-header-info">
+      <div class="task-title">Artículos de blog 3 y 4 + actualizar sitemap</div>
+      <div class="task-meta">
+        <span class="task-date">📅 Lunes 4 – Viernes 8 de agosto</span>
+        <span class="task-time">⏱ 6 horas</span>
+        <span class="task-resp resp-content">Contenido</span>
+        <span class="priority-badge p-normal">NORMAL</span>
+      </div>
+    </div>
+  </div>
+  <div class="task-body">
+    <div class="task-section">
+      <div class="task-section-title">Artículo 3</div>
+      <ul class="task-steps">
+        <li>Tema: "Destinos Asia más vendidos para agencias colombianas 2026"</li>
+        <li>URL: /blog/agencias/destinos-asia-mas-vendidos-agencias-colombia-2026/</li>
+        <li>Incluir: Japón, Tailandia, Indonesia, India — datos de demanda, precio promedio por agencia, tiempos de anticipación</li>
+      </ul>
+    </div>
+    <div class="task-section">
+      <div class="task-section-title">Artículo 4</div>
+      <ul class="task-steps">
+        <li>Tema: "Georgia y Armenia: el destino emergente que las agencias deben conocer"</li>
+        <li>URL: /blog/agencias/georgia-armenia-destino-emergente-agencias/</li>
+        <li>Incluir: por qué es rentable vender para agencias, diferenciador vs Europa clásica, cómo cotizarlo</li>
+        <li>Actualizar sitemap.xml con las 4 nuevas URLs del blog y re-enviar a Search Console</li>
+      </ul>
+    </div>
+    <div class="task-result">4 artículos de blog publicados. Sitemap actualizado. Presencia en Google para keywords informacionales B2B de agencias.</div>
+  </div>
+</div>
+
+<!-- BLOQUE 7 -->
+<div class="block-header">
+  <div class="block-num">Bloque 07</div>
+  <h2>GEO B2B — Visibilidad en Inteligencia Artificial</h2>
+  <div class="block-meta">📅 Semanas 6–7 · Lunes 7 de julio al Viernes 18 de julio 2026 · Total: ~4 horas</div>
+</div>
+
+<div class="task-card">
+  <div class="task-header">
+    <div class="task-num">17</div>
+    <div class="task-header-info">
+      <div class="task-title">Reescribir página /nosotros/ con bloque de identidad B2B para IA</div>
+      <div class="task-meta">
+        <span class="task-date">📅 Lunes 7 – Martes 8 de julio</span>
+        <span class="task-time">⏱ 2 horas</span>
+        <span class="task-resp resp-content">Contenido</span>
+        <span class="task-resp resp-dev">Dev</span>
+        <span class="priority-badge p-alto">ALTO</span>
+      </div>
+    </div>
+  </div>
+  <div class="task-body">
+    <div class="task-section">
+      <div class="task-section-title">Pasos a seguir</div>
+      <ul class="task-steps">
+        <li>Reescribir /nosotros/ con un bloque de identidad estructurado que los modelos de IA puedan leer y citar</li>
+        <li>Primer párrafo: "Akira Travel es una agencia mayorista de viajes colombiana con sede en Medellín, Colombia, especializada en paquetes para agencias de viaje y clientes corporativos. Operamos con RNT 24740 y somos parte del grupo Geoser junto a Geo Tours y Sakya Travel."</li>
+        <li>Añadir lista de hechos verificables: años de operación, destinos disponibles, número de agencias afiliadas, certificaciones, ciudades de salida</li>
+        <li>Añadir sección "Nuestros servicios para agencias" con lista de servicios B2B</li>
+        <li>Texto debe estar en HTML puro visible — no generado con JavaScript</li>
+        <li>Enlazar /nosotros/ desde el footer y el menú principal</li>
+      </ul>
+    </div>
+    <div class="task-section">
+      <div class="task-section-title">Herramientas</div>
+      <div class="task-tools">
+        <span class="tool-tag">CMS del sitio</span>
+        <span class="tool-tag">Google Docs (redacción)</span>
+      </div>
+    </div>
+    <div class="task-result">Página /nosotros/ con contenido B2B estructurado que los modelos de IA pueden leer y citar al responder preguntas sobre mayoristas de viajes en Colombia.</div>
+  </div>
+</div>
+
+<div class="task-card">
+  <div class="task-header">
+    <div class="task-num">18</div>
+    <div class="task-header-info">
+      <div class="task-title">Primer test de visibilidad en IA — preguntas B2B</div>
+      <div class="task-meta">
+        <span class="task-date">📅 Jueves 17 – Viernes 18 de julio</span>
+        <span class="task-time">⏱ 2 horas</span>
+        <span class="task-resp resp-seo">SEO</span>
+        <span class="task-resp resp-mkt">Marketing</span>
+        <span class="priority-badge p-alto">ALTO</span>
+      </div>
+    </div>
+  </div>
+  <div class="task-body">
+    <div class="task-section">
+      <div class="task-section-title">Preguntas a testear en ChatGPT, Perplexity y Gemini</div>
+      <ul class="task-steps">
+        <li><strong>"¿Cuáles son los mejores mayoristas de viajes a Europa en Colombia?"</strong></li>
+        <li><strong>"¿Qué mayoristas de viajes hay en Medellín para agencias?"</strong></li>
+        <li><strong>"¿Dónde pueden las agencias de viaje colombianas comprar paquetes a Europa al por mayor?"</strong></li>
+        <li>Google (búsqueda normal): <strong>"mayorista de viajes colombia agencias"</strong> — revisar si hay AI Overview</li>
+      </ul>
+    </div>
+    <div class="task-section">
+      <div class="task-section-title">Registrar resultados</div>
+      <ul class="task-steps">
+        <li>Crear tabla: Herramienta IA | Pregunta | ¿Aparece Akira Travel? | ¿Qué competidores aparecen?</li>
+        <li>Si no aparece: priorizar conseguir backlinks en directorios B2B (Bloque 8)</li>
+        <li>Si aparece en algunos: identificar cuáles señales están funcionando y reforzarlas</li>
+      </ul>
+    </div>
+    <div class="task-result">Documento de diagnóstico de visibilidad en IA con baseline establecido para comparar en la semana 12.</div>
+  </div>
+</div>
+
+<!-- BLOQUE 8 -->
+<div class="block-header">
+  <div class="block-num">Bloque 08</div>
+  <h2>Autoridad B2B — Backlinks y Prensa Sectorial</h2>
+  <div class="block-meta">📅 Semanas 8–9 · Lunes 21 de julio al Viernes 1 de agosto 2026 · Total: ~6 horas</div>
+</div>
+
+<div class="task-card">
+  <div class="task-header">
+    <div class="task-num">19</div>
+    <div class="task-header-info">
+      <div class="task-title">Registro en directorio ANATO + envío nota de prensa a medios B2B</div>
+      <div class="task-meta">
+        <span class="task-date">📅 Lunes 21 – Miércoles 23 de julio</span>
+        <span class="task-time">⏱ 3 horas</span>
+        <span class="task-resp resp-mkt">Marketing</span>
+        <span class="priority-badge p-alto">ALTO</span>
+      </div>
+    </div>
+  </div>
+  <div class="task-body">
+    <div class="task-section">
+      <div class="task-section-title">Paso 1: ANATO</div>
+      <ul class="task-steps">
+        <li>Verificar si Akira Travel ya aparece en el directorio de agencias en <strong>anato.org</strong></li>
+        <li>Si no aparece: contactar a ANATO para solicitar la inclusión o actualización del perfil</li>
+        <li>Incluir URL del sitio web en el perfil de ANATO — este backlink tiene altísimo valor SEO y señal de consenso para IA</li>
+      </ul>
+    </div>
+    <div class="task-section">
+      <div class="task-section-title">Paso 2: Nota de prensa sectorial</div>
+      <ul class="task-steps">
+        <li>Redactar nota de prensa de 400 palabras sobre Akira Travel como mayorista: qué destinos tiene, cuántas agencias trabajan con ellos, cita del gerente con nombre y cargo</li>
+        <li>Enviar a: <strong>Turismo y Negocios</strong>, <strong>Portafolio</strong> (sección turismo), <strong>Sectorial.co</strong></li>
+        <li>Objetivo: 2 publicaciones con backlink a akiratravel.com en los próximos 30 días</li>
+      </ul>
+    </div>
+    <div class="task-section">
+      <div class="task-section-title">Herramientas</div>
+      <div class="task-tools">
+        <span class="tool-tag">anato.org</span>
+        <span class="tool-tag">Email corporativo</span>
+        <span class="tool-tag">Google Docs (nota de prensa)</span>
+      </div>
+    </div>
+    <div class="task-result">Presencia activa en directorio ANATO. Al menos 2 menciones con backlink en medios sectoriales de turismo colombiano.</div>
+  </div>
+</div>
+
+<div class="task-card">
+  <div class="task-header">
+    <div class="task-num">20</div>
+    <div class="task-header-info">
+      <div class="task-title">Outreach en LinkedIn a agencias de viaje + campaña de reseñas</div>
+      <div class="task-meta">
+        <span class="task-date">📅 Jueves 24 de julio – Viernes 1 de agosto</span>
+        <span class="task-time">⏱ 3 horas</span>
+        <span class="task-resp resp-mkt">Marketing</span>
+        <span class="priority-badge p-normal">NORMAL</span>
+      </div>
+    </div>
+  </div>
+  <div class="task-body">
+    <div class="task-section">
+      <div class="task-section-title">Paso 1: LinkedIn B2B</div>
+      <ul class="task-steps">
+        <li>Asegurarse que la página de empresa de Akira Travel en LinkedIn está completa: logo, descripción B2B, URL del sitio, servicios listados</li>
+        <li>Publicar artículo nativo en LinkedIn: "Tendencias de viajes internacionales para agencias colombianas en 2026" — firmado por el gerente</li>
+        <li>Conectar con gerentes y dueños de agencias de viaje en Colombia — meta: 50 nuevas conexiones B2B</li>
+        <li>En cada publicación de LinkedIn, incluir link a /recursos-para-agencias/ del sitio</li>
+      </ul>
+    </div>
+    <div class="task-section">
+      <div class="task-section-title">Paso 2: Campaña de reseñas Google</div>
+      <ul class="task-steps">
+        <li>Obtener el enlace directo de reseñas desde Google Business Profile → Compartir → Copiar enlace de reseñas</li>
+        <li>Enviar mensaje de WhatsApp a agencias afiliadas y clientes: "Hola [nombre], gracias por confiar en Akira Travel. ¿Podés dejarnos una reseña en Google? Nos ayuda a que más agencias nos encuentren. [LINK]"</li>
+        <li>Meta: 30 reseñas nuevas en 30 días. Responder todas las reseñas en menos de 48 horas</li>
+        <li>No ofrecer incentivos a cambio de reseñas (viola políticas de Google)</li>
+      </ul>
+    </div>
+    <div class="task-section">
+      <div class="task-section-title">Herramientas</div>
+      <div class="task-tools">
+        <span class="tool-tag">LinkedIn Empresa</span>
+        <span class="tool-tag">Google Business Profile</span>
+        <span class="tool-tag">WhatsApp Business</span>
+      </div>
+    </div>
+    <div class="task-result">+30 reseñas nuevas en Google. Presencia activa en LinkedIn con backlinks al sitio. 3+ backlinks de fuentes B2B en 30 días.</div>
+  </div>
+</div>
+
+<!-- BLOQUE 9 -->
+<div class="block-header">
+  <div class="block-num">Bloque 09</div>
+  <h2>Monitoreo, Core Web Vitals y Reporte Final</h2>
+  <div class="block-meta">📅 Semanas 10–13 · Lunes 4 de agosto al Viernes 29 de agosto 2026 · Total: ~4 horas</div>
+</div>
+
+<div class="task-card">
+  <div class="task-header">
+    <div class="task-num">21</div>
+    <div class="task-header-info">
+      <div class="task-title">Revisión técnica: Core Web Vitals semana 11</div>
+      <div class="task-meta">
+        <span class="task-date">📅 Lunes 11 – Martes 12 de agosto</span>
+        <span class="task-time">⏱ 1.5 horas</span>
+        <span class="task-resp resp-dev">Dev</span>
+        <span class="task-resp resp-seo">SEO</span>
+        <span class="priority-badge p-normal">NORMAL</span>
+      </div>
+    </div>
+  </div>
+  <div class="task-body">
+    <div class="task-section">
+      <div class="task-section-title">Pasos a seguir</div>
+      <ul class="task-steps">
+        <li>Correr PageSpeed Insights en las mismas 5 páginas del test inicial (Tarea 3)</li>
+        <li>Comparar con la línea base: ¿mejoró el puntaje móvil? ¿bajó el LCP?</li>
+        <li><strong>Objetivos mínimos:</strong> LCP ≤ 2.5s, INP ≤ 200ms, CLS ≤ 0.1 en todas las páginas</li>
+        <li>En Search Console → Experiencia → Core Web Vitals: verificar cuántas URLs tienen estado "Bueno"</li>
+        <li>Documentar mejora vs línea base de semana 1</li>
+      </ul>
+    </div>
+    <div class="task-section">
+      <div class="task-section-title">Herramientas</div>
+      <div class="task-tools">
+        <span class="tool-tag">PageSpeed Insights</span>
+        <span class="tool-tag">Google Search Console → Core Web Vitals</span>
+        <span class="tool-tag">GTmetrix (alternativa)</span>
+      </div>
+    </div>
+    <div class="task-result">Informe comparativo de Core Web Vitals. Si puntaje móvil ≥ 65 en todas las páginas, objetivo cumplido.</div>
+  </div>
+</div>
+
+<div class="task-card">
+  <div class="task-header">
+    <div class="task-num">22</div>
+    <div class="task-header-info">
+      <div class="task-title">Test final de visibilidad en IA — semana 12</div>
+      <div class="task-meta">
+        <span class="task-date">📅 Lunes 18 – Martes 19 de agosto</span>
+        <span class="task-time">⏱ 1 hora</span>
+        <span class="task-resp resp-seo">SEO</span>
+        <span class="task-resp resp-mkt">Marketing</span>
+        <span class="priority-badge p-normal">NORMAL</span>
+      </div>
+    </div>
+  </div>
+  <div class="task-body">
+    <div class="task-section">
+      <div class="task-section-title">Pasos a seguir</div>
+      <ul class="task-steps">
+        <li>Repetir las mismas 4 preguntas de la Tarea 18 en ChatGPT, Perplexity y Gemini</li>
+        <li>Comparar con el test de la semana 7: ¿aparece Akira Travel ahora? ¿en cuáles herramientas?</li>
+        <li>Si aparece: documentar la respuesta completa como evidencia para el reporte ejecutivo</li>
+        <li>Si no aparece: identificar cuáles señales faltan (más reseñas, más backlinks, más contenido) y planificar para Q4</li>
+        <li>Añadir resultados al reporte final de 90 días</li>
+      </ul>
+    </div>
+    <div class="task-result">Diagnóstico comparativo de visibilidad en IA. Evidencia documentada del avance en GEO B2B.</div>
+  </div>
+</div>
+
+<div class="task-card">
+  <div class="task-header">
+    <div class="task-num">·</div>
+    <div class="task-header-info">
+      <div class="task-title">Reporte ejecutivo 90 días para presentar a dirección</div>
+      <div class="task-meta">
+        <span class="task-date">📅 Lunes 25 – Viernes 29 de agosto</span>
+        <span class="task-time">⏱ 1.5 horas</span>
+        <span class="task-resp resp-seo">SEO</span>
+        <span class="task-resp resp-mkt">Marketing</span>
+        <span class="priority-badge p-normal">NORMAL</span>
+      </div>
+    </div>
+  </div>
+  <div class="task-body">
+    <div class="task-section">
+      <div class="task-section-title">Métricas a incluir en el reporte</div>
+      <ul class="task-steps">
+        <li>Tráfico orgánico: sesiones de junio vs agosto (Google Analytics 4)</li>
+        <li>Posición promedio en Google para top 10 keywords B2B objetivo (Search Console)</li>
+        <li>Clics orgánicos: junio vs agosto (Search Console)</li>
+        <li>Reseñas Google: número antes y después</li>
+        <li>Errores de rastreo resueltos (Search Console → Cobertura)</li>
+        <li>URLs con schema implementado y elegibles para rich snippets</li>
+        <li>Artículos de blog publicados y tráfico generado</li>
+        <li>Visibilidad en IA: ¿aparece en ChatGPT/Perplexity para búsquedas B2B?</li>
+        <li>Backlinks B2B conseguidos: número y dominios</li>
+      </ul>
+    </div>
+    <div class="task-result">Reporte ejecutivo con resultados cuantificables del plan SEO+GEO a 90 días para Akira Travel. Plan Q4 aprobado.</div>
+  </div>
+</div>
+
+<!-- CHECKLIST FINAL -->
+<div class="block-header" style="background: linear-gradient(90deg, #1e8449, #27ae60);">
+  <div class="block-num" style="color:#a8e6c0;">Checklist Final</div>
+  <h2>Verificación Completa — 90 Días Akira Travel</h2>
+  <div class="block-meta" style="color:#d5f5e3;">Antes de cerrar el plan, confirmá que cada ítem esté marcado como completado</div>
+</div>
+
+<ul class="checklist">
+  <li><div class="check-box"></div><div class="check-num">01</div>Google Search Console activo para akiratravel.com y sitemap enviado</li>
+  <li><div class="check-box"></div><div class="check-num">02</div>Google Analytics 4 instalado con conversiones configuradas y línea base documentada</li>
+  <li><div class="check-box"></div><div class="check-num">03</div>Test de PageSpeed en 5 páginas — línea base establecida</li>
+  <li><div class="check-box"></div><div class="check-num">04</div>Redirecciones HTTPS activas: http→https y www→sin www</li>
+  <li><div class="check-box"></div><div class="check-num">05</div>Canonical tags implementadas en todas las páginas (apuntando a https sin www)</li>
+  <li><div class="check-box"></div><div class="check-num">06</div>robots.txt actualizado con GPTBot, ClaudeBot, PerplexityBot, Google-Extended permitidos</li>
+  <li><div class="check-box"></div><div class="check-num">07</div>Errores 404 corregidos con redirects 301 o respuesta 410</li>
+  <li><div class="check-box"></div><div class="check-num">08</div>Meta titles B2B únicos actualizados en páginas principales</li>
+  <li><div class="check-box"></div><div class="check-num">09</div>Meta descriptions optimizadas con keywords B2B en páginas principales</li>
+  <li><div class="check-box"></div><div class="check-num">10</div>H1 único y B2B en cada página de destino</li>
+  <li><div class="check-box"></div><div class="check-num">11</div>Schema TravelAgency B2B validado en homepage sin errores</li>
+  <li><div class="check-box"></div><div class="check-num">12</div>Schema TouristTrip en 10 páginas de paquetes validado</li>
+  <li><div class="check-box"></div><div class="check-num">13</div>Schema FAQPage para agencias implementado y validado</li>
+  <li><div class="check-box"></div><div class="check-num">14</div>Google Business Profile al 100% con descripción B2B y fotos</li>
+  <li><div class="check-box"></div><div class="check-num">15</div>Página /recursos-para-agencias/ activa con fichas descargables</li>
+  <li><div class="check-box"></div><div class="check-num">16</div>4 artículos de blog publicados con keywords B2B y FAQ</li>
+  <li><div class="check-box"></div><div class="check-num">17</div>Sitemap.xml actualizado con todas las nuevas URLs y re-enviado a Search Console</li>
+  <li><div class="check-box"></div><div class="check-num">18</div>Página /nosotros/ reescrita con bloque de identidad B2B para IA</li>
+  <li><div class="check-box"></div><div class="check-num">19</div>Test de visibilidad en IA completado (semana 7 y semana 12)</li>
+  <li><div class="check-box"></div><div class="check-num">20</div>Perfil Akira Travel en directorio ANATO activo con backlink</li>
+  <li><div class="check-box"></div><div class="check-num">21</div>Nota de prensa enviada a Turismo y Negocios y Portafolio</li>
+  <li><div class="check-box"></div><div class="check-num">22</div>3+ backlinks de fuentes B2B (ANATO, medios, LinkedIn)</li>
+  <li><div class="check-box"></div><div class="check-num">23</div>30+ reseñas nuevas en Google Business Profile</li>
+  <li><div class="check-box"></div><div class="check-num">24</div>Core Web Vitals revisados en semana 11 — mejora vs baseline documentada</li>
+  <li><div class="check-box"></div><div class="check-num">25</div>Reporte ejecutivo 90 días entregado a dirección</li>
+  <li><div class="check-box"></div><div class="check-num">26</div>Plan Q4 (septiembre–diciembre 2026) aprobado</li>
+</ul>
+
+<div style="margin-top: 40px; background: linear-gradient(135deg, #0f3460, #16213e); border-radius: 12px; padding: 24px 28px; color: #fff; text-align: center;">
+  <div style="font-size: 13pt; font-weight: 800; color: #e94560; margin-bottom: 8px;">¡Las 22 tareas completadas = Akira Travel visible en Google y en IA para agencias!</div>
+  <div style="font-size: 10pt; color: #a8b2d8;">El SEO B2B tiene resultados más lentos que el B2C, pero más duraderos. Las agencias que encuentren Akira Travel en Google son leads de alta calidad con alto valor de vida. Manteniendo el blog activo con contenido para agencias y las señales técnicas correctas, Akira Travel puede convertirse en el mayorista de referencia que aparece cuando ChatGPT y Google responden preguntas de agencias colombianas sobre Europa y Asia.</div>
+</div>
+
+<div style="margin-top: 36px; padding-top: 20px; border-top: 1px solid #e8ecf5; text-align: center;">
+  <div style="font-size: 9pt; color: #999; margin-bottom: 4px;">Akira Travel · Geoser · Medellín, Colombia</div>
+  <div style="font-size: 9pt; color: #999;">Guía confidencial de implementación B2B — Mayo 2026</div>
+</div>
+
+  </div><!-- /page -->
+</div><!-- /tab akira-guia -->
+
+<!-- ══════════════════════════════════════════
+     TAB 3: GEO TOURS — PLAN MAESTRO SEO+GEO
+══════════════════════════════════════════ -->
+<div class="tab-section" id="geo-plan">
+  <div class="tab-banner">
+    <div class="brand">Geo Tours · B2C · Geoser</div>
+    <h1>Plan Maestro SEO + GEO 2026</h1>
+    <div class="sub">Estrategia completa de posicionamiento orgánico y visibilidad en Inteligencia Artificial · viajesgeotours.com</div>
+  </div>
+  <div class="page">
+
+<div class="section-header">
+  <div class="section-num">Sección 01</div>
+  <h2>Diagnóstico del Sitio Actual</h2>
+  <p>Estado real de viajesgeotours.com antes de cualquier intervención. Esta radiografía muestra las oportunidades críticas que están costando tráfico y leads cada día.</p>
+  <div class="section-divider"></div>
+</div>
+
+<div class="cards cards-4">
+  <div class="card red"><div class="card-title">URLs con ID numérico</div><div class="card-value">~60%</div><div class="card-desc">de páginas de paquetes con estructura /geotours/vp####/</div></div>
+  <div class="card orange"><div class="card-title">Inconsistencia URL</div><div class="card-value">/destino vs /destinos</div><div class="card-desc">Páginas clave con estructura inconsistente</div></div>
+  <div class="card blue"><div class="card-title">Blog estructurado</div><div class="card-value">No existe</div><div class="card-desc">Sin estrategia de contenido editorial activa</div></div>
+  <div class="card green"><div class="card-title">Potencial de Keywords</div><div class="card-value">Alto</div><div class="card-desc">Nicho específico con competidores superables</div></div>
+</div>
+
+<h3>Estado Actual del Meta Title</h3>
+<table>
+  <tr><th>Página</th><th>Title Actual</th><th>Problema</th><th>Prioridad</th></tr>
+  <tr><td>Homepage</td><td>"Geo Tours - Viajes a Europa, Turquía, Tailandia, Cruceros"</td><td class="td-orange">Sin ciudad, sin diferenciador</td><td class="td-orange">Alta</td></tr>
+  <tr><td>/destinos/europa/</td><td>"Europa – Viajes a Europa, Tailandia, Turquía, Cruceros"</td><td class="td-red">Repite título genérico del home</td><td class="td-red">Crítica</td></tr>
+  <tr><td>/destinos/tailandia/</td><td>"Tailandia – Viajes a Europa, Tailandia, Turquía, Cruceros"</td><td class="td-red">Mismo patrón repetitivo</td><td class="td-red">Crítica</td></tr>
+  <tr><td>/destinos/cruceros/</td><td>"Cruceros – Viajes a Europa, Tailandia, Turquía, Cruceros"</td><td class="td-red">La palabra "Cruceros" aparece dos veces</td><td class="td-red">Crítica</td></tr>
+  <tr><td>/destino/punta-cana/</td><td>No confirmada</td><td class="td-orange">URL en singular vs. /destinos/ en plural</td><td class="td-orange">Alta</td></tr>
+  <tr><td>Páginas de paquetes</td><td>Variable por paquete</td><td class="td-red">URLs tipo /geotours/vp6381/sp/ofertas-a-europ (TRUNCADA)</td><td class="td-red">Crítica</td></tr>
+</table>
+
+<div class="alert alert-red"><div class="alert-icon">🚨</div><div><div class="alert-title">URL TRUNCADA DETECTADA</div><div class="alert-text">La URL <strong>/geotours/vp6381/sp/ofertas-a-europ</strong> está cortada — "europa" aparece como "europ". Esto es un error técnico activo que puede estar generando errores 404 y confundiendo al crawler de Google. Requiere corrección inmediata.</div></div></div>
+
+<div class="alert alert-orange"><div class="alert-icon">⚠️</div><div><div class="alert-title">DOMINIO DUPLICADO DETECTADO</div><div class="alert-text">Existe tanto <strong>viajesgeotours.com</strong> como <strong>viajesgeotours.com.co</strong>. Si ambos dominios sirven el mismo contenido sin redirección 301 canónica, Google está dividiendo la autoridad entre los dos dominios.</div></div></div>
+
+<h3>Estructura de URLs — Problemas Identificados</h3>
+<table>
+  <tr><th>URL Actual</th><th>Tipo de Problema</th><th>URL Recomendada</th></tr>
+  <tr><td>/geotours/vp6795/sp/ofertas-a-estados-unidos</td><td class="td-red">ID numérico + ruta innecesaria</td><td>/destinos/estados-unidos/</td></tr>
+  <tr><td>/geotours/vp6823/sp/</td><td class="td-red">Sin slug descriptivo</td><td>/blog/donde-comprar-paquetes-europa-colombia/</td></tr>
+  <tr><td>/geotours/vp5755/sp/turquia-costa-azul-con-troya-15-das</td><td class="td-red">Caracteres mal codificados</td><td>/destinos/turquia/paquete-turquia-costa-azul-15-dias/</td></tr>
+  <tr><td>/geotours/vp6381/sp/ofertas-a-europ</td><td class="td-red">URL TRUNCADA</td><td>/destinos/europa/ofertas/</td></tr>
+  <tr><td>/destino/punta-cana/</td><td class="td-orange">Singular vs plural</td><td>/destinos/punta-cana/</td></tr>
+  <tr><td>/geotours/vp6850/sp/promocion-y-ofertas-a-europa-de-ultima-hora</td><td class="td-orange">ID numérico</td><td>/destinos/europa/ofertas-ultima-hora/</td></tr>
+</table>
+
+<div class="section-header">
+  <div class="section-num">Sección 02</div>
+  <h2>Los 10 Problemas Críticos a Resolver</h2>
+  <p>Ordenados por impacto en el posicionamiento. Los primeros 4 son emergencias que deben atenderse en la Semana 1.</p>
+  <div class="section-divider"></div>
+</div>
+
+<ul class="prob-list">
+  <li class="prob-item"><div class="prob-num">1</div><div class="prob-content"><div class="prob-title">URLs con IDs numéricos sin estructura semántica <span class="tag tag-critico">CRÍTICO</span></div><div class="prob-text">La mayoría de páginas de paquetes usan la estructura /geotours/vp####/sp/ heredada del CMS. Google no puede entender de qué trata la página por su URL. Esto reduce el peso de ranking en keywords de cola larga.</div><div class="prob-fix">→ Solución: Crear nuevas URLs semánticas + redirects 301 permanentes desde las antiguas. Priorizar las 20 páginas de mayor tráfico.</div></div></li>
+  <li class="prob-item"><div class="prob-num">2</div><div class="prob-content"><div class="prob-title">Meta titles duplicados y genéricos en páginas de destinos <span class="tag tag-critico">CRÍTICO</span></div><div class="prob-text">Las páginas de Europa, Tailandia, Cruceros y Turquía comparten prácticamente el mismo meta title. Google puede tratar estas páginas como contenido duplicado.</div><div class="prob-fix">→ Solución: Título único por página incluyendo ciudad de salida, duración y keyword principal de cada destino.</div></div></li>
+  <li class="prob-item"><div class="prob-num">3</div><div class="prob-content"><div class="prob-title">URL truncada activa (/ofertas-a-europ) <span class="tag tag-critico">CRÍTICO</span></div><div class="prob-text">La URL /geotours/vp6381/sp/ofertas-a-europ está cortada. Esta página puede estar generando error 404 o accediendo a contenido incorrecto.</div><div class="prob-fix">→ Solución: Verificar en Search Console si genera error 404 o 200. Corregir URL y añadir redirect 301.</div></div></li>
+  <li class="prob-item"><div class="prob-num">4</div><div class="prob-content"><div class="prob-title">Dominio duplicado sin resolver (viajesgeotours.com.co) <span class="tag tag-critico">CRÍTICO</span></div><div class="prob-text">Si viajesgeotours.com.co sirve el mismo contenido sin canonical tag, Google está dividiendo toda la autoridad entre dos dominios.</div><div class="prob-fix">→ Solución: Redirect 301 del .com.co al .com principal.</div></div></li>
+  <li class="prob-item orange"><div class="prob-num">5</div><div class="prob-content"><div class="prob-title">Sin schema markup en páginas de paquetes <span class="tag tag-alto">ALTO</span></div><div class="prob-text">Las páginas de paquetes turísticos no tienen Schema de TouristTrip ni Offer. Sin esto, Google no puede generar rich snippets en los resultados de búsqueda.</div><div class="prob-fix">→ Solución: Implementar TravelAgency (home), TouristTrip (paquetes), AggregateRating (reviews), FAQPage.</div></div></li>
+  <li class="prob-item orange"><div class="prob-num">6</div><div class="prob-content"><div class="prob-title">Sin blog editorial estructurado <span class="tag tag-alto">ALTO</span></div><div class="prob-text">Un blog real es la principal fuente de tráfico orgánico de largo plazo para agencias de viajes — atrae usuarios en fase de investigación antes de que estén listos para comprar.</div><div class="prob-fix">→ Solución: Crear sección /blog/ con mínimo 2 artículos al mes orientados a keywords informacionales.</div></div></li>
+  <li class="prob-item orange"><div class="prob-num">7</div><div class="prob-content"><div class="prob-title">Google Business Profile no optimizado <span class="tag tag-alto">ALTO</span></div><div class="prob-text">Sin fotos actualizadas, reseñas respondidas y posts semanales, se pierde visibilidad local crítica para búsquedas "agencia de viajes medellín".</div><div class="prob-fix">→ Solución: Completar perfil al 100%, responder todas las reseñas, publicar 1 post semanal.</div></div></li>
+  <li class="prob-item orange"><div class="prob-num">8</div><div class="prob-content"><div class="prob-title">Inconsistencia en estructura de URLs (/destino vs /destinos) <span class="tag tag-alto">ALTO</span></div><div class="prob-text">Punta Cana usa /destino/ (singular) mientras Europa, Tailandia y Cruceros usan /destinos/ (plural). Esta inconsistencia confunde al crawler.</div><div class="prob-fix">→ Solución: Estandarizar toda la estructura bajo /destinos/ con redirect 301.</div></div></li>
+  <li class="prob-item blue"><div class="prob-num">9</div><div class="prob-content"><div class="prob-title">Subdominio portalpagos.viajesgeotours.com sin noindex <span class="tag tag-medio">MEDIO</span></div><div class="prob-text">El portal de pagos en un subdominio puede ser rastreado e indexado por Google. Las páginas de pagos no deben aparecer en resultados de búsqueda.</div><div class="prob-fix">→ Solución: Añadir robots.txt con Disallow en el subdominio de pagos.</div></div></li>
+  <li class="prob-item blue"><div class="prob-num">10</div><div class="prob-content"><div class="prob-title">Sin estrategia de GEO — invisible para ChatGPT, Perplexity y Google AI Overviews <span class="tag tag-medio">MEDIO</span></div><div class="prob-text">Cuando un usuario le pregunta a ChatGPT "¿cuál es la mejor agencia de viajes a Europa en Medellín?", Geo Tours no aparece porque no tiene señales estructuradas de autoridad.</div><div class="prob-fix">→ Solución: Implementar bloque de identidad estructurado, permitir bots de IA en robots.txt, crear contenido con formato de respuesta directa.</div></div></li>
+</ul>
+
+<div class="section-header">
+  <div class="section-num">Sección 03</div>
+  <h2>Benchmark vs. Competidores</h2>
+  <p>Análisis de los sitios mejor posicionados para las keywords objetivo de Geo Tours.</p>
+  <div class="section-divider"></div>
+</div>
+
+<div class="comp-card">
+  <div class="comp-header"><div><div class="comp-name">Viajes Éxito</div><div class="comp-url">viajesexito.com · Gran retailer nacional</div></div><div class="comp-score score-high">Competidor muy fuerte</div></div>
+  <div class="comp-items">
+    <div class="comp-item">Blog editorial activo con 50+ artículos</div>
+    <div class="comp-item">Schema TouristTrip en todas las páginas</div>
+    <div class="comp-item">URLs semánticas /circuitos/europa/</div>
+    <div class="comp-item">Reseñas verificadas con AggregateRating</div>
+    <div class="comp-item miss">Sin voz colombiana local (es nacional genérico)</div>
+    <div class="comp-item miss">Sin enfoque en salidas desde Medellín</div>
+  </div>
+</div>
+
+<div class="comp-card">
+  <div class="comp-header"><div><div class="comp-name">Travel Viajes Medellín</div><div class="comp-url">travelviajesmedellin.com · Competidor directo</div></div><div class="comp-score score-high">Competidor directo fuerte</div></div>
+  <div class="comp-items">
+    <div class="comp-item">URL semántica /viajes-a-europa indexada</div>
+    <div class="comp-item">Título optimizado con ciudad de salida</div>
+    <div class="comp-item">Google Business activo en Medellín</div>
+    <div class="comp-item miss">Sin 20 años de historia como Geo Tours</div>
+    <div class="comp-item miss">Sin certificación IATA destacada</div>
+  </div>
+</div>
+
+<div class="alert alert-green"><div class="alert-icon">💡</div><div><div class="alert-title">VENTAJA COMPETITIVA DE GEO TOURS</div><div class="alert-text">20+ años de experiencia, 15.000+ viajes realizados, certificación IATA, miembro ANATO, operación propia (mayorista Akira Travel), salidas confirmadas desde Medellín Y Bogotá. Ningún competidor directo tiene este perfil completo. La oportunidad es enorme — solo falta comunicarlo con la estructura correcta.</div></div></div>
+
+<h3>Tabla Comparativa de Señales SEO</h3>
+<table>
+  <tr><th>Señal SEO</th><th>Geo Tours</th><th>Viajes Éxito</th><th>Travel Viajes MDE</th><th>Megatravel</th></tr>
+  <tr><td>URLs semánticas</td><td class="td-red">Parcial (IDs numéricos)</td><td class="td-green">Sí</td><td class="td-green">Sí</td><td class="td-green">Sí</td></tr>
+  <tr><td>Blog editorial</td><td class="td-red">No estructurado</td><td class="td-green">Sí (50+ posts)</td><td class="td-orange">Básico</td><td class="td-red">No</td></tr>
+  <tr><td>Schema TouristTrip</td><td class="td-red">No</td><td class="td-green">Sí</td><td class="td-orange">Parcial</td><td class="td-orange">Parcial</td></tr>
+  <tr><td>Google Business optimizado</td><td class="td-orange">Básico</td><td class="td-green">Sí</td><td class="td-green">Sí</td><td class="td-orange">Básico</td></tr>
+  <tr><td>Años de historia</td><td class="td-green">20+ años</td><td class="td-green">25+ años</td><td class="td-orange">10+ años</td><td class="td-orange">15+ años</td></tr>
+  <tr><td>GEO / Visibilidad IA</td><td class="td-red">No</td><td class="td-orange">Básico</td><td class="td-red">No</td><td class="td-red">No</td></tr>
+</table>
+
+<div class="section-header">
+  <div class="section-num">Sección 04</div>
+  <h2>Nueva Arquitectura de URLs</h2>
+  <p>Estructura recomendada para que cada URL comunique claramente su contenido a Google. Todos los cambios requieren redirects 301 desde las URLs antiguas.</p>
+  <div class="section-divider"></div>
+</div>
+
+<div class="alert alert-blue"><div class="alert-icon">📋</div><div><div class="alert-title">REGLA DE ORO PARA URLs</div><div class="alert-text">Cada URL debe responder una sola pregunta: ¿de qué trata esta página? Una URL como /destinos/europa/tour-europa-17-dias-desde-medellin/ ya le dice a Google exactamente qué clasificar.</div></div></div>
+
+<table>
+  <tr><th>Sección</th><th>Estructura Recomendada</th><th>Ejemplo</th></tr>
+  <tr><td>Homepage</td><td>/</td><td>viajesgeotours.com/</td></tr>
+  <tr><td>Destinos (hub)</td><td>/destinos/</td><td>viajesgeotours.com/destinos/</td></tr>
+  <tr><td>Página de destino</td><td>/destinos/{destino}/</td><td>/destinos/europa/</td></tr>
+  <tr><td>Paquete específico</td><td>/destinos/{destino}/{nombre-paquete}/</td><td>/destinos/europa/tour-europa-dreams-17-dias/</td></tr>
+  <tr><td>Blog</td><td>/blog/</td><td>viajesgeotours.com/blog/</td></tr>
+  <tr><td>Artículo de blog</td><td>/blog/{categoria}/{slug}/</td><td>/blog/europa/que-llevar-viaje-europa-colombia/</td></tr>
+  <tr><td>Sobre nosotros</td><td>/nosotros/</td><td>viajesgeotours.com/nosotros/</td></tr>
+  <tr><td>Preguntas frecuentes</td><td>/preguntas-frecuentes/</td><td>viajesgeotours.com/preguntas-frecuentes/</td></tr>
+</table>
+
+<div class="section-header">
+  <div class="section-num">Sección 05</div>
+  <h2>Estrategia de Keywords</h2>
+  <p>Agrupadas por clústeres temáticos. Cada clúster debe tener una página hub y páginas de paquetes que la soporten internamente.</p>
+  <div class="section-divider"></div>
+</div>
+
+<div class="kw-block">
+  <div class="kw-label">Clúster 1 · Europa desde Colombia</div>
+  <table>
+    <tr><th>Keyword</th><th>Intención</th><th>Página objetivo</th></tr>
+    <tr><td>viajes a europa desde colombia</td><td>Transaccional</td><td>/destinos/europa/</td></tr>
+    <tr><td>paquetes europa desde medellín</td><td>Transaccional</td><td>/destinos/europa/</td></tr>
+    <tr><td>tour europa colombia todo incluido</td><td>Transaccional</td><td>/destinos/europa/</td></tr>
+    <tr><td>viaje a europa cuánto cuesta colombia</td><td>Informacional</td><td>/blog/europa/cuanto-cuesta-viaje-europa-colombia/</td></tr>
+  </table>
+</div>
+
+<div class="kw-block">
+  <div class="kw-label blue">Clúster 2 · Turquía desde Colombia</div>
+  <table>
+    <tr><th>Keyword</th><th>Intención</th><th>Página objetivo</th></tr>
+    <tr><td>viajes a turquía desde colombia</td><td>Transaccional</td><td>/destinos/turquia/</td></tr>
+    <tr><td>tour turquía 15 días todo incluido</td><td>Transaccional</td><td>/destinos/turquia/tour-turquia-15-dias/</td></tr>
+    <tr><td>visa turquía colombianos 2026</td><td>Informacional</td><td>/blog/turquia/visa-turquia-colombianos/</td></tr>
+  </table>
+</div>
+
+<div class="kw-block">
+  <div class="kw-label green">Clúster 3 · Tailandia desde Colombia</div>
+  <table>
+    <tr><th>Keyword</th><th>Intención</th><th>Página objetivo</th></tr>
+    <tr><td>viajes a tailandia desde colombia</td><td>Transaccional</td><td>/destinos/tailandia/</td></tr>
+    <tr><td>tour tailandia 14 días desde medellín</td><td>Transaccional</td><td>/destinos/tailandia/tour-tailandia-14-dias/</td></tr>
+    <tr><td>tailandia cuántos días se necesitan</td><td>Informacional</td><td>/blog/tailandia/cuantos-dias-tailandia/</td></tr>
+  </table>
+</div>
+
+<div class="kw-block">
+  <div class="kw-label purple">Clúster 4 · Local SEO Medellín + Bogotá</div>
+  <table>
+    <tr><th>Keyword</th><th>Intención</th><th>Página objetivo</th></tr>
+    <tr><td>agencia de viajes medellín</td><td>Local/Navegacional</td><td>Homepage + Google Business</td></tr>
+    <tr><td>agencia de viajes bogotá confiable</td><td>Local/Navegacional</td><td>Homepage + Google Business</td></tr>
+    <tr><td>mejores agencias de viajes colombia europa</td><td>Comparativa</td><td>/nosotros/ + blog</td></tr>
+  </table>
+</div>
+
+<div class="kw-block">
+  <div class="kw-label orange">Clúster 5 · Cruceros desde Colombia</div>
+  <table>
+    <tr><th>Keyword</th><th>Intención</th><th>Página objetivo</th></tr>
+    <tr><td>cruceros mediterráneo desde colombia</td><td>Transaccional</td><td>/destinos/cruceros/</td></tr>
+    <tr><td>cruceros todo incluido colombia 2026</td><td>Transaccional</td><td>/destinos/cruceros/</td></tr>
+  </table>
+</div>
+
+<div class="section-header">
+  <div class="section-num">Sección 06</div>
+  <h2>Optimización On-Page</h2>
+  <p>Nuevos meta titles, meta descriptions y estructura de encabezados para las páginas principales.</p>
+  <div class="section-divider"></div>
+</div>
+
+<table>
+  <tr><th>Página</th><th>Meta Title Recomendado (máx. 60 chars)</th><th>Meta Description Recomendada (máx. 155 chars)</th></tr>
+  <tr><td>Homepage</td><td>Geo Tours | Viajes a Europa desde Medellín y Bogotá</td><td>Agencia de viajes con 20 años de experiencia. Paquetes a Europa, Turquía, Tailandia y Cruceros desde Medellín y Bogotá. Tiquetes incluidos. ¡Consultá ya!</td></tr>
+  <tr><td>/destinos/europa/</td><td>Viajes a Europa desde Colombia 2026 | Geo Tours</td><td>Tours a Europa todo incluido desde Medellín y Bogotá. Madrid, París, Roma, Venecia y más. 8 a 19 días con Avianca. 15.000+ viajeros satisfechos. ¡Reservá ahora!</td></tr>
+  <tr><td>/destinos/turquia/</td><td>Viajes a Turquía desde Colombia | Tours Geo Tours</td><td>Paquetes a Turquía desde Medellín y Bogotá. Estambul, Capadocia, Costa Azul. 10 a 15 días todo incluido. Certificados IATA y ANATO. ¡Cotizá gratis!</td></tr>
+  <tr><td>/destinos/tailandia/</td><td>Paquetes a Tailandia desde Colombia | Geo Tours</td><td>Viajes a Tailandia desde Medellín y Bogotá. Bangkok, Chiang Mai, Phuket. Todo incluido con tiquetes Avianca. Partidas 2026. ¡Consultá disponibilidad!</td></tr>
+  <tr><td>/destinos/cruceros/</td><td>Cruceros Mediterráneo desde Colombia | Geo Tours</td><td>Cruceros todo incluido al Mediterráneo desde Colombia. Roma, Barcelona, Santorini y más. Salidas con fecha confirmada desde Medellín y Bogotá. ¡Reservá hoy!</td></tr>
+  <tr><td>/nosotros/</td><td>Quiénes Somos | Geo Tours Agencia de Viajes Colombia</td><td>Geo Tours: más de 20 años llevando colombianos al mundo. Agencia certificada IATA, miembro ANATO. +15.000 viajeros. Con salidas desde Medellín y Bogotá.</td></tr>
+</table>
+
+<h3>Estructura de Encabezados Recomendada — Página Europa</h3>
+<table>
+  <tr><th>Nivel</th><th>Texto del encabezado</th></tr>
+  <tr><td>H1 (único)</td><td>Viajes a Europa desde Colombia — Paquetes Todo Incluido 2026</td></tr>
+  <tr><td>H2</td><td>Nuestros paquetes a Europa</td></tr>
+  <tr><td>H3</td><td>Europa en Tenis II — 8 días desde Medellín</td></tr>
+  <tr><td>H3</td><td>Europa Dreams — 17 días desde Bogotá</td></tr>
+  <tr><td>H2</td><td>¿Por qué viajar a Europa con Geo Tours?</td></tr>
+  <tr><td>H2</td><td>Lo que incluye tu viaje a Europa</td></tr>
+  <tr><td>H2</td><td>Preguntas frecuentes sobre viajes a Europa</td></tr>
+</table>
+
+<div class="section-header">
+  <div class="section-num">Sección 07</div>
+  <h2>Schema Markup — Datos Estructurados</h2>
+  <p>El schema le habla directamente a Google (y a los modelos de IA) sobre quiénes somos y qué ofrecemos.</p>
+  <div class="section-divider"></div>
+</div>
+
+<h3>Schema 1 — TravelAgency (Homepage)</h3>
+<pre><code><span class="code-tag">&lt;script</span> <span class="code-attr">type</span>=<span class="code-value">"application/ld+json"</span><span class="code-tag">&gt;</span>
+{
+  "@context": "https://schema.org",
+  "@type": "TravelAgency",
+  "name": "Geo Tours",
+  "legalName": "Promotora Geo de Servicios S.A.S.",
+  "url": "https://www.viajesgeotours.com",
+  "logo": "https://www.viajesgeotours.com/logo.png",
+  "description": "Agencia de viajes colombiana con más de 20 años de experiencia. Especializada en Europa, Turquía, Tailandia y Cruceros. Certificada IATA y miembro ANATO.",
+  "foundingDate": "2004",
+  "telephone": "+573162412664",
+  "email": "reservas@viajesgeotours.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Calle 35 82A-12",
+    "addressLocality": "Medellín",
+    "addressRegion": "Antioquia",
+    "addressCountry": "CO"
+  },
+  "areaServed": ["Medellín", "Bogotá", "Colombia"],
+  "identifier": { "@type": "PropertyValue", "name": "RNT", "value": "9956" },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "350",
+    "bestRating": "5"
+  }
+}
+<span class="code-tag">&lt;/script&gt;</span></code></pre>
+
+<h3>Schema 2 — TouristTrip (Página de Paquete)</h3>
+<pre><code><span class="code-tag">&lt;script</span> <span class="code-attr">type</span>=<span class="code-value">"application/ld+json"</span><span class="code-tag">&gt;</span>
+{
+  "@context": "https://schema.org",
+  "@type": "TouristTrip",
+  "name": "Europa Dreams — 17 días desde Medellín",
+  "description": "Tour a Europa todo incluido. Madrid, París, Venecia, Florencia, Roma y Barcelona en 17 días. Tiquetes Avianca incluidos, salida desde Medellín.",
+  "touristType": "Cultural, Parejas, Familiar",
+  "duration": "P17D",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "COP",
+    "availability": "https://schema.org/InStock",
+    "validThrough": "2026-10-31"
+  },
+  "itinerary": {
+    "@type": "ItemList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Madrid, España" },
+      { "@type": "ListItem", "position": 2, "name": "París, Francia" },
+      { "@type": "ListItem", "position": 3, "name": "Roma, Italia" },
+      { "@type": "ListItem", "position": 4, "name": "Barcelona, España" }
+    ]
+  },
+  "provider": { "@type": "TravelAgency", "name": "Geo Tours", "url": "https://www.viajesgeotours.com" }
+}
+<span class="code-tag">&lt;/script&gt;</span></code></pre>
+
+<div class="section-header">
+  <div class="section-num">Sección 08</div>
+  <h2>Estrategia GEO — Visibilidad en IA</h2>
+  <p>GEO (Generative Engine Optimization) es el conjunto de acciones para aparecer cuando alguien le pregunta a ChatGPT, Perplexity o Gemini sobre viajes a Europa desde Colombia.</p>
+  <div class="section-divider"></div>
+</div>
+
+<div class="geo-block">
+  <h3>¿Qué es GEO y por qué importa para Geo Tours?</h3>
+  <p>Cuando un usuario colombiano le pregunta a ChatGPT: <em>"¿cuál es la mejor agencia de viajes para ir a Europa desde Medellín?"</em>, el modelo de IA busca páginas con señales claras de autoridad, hechos verificables y contenido estructurado.</p>
+  <ul>
+    <li><strong>Google AI Overview:</strong> Aparece en el 40% de búsquedas de viajes en Colombia 2026</li>
+    <li><strong>ChatGPT Search:</strong> 15M+ usuarios en Latinoamérica hacen preguntas de viajes mensualmente</li>
+    <li><strong>Perplexity:</strong> Principal motor de búsqueda IA para decisiones de compra de alto valor</li>
+  </ul>
+</div>
+
+<h3>Acción 1 — Acceso a bots de IA (robots.txt)</h3>
+<pre><code><span class="code-comment"># robots.txt — Geo Tours</span>
+User-agent: *
+Allow: /
+
+<span class="code-comment"># Permitir explícitamente bots de IA</span>
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+Sitemap: https://www.viajesgeotours.com/sitemap.xml</code></pre>
+
+<h3>Acción 2 — Bloque de Identidad para IA (/nosotros/)</h3>
+<pre><code><span class="code-tag">&lt;section</span> <span class="code-attr">id</span>=<span class="code-value">"quienes-somos"</span><span class="code-tag">&gt;</span>
+  <span class="code-tag">&lt;h1&gt;</span>Quiénes Somos — Geo Tours<span class="code-tag">&lt;/h1&gt;</span>
+  <span class="code-tag">&lt;p&gt;</span>Geo Tours es una agencia de viajes colombiana fundada en 2004,
+  con sede en Medellín, Colombia. Somos una empresa certificada IATA
+  y miembro activo de ANATO, con más de 20 años de experiencia.<span class="code-tag">&lt;/p&gt;</span>
+  <span class="code-tag">&lt;ul&gt;</span>
+    <span class="code-tag">&lt;li&gt;</span>Más de 20 años de operación continua<span class="code-tag">&lt;/li&gt;</span>
+    <span class="code-tag">&lt;li&gt;</span>Más de 15.000 viajeros llevados al mundo<span class="code-tag">&lt;/li&gt;</span>
+    <span class="code-tag">&lt;li&gt;</span>Agencia certificada IATA<span class="code-tag">&lt;/li&gt;</span>
+    <span class="code-tag">&lt;li&gt;</span>Miembro de ANATO<span class="code-tag">&lt;/li&gt;</span>
+    <span class="code-tag">&lt;li&gt;</span>RNT 9956 registrado<span class="code-tag">&lt;/li&gt;</span>
+    <span class="code-tag">&lt;li&gt;</span>Salidas desde Medellín y Bogotá<span class="code-tag">&lt;/li&gt;</span>
+  <span class="code-tag">&lt;/ul&gt;</span>
+<span class="code-tag">&lt;/section&gt;</span></code></pre>
+
+<h3>Acción 3 — Señales de Consenso</h3>
+<table>
+  <tr><th>Fuente</th><th>Acción</th><th>Impacto IA</th></tr>
+  <tr><td>Google Business Profile</td><td>Perfil completo con 50+ reseñas verificadas</td><td class="td-green">Muy alto</td></tr>
+  <tr><td>TripAdvisor / Booking</td><td>Perfil activo con reseñas y respuestas</td><td class="td-green">Alto</td></tr>
+  <tr><td>El Colombiano / El Tiempo</td><td>Notas de prensa sobre Primatón y campañas</td><td class="td-green">Alto</td></tr>
+  <tr><td>ANATO.org</td><td>Menciones en directorio oficial ANATO</td><td class="td-orange">Medio-alto</td></tr>
+  <tr><td>Blogs de viajes colombianos</td><td>Colaboraciones y guest posts</td><td class="td-orange">Medio</td></tr>
+</table>
+
+<div class="section-header">
+  <div class="section-num">Sección 09</div>
+  <h2>Roadmap — Plan 90 Días</h2>
+  <p>Junio · Julio · Agosto 2026. Organizado de mayor a menor urgencia.</p>
+  <div class="section-divider"></div>
+</div>
+
+<div class="roadmap-month">
+  <div class="roadmap-month-title">MES 1 — JUNIO 2026 · Fundación Técnica (días 1–30)</div>
+  <div class="roadmap-items">
+    <div class="roadmap-item"><div class="roadmap-week">Sem 1<br>Jun 2-6</div><div class="roadmap-content"><div class="roadmap-task">Auditoría técnica completa + Search Console</div><div class="roadmap-detail">Instalar Google Search Console, revisar errores 404, rastrear URL truncada, verificar indexación, identificar páginas duplicadas con dominio .com.co</div><div class="roadmap-tags"><span class="rtag rtag-dev">Dev</span><span class="rtag rtag-seo">SEO</span></div></div></div>
+    <div class="roadmap-item"><div class="roadmap-week">Sem 1<br>Jun 2-6</div><div class="roadmap-content"><div class="roadmap-task">Resolver URL truncada + dominio duplicado</div><div class="roadmap-detail">Corregir /ofertas-a-europ, implementar redirect 301 del .com.co al .com, verificar canonical tags</div><div class="roadmap-tags"><span class="rtag rtag-dev">Dev</span></div></div></div>
+    <div class="roadmap-item"><div class="roadmap-week">Sem 2<br>Jun 9-13</div><div class="roadmap-content"><div class="roadmap-task">Actualizar robots.txt para permitir bots de IA</div><div class="roadmap-detail">Agregar explícitamente GPTBot, ClaudeBot, PerplexityBot, Google-Extended con Allow: /</div><div class="roadmap-tags"><span class="rtag rtag-dev">Dev</span><span class="rtag rtag-seo">SEO</span></div></div></div>
+    <div class="roadmap-item"><div class="roadmap-week">Sem 3<br>Jun 16-20</div><div class="roadmap-content"><div class="roadmap-task">Nuevos meta titles y meta descriptions</div><div class="roadmap-detail">Actualizar Homepage, /destinos/europa/, /destinos/turquia/, /destinos/tailandia/, /destinos/cruceros/, /nosotros/</div><div class="roadmap-tags"><span class="rtag rtag-seo">SEO</span><span class="rtag rtag-mkt">Marketing</span></div></div></div>
+    <div class="roadmap-item"><div class="roadmap-week">Sem 3<br>Jun 16-20</div><div class="roadmap-content"><div class="roadmap-task">Estandarizar URLs (/destinos/ + redirects 301)</div><div class="roadmap-detail">Corregir /destino/punta-cana/ a /destinos/punta-cana/. Crear mapa de redirects de las 20 páginas de paquetes más importantes.</div><div class="roadmap-tags"><span class="rtag rtag-dev">Dev</span><span class="rtag rtag-seo">SEO</span></div></div></div>
+    <div class="roadmap-item"><div class="roadmap-week">Sem 4<br>Jun 23-27</div><div class="roadmap-content"><div class="roadmap-task">Schema TravelAgency en homepage + Google Business Profile</div><div class="roadmap-detail">Insertar JSON-LD de TravelAgency. Validar con Google Rich Results Test. Completar GBP al 100%: fotos, descripción, responder reseñas, primer post Primatón.</div><div class="roadmap-tags"><span class="rtag rtag-dev">Dev</span><span class="rtag rtag-mkt">Marketing</span></div></div></div>
+  </div>
+</div>
+
+<div class="roadmap-month">
+  <div class="roadmap-month-title">MES 2 — JULIO 2026 · Contenido y Autoridad (días 31–60)</div>
+  <div class="roadmap-items">
+    <div class="roadmap-item"><div class="roadmap-week">Sem 5<br>Jun 30-Jul 4</div><div class="roadmap-content"><div class="roadmap-task">Lanzar blog /blog/ con primeros 2 artículos</div><div class="roadmap-detail">Artículo 1: "Cuánto cuesta un viaje a Europa desde Colombia en 2026". Artículo 2: "Los mejores destinos de Europa para colombianos". Mínimo 1.200 palabras con FAQ al final.</div><div class="roadmap-tags"><span class="rtag rtag-content">Contenido</span><span class="rtag rtag-seo">SEO</span></div></div></div>
+    <div class="roadmap-item"><div class="roadmap-week">Sem 5<br>Jun 30-Jul 4</div><div class="roadmap-content"><div class="roadmap-task">Schema TouristTrip en top 10 paquetes</div><div class="roadmap-detail">Priorizar Europa Dreams, Europa One, Europa Top, Turquía Increíble, Tailandia, 2 cruceros. Validar con Google Rich Results Test.</div><div class="roadmap-tags"><span class="rtag rtag-dev">Dev</span><span class="rtag rtag-seo">SEO</span></div></div></div>
+    <div class="roadmap-item"><div class="roadmap-week">Sem 6<br>Jul 7-11</div><div class="roadmap-content"><div class="roadmap-task">Actualizar /nosotros/ con bloque GEO</div><div class="roadmap-detail">Reescribir con formato de identidad estructurado. Incluir: fundación, años, viajeros, certificaciones, destinos, ciudades de salida.</div><div class="roadmap-tags"><span class="rtag rtag-content">Contenido</span></div></div></div>
+    <div class="roadmap-item"><div class="roadmap-week">Sem 7<br>Jul 14-18</div><div class="roadmap-content"><div class="roadmap-task">2 artículos de blog adicionales + sitemap</div><div class="roadmap-detail">Artículo 3: "Visa Schengen para colombianos". Artículo 4: "Tailandia vs. Bali". Actualizar sitemap.xml.</div><div class="roadmap-tags"><span class="rtag rtag-content">Contenido</span><span class="rtag rtag-seo">SEO</span></div></div></div>
+    <div class="roadmap-item"><div class="roadmap-week">Sem 8<br>Jul 21-25</div><div class="roadmap-content"><div class="roadmap-task">Estrategia de reseñas + link building</div><div class="roadmap-detail">Campaña de WhatsApp a clientes recientes. Meta: 50 reseñas nuevas. Enviar nota de prensa Primatón a El Colombiano y portales de turismo.</div><div class="roadmap-tags"><span class="rtag rtag-mkt">Marketing</span></div></div></div>
+  </div>
+</div>
+
+<div class="roadmap-month">
+  <div class="roadmap-month-title">MES 3 — AGOSTO 2026 · Escalamiento y Medición (días 61–90)</div>
+  <div class="roadmap-items">
+    <div class="roadmap-item"><div class="roadmap-week">Sem 10<br>Aug 4-8</div><div class="roadmap-content"><div class="roadmap-task">2 artículos más de blog + calendario editorial Q3</div><div class="roadmap-detail">Artículo 5: "Cómo financiar un viaje a Europa". Artículo 6: "Qué llevar a Europa: lista completa". Planificar artículos hasta diciembre 2026.</div><div class="roadmap-tags"><span class="rtag rtag-content">Contenido</span></div></div></div>
+    <div class="roadmap-item"><div class="roadmap-week">Sem 11<br>Aug 11-15</div><div class="roadmap-content"><div class="roadmap-task">Revisión técnica + Core Web Vitals</div><div class="roadmap-detail">Correr PageSpeed Insights en las 5 páginas principales. Objetivo: LCP &lt; 2.5s, INP &lt; 200ms, CLS &lt; 0.1.</div><div class="roadmap-tags"><span class="rtag rtag-dev">Dev</span><span class="rtag rtag-seo">SEO</span></div></div></div>
+    <div class="roadmap-item"><div class="roadmap-week">Sem 12<br>Aug 18-22</div><div class="roadmap-content"><div class="roadmap-task">Test de visibilidad en IA</div><div class="roadmap-detail">Preguntar a ChatGPT, Perplexity y Gemini: "¿Cuáles son las mejores agencias de viajes para ir a Europa desde Medellín?" — Registrar resultados.</div><div class="roadmap-tags"><span class="rtag rtag-seo">SEO</span><span class="rtag rtag-mkt">Marketing</span></div></div></div>
+    <div class="roadmap-item"><div class="roadmap-week">Sem 13<br>Aug 25-29</div><div class="roadmap-content"><div class="roadmap-task">Reporte de resultados 90 días + plan Q4</div><div class="roadmap-detail">Medir: posiciones en Google, tráfico orgánico, conversiones, posición en IA, backlinks conseguidos. Planificar acciones Q4.</div><div class="roadmap-tags"><span class="rtag rtag-seo">SEO</span><span class="rtag rtag-mkt">Marketing</span></div></div></div>
+  </div>
+</div>
+
+<div class="section-header">
+  <div class="section-num">Sección 10</div>
+  <h2>KPIs y Métricas de Éxito</h2>
+  <p>Indicadores medibles para cada fase del plan.</p>
+  <div class="section-divider"></div>
+</div>
+
+<div class="kpi-grid">
+  <div class="kpi-card"><div class="kpi-icon">📈</div><div class="kpi-num">+40%</div><div class="kpi-label">Tráfico orgánico</div><div class="kpi-target">Meta: mes 3 vs mes 0</div></div>
+  <div class="kpi-card"><div class="kpi-icon">🔍</div><div class="kpi-num">Top 5</div><div class="kpi-label">Posición en Google</div><div class="kpi-target">Para "viajes a europa desde colombia"</div></div>
+  <div class="kpi-card"><div class="kpi-icon">⭐</div><div class="kpi-num">50+</div><div class="kpi-label">Reseñas nuevas</div><div class="kpi-target">Google Business Profile en 90 días</div></div>
+  <div class="kpi-card"><div class="kpi-icon">🤖</div><div class="kpi-num">3/3</div><div class="kpi-label">Aparece en IA</div><div class="kpi-target">ChatGPT + Perplexity + Gemini</div></div>
+  <div class="kpi-card"><div class="kpi-icon">📝</div><div class="kpi-num">6</div><div class="kpi-label">Artículos de blog</div><div class="kpi-target">Publicados en 90 días</div></div>
+  <div class="kpi-card"><div class="kpi-icon">🔗</div><div class="kpi-num">3+</div><div class="kpi-label">Backlinks nuevos</div><div class="kpi-target">De medios y blogs de turismo</div></div>
+</div>
+
+<div class="alert alert-green" style="margin-top: 40px;">
+  <div class="alert-icon">🚀</div>
+  <div>
+    <div class="alert-title">RESUMEN EJECUTIVO</div>
+    <div class="alert-text">Geo Tours tiene una base sólida — 20 años de experiencia, certificaciones IATA y ANATO, 15.000+ viajeros y dos ciudades de operación. El problema es técnico y de comunicación: las URLs no le hablan a Google, no hay schema que le muestre datos a la IA, y el blog que podría atraer tráfico informacional no existe como tal. Con las 26 acciones de este plan aplicadas en 90 días, el sitio puede pasar de invisible a competidor real en las primeras posiciones de Google.</div>
+  </div>
+</div>
+
+<div style="margin-top: 48px; padding-top: 24px; border-top: 1px solid #e8ecf5; text-align: center;">
+  <div style="font-size: 9pt; color: #999; margin-bottom: 4px;">Geo Tours · Geoser · Medellín, Colombia</div>
+  <div style="font-size: 9pt; color: #999;">Documento confidencial — Mayo 2026 · Preparado para presentación interna</div>
+</div>
+
+  </div><!-- /page -->
+</div><!-- /tab geo-plan -->
+
+<!-- ══════════════════════════════════════════
+     TAB 4: GEO TOURS — GUÍA CON FECHAS
+══════════════════════════════════════════ -->
+<div class="tab-section" id="geo-guia">
+  <div class="tab-banner">
+    <div class="brand">Geo Tours · B2C · Geoser</div>
+    <h1>Guía de Implementación SEO + GEO Paso a Paso con Fechas</h1>
+    <div class="sub">Instrucciones detalladas para ejecutar el Plan Maestro SEO+GEO de viajesgeotours.com en 90 días · Jun 2 – Ago 29, 2026</div>
+  </div>
+  <div class="page">
+
+<div style="margin: 0 0 40px;">
+  <h2 style="font-size:16pt; font-weight:800; color:#0f3460; margin-bottom:16px;">Resumen del Plan de 90 Días</h2>
+  <div class="summary-table">
+    <table>
+      <tr><th>#</th><th>Bloque</th><th>Fechas</th><th>Semanas</th><th>Horas Est.</th><th>Responsable</th></tr>
+      <tr><td>1</td><td>Auditoría técnica y Search Console</td><td>Jun 2 – 6</td><td>Sem 1</td><td>6h</td><td>Dev + SEO</td></tr>
+      <tr><td>2</td><td>Correcciones técnicas urgentes</td><td>Jun 9 – 20</td><td>Sem 2–3</td><td>10h</td><td>Dev</td></tr>
+      <tr><td>3</td><td>Optimización On-Page</td><td>Jun 16 – 27</td><td>Sem 3–4</td><td>6h</td><td>SEO + Marketing</td></tr>
+      <tr><td>4</td><td>Schema markup</td><td>Jun 23 – Jul 11</td><td>Sem 4–6</td><td>8h</td><td>Dev</td></tr>
+      <tr><td>5</td><td>Google Business Profile</td><td>Jun 23 – 27</td><td>Sem 4</td><td>4h</td><td>Marketing</td></tr>
+      <tr><td>6</td><td>Blog y estrategia de contenido</td><td>Jun 30 – Ago 8</td><td>Sem 5–10</td><td>20h</td><td>Contenido + SEO</td></tr>
+      <tr><td>7</td><td>GEO — Visibilidad en IA</td><td>Jul 7 – 18</td><td>Sem 6–7</td><td>4h</td><td>Dev + Contenido</td></tr>
+      <tr><td>8</td><td>Link building y reseñas</td><td>Jul 21 – Ago 1</td><td>Sem 8–9</td><td>6h</td><td>Marketing</td></tr>
+      <tr><td>9</td><td>Monitoreo y reporte final</td><td>Ago 4 – 29</td><td>Sem 10–13</td><td>4h</td><td>SEO + Marketing</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- BLOQUE 1 -->
+<div class="block-header"><div class="block-num">Bloque 01</div><h2>Auditoría Técnica + Google Search Console</h2><div class="block-meta">📅 Semana 1 · Lunes 2 de junio al Viernes 6 de junio 2026 · Total: ~6 horas</div></div>
+<div class="week-divider"><div class="week-label">Semana 1</div><div class="week-dates">Lunes 2 jun – Viernes 6 jun 2026</div><div class="week-hours">⏱ 6 horas en total</div></div>
+
+<div class="task-card">
+  <div class="task-header"><div class="task-num">1</div><div class="task-header-info"><div class="task-title">Instalar y configurar Google Search Console</div><div class="task-meta"><span class="task-date">📅 Lunes 2 de junio</span><span class="task-time">⏱ 1.5 horas</span><span class="task-resp resp-dev">Dev</span><span class="task-resp resp-seo">SEO</span><span class="priority-badge p-critico">CRÍTICO</span></div></div></div>
+  <div class="task-body">
+    <div class="task-section"><div class="task-section-title">Pasos a seguir</div><ul class="task-steps"><li>Ir a <strong>search.google.com/search-console</strong> e iniciar sesión con cuenta de Google de Geo Tours</li><li>Clic en "Añadir propiedad" → elegir tipo "Dominio" → ingresar <strong>viajesgeotours.com</strong></li><li>Verificar mediante registro DNS TXT en el panel de hosting</li><li>También agregar propiedad <strong>www.viajesgeotours.com</strong> y verificar</li><li>Si existe <strong>viajesgeotours.com.co</strong> — agregar esa propiedad también</li><li>Enviar el sitemap: menú lateral → "Sitemaps" → ingresar <strong>https://www.viajesgeotours.com/sitemap.xml</strong></li></ul></div>
+    <div class="task-section"><div class="task-section-title">Herramientas</div><div class="task-tools"><span class="tool-tag">Google Search Console</span><span class="tool-tag">Panel de hosting (DNS)</span></div></div>
+    <div class="task-result">Search Console activo con datos fluyendo. Sitemap enviado. Propiedades www y no-www verificadas.</div>
+  </div>
+</div>
+
+<div class="task-card">
+  <div class="task-header"><div class="task-num">2</div><div class="task-header-info"><div class="task-title">Auditoría de errores: 404, URLs truncadas y duplicados</div><div class="task-meta"><span class="task-date">📅 Martes 3 de junio</span><span class="task-time">⏱ 2 horas</span><span class="task-resp resp-dev">Dev</span><span class="task-resp resp-seo">SEO</span><span class="priority-badge p-critico">CRÍTICO</span></div></div></div>
+  <div class="task-body">
+    <div class="task-section"><div class="task-section-title">Pasos a seguir</div><ul class="task-steps"><li>En Search Console → menú "Cobertura" → filtrar por "Error 404 / no encontrada"</li><li>Revisar si <strong>/geotours/vp6381/sp/ofertas-a-europ</strong> aparece como error — anotar</li><li>Descargar lista completa de URLs con errores 404 como CSV</li><li>Verificar <strong>viajesgeotours.com.co</strong>: ¿redirige al .com o sirve contenido propio?</li><li>Verificar <strong>portalpagos.viajesgeotours.com</strong>: ¿aparece indexado? (buscar site:portalpagos.viajesgeotours.com)</li><li>Crear documento Excel con 3 columnas: URL actual | Estado | Acción a tomar</li></ul></div>
+    <div class="task-section"><div class="task-section-title">Herramientas</div><div class="task-tools"><span class="tool-tag">Google Search Console</span><span class="tool-tag">Screaming Frog SEO Spider</span><span class="tool-tag">Google Chrome</span></div></div>
+    <div class="task-result">Documento de auditoría con todas las URLs problemáticas identificadas y acción definida para cada una.</div>
+  </div>
+</div>
+
+<div class="task-card">
+  <div class="task-header"><div class="task-num">3</div><div class="task-header-info"><div class="task-title">Instalar Google Analytics 4 + configurar conversiones</div><div class="task-meta"><span class="task-date">📅 Miércoles 4 de junio</span><span class="task-time">⏱ 1.5 horas</span><span class="task-resp resp-dev">Dev</span><span class="priority-badge p-alto">ALTO</span></div></div></div>
+  <div class="task-body">
+    <div class="task-section"><div class="task-section-title">Pasos a seguir</div><ul class="task-steps"><li>Ir a <strong>analytics.google.com</strong> → crear propiedad GA4 para viajesgeotours.com</li><li>Instalar el tag de GA4 en el &lt;head&gt; de todas las páginas</li><li>Configurar evento de conversión "Formulario completado" y "Clic en WhatsApp"</li><li>Vincular GA4 con Google Search Console</li><li>Anotar el número de sesiones orgánicas del mes de mayo como <strong>LÍNEA BASE</strong></li></ul></div>
+    <div class="task-section"><div class="task-section-title">Herramientas</div><div class="task-tools"><span class="tool-tag">Google Analytics 4</span><span class="tool-tag">Google Tag Manager (opcional)</span></div></div>
+    <div class="task-result">GA4 instalado y recibiendo datos. Conversiones configuradas. Línea base de tráfico orgánico documentada.</div>
+  </div>
+</div>
+
+<div class="task-card">
+  <div class="task-header"><div class="task-num">4</div><div class="task-header-info"><div class="task-title">Test de velocidad con PageSpeed Insights</div><div class="task-meta"><span class="task-date">📅 Jueves 5 de junio</span><span class="task-time">⏱ 1 hora</span><span class="task-resp resp-dev">Dev</span><span class="priority-badge p-alto">ALTO</span></div></div></div>
+  <div class="task-body">
+    <div class="task-section"><div class="task-section-title">Pasos a seguir</div><ul class="task-steps"><li>Abrir <strong>pagespeed.web.dev</strong> y testear estas 5 URLs (móvil y desktop):</li><li><strong>https://www.viajesgeotours.com/</strong> (homepage)</li><li><strong>https://www.viajesgeotours.com/destinos/europa/</strong></li><li><strong>https://www.viajesgeotours.com/destinos/turquia/</strong></li><li>Una página de paquete específico (la más visitada según Search Console)</li><li>Anotar: puntaje móvil, puntaje desktop, LCP, INP, CLS</li><li><strong>Objetivo mínimo:</strong> Móvil ≥ 50, Desktop ≥ 80</li></ul></div>
+    <div class="task-section"><div class="task-section-title">Herramientas</div><div class="task-tools"><span class="tool-tag">PageSpeed Insights (pagespeed.web.dev)</span></div></div>
+    <div class="task-result">Documento con puntajes actuales de velocidad para las 5 páginas. Línea base establecida para medir mejora en semana 11.</div>
+  </div>
+</div>
+
+<!-- BLOQUE 2 -->
+<div class="block-header"><div class="block-num">Bloque 02</div><h2>Correcciones Técnicas Urgentes</h2><div class="block-meta">📅 Semanas 2–3 · Lunes 9 de junio al Viernes 20 de junio 2026 · Total: ~10 horas</div></div>
+<div class="week-divider"><div class="week-label">Semana 2</div><div class="week-dates">Lunes 9 jun – Viernes 13 jun 2026</div><div class="week-hours">⏱ 6 horas</div></div>
+
+<div class="task-card">
+  <div class="task-header"><div class="task-num">5</div><div class="task-header-info"><div class="task-title">Resolver dominio duplicado viajesgeotours.com.co</div><div class="task-meta"><span class="task-date">📅 Lunes 9 de junio</span><span class="task-time">⏱ 1.5 horas</span><span class="task-resp resp-dev">Dev</span><span class="priority-badge p-critico">CRÍTICO</span></div></div></div>
+  <div class="task-body">
+    <div class="task-section"><div class="task-section-title">Pasos a seguir</div><ul class="task-steps"><li>Confirmar: ¿el .com.co sirve el mismo contenido que el .com?</li><li><strong>Si el .com.co tiene contenido igual:</strong> configurar redirect 301 permanente de todo el .com.co al .com en el servidor</li><li>Código .htaccess: <code>RewriteCond %{HTTP_HOST} ^(www\.)?viajesgeotours\.com\.co [NC] · RewriteRule (.*) https://www.viajesgeotours.com/$1 [R=301,L]</code></li><li>Verificar con herramienta: <strong>httpstatus.io</strong> — ingresar la URL .com.co → debe retornar 301</li></ul></div>
+    <div class="task-section"><div class="task-section-title">Herramientas</div><div class="task-tools"><span class="tool-tag">Panel de hosting / cPanel</span><span class="tool-tag">Editor .htaccess</span><span class="tool-tag">httpstatus.io</span></div></div>
+    <div class="task-result">viajesgeotours.com.co redirige 301 a www.viajesgeotours.com. Toda la autoridad consolidada en el dominio principal.</div>
+  </div>
+</div>
+
+<div class="task-card">
+  <div class="task-header"><div class="task-num">6</div><div class="task-header-info"><div class="task-title">Corregir URL truncada + bloquear subdominio de pagos</div><div class="task-meta"><span class="task-date">📅 Martes 10 de junio</span><span class="task-time">⏱ 1.5 horas</span><span class="task-resp resp-dev">Dev</span><span class="priority-badge p-critico">CRÍTICO</span></div></div></div>
+  <div class="task-body">
+    <div class="task-section"><div class="task-section-title">Pasos a seguir — URL truncada</div><ul class="task-steps"><li>Verificar en el CMS: buscar la página con URL /geotours/vp6381/sp/ofertas-a-europ</li><li>Corregir el slug de la URL en el CMS a: /destinos/europa/ofertas/</li><li>Añadir redirect 301 desde la URL truncada a la nueva URL</li></ul></div>
+    <div class="task-section"><div class="task-section-title">Pasos a seguir — Subdominio pagos</div><ul class="task-steps"><li>En portalpagos.viajesgeotours.com, crear/editar robots.txt</li><li>Añadir: <code>User-agent: * · Disallow: /</code></li><li>Verificar: abrir portalpagos.viajesgeotours.com/robots.txt — debe mostrar el Disallow</li></ul></div>
+    <div class="task-section"><div class="task-section-title">Herramientas</div><div class="task-tools"><span class="tool-tag">CMS del sitio</span><span class="tool-tag">Editor robots.txt</span><span class="tool-tag">httpstatus.io</span></div></div>
+    <div class="task-result">URL truncada corregida con redirect 301 activo. Subdominio de pagos bloqueado con robots.txt Disallow.</div>
+  </div>
+</div>
+
+<div class="task-card">
+  <div class="task-header"><div class="task-num">7</div><div class="task-header-info"><div class="task-title">Actualizar robots.txt principal — permitir bots de IA</div><div class="task-meta"><span class="task-date">📅 Miércoles 11 de junio</span><span class="task-time">⏱ 30 min</span><span class="task-resp resp-dev">Dev</span><span class="priority-badge p-alto">ALTO</span></div></div></div>
+  <div class="task-body">
+    <div class="task-section"><div class="task-section-title">Pasos a seguir</div><ul class="task-steps"><li>Abrir el archivo robots.txt en la raíz del sitio (viajesgeotours.com/robots.txt)</li><li>Verificar que NO exista ningún Disallow para GPTBot, ClaudeBot o PerplexityBot</li><li>Añadir explícitamente: GPTBot, ChatGPT-User, PerplexityBot, ClaudeBot, anthropic-ai, Google-Extended con Allow: /</li><li>Asegurarse de que la línea del Sitemap apunte a: https://www.viajesgeotours.com/sitemap.xml</li></ul></div>
+    <div class="task-section"><div class="task-section-title">Herramientas</div><div class="task-tools"><span class="tool-tag">Editor de texto / FTP</span><span class="tool-tag">Google Search Console</span></div></div>
+    <div class="task-result">robots.txt actualizado permitiendo acceso a GPTBot, ClaudeBot, PerplexityBot y Google-Extended.</div>
+  </div>
+</div>
+
+<div class="week-divider"><div class="week-label">Semana 3</div><div class="week-dates">Lunes 16 jun – Viernes 20 jun 2026</div><div class="week-hours">⏱ 4 horas</div></div>
+
+<div class="task-card">
+  <div class="task-header"><div class="task-num">8</div><div class="task-header-info"><div class="task-title">Mapa de redirects 301 — 20 páginas de paquetes prioritarias</div><div class="task-meta"><span class="task-date">📅 Lunes 16 – Miércoles 18 de junio</span><span class="task-time">⏱ 4 horas</span><span class="task-resp resp-dev">Dev</span><span class="task-resp resp-seo">SEO</span><span class="priority-badge p-critico">CRÍTICO</span></div></div></div>
+  <div class="task-body">
+    <div class="task-section"><div class="task-section-title">Pasos a seguir</div><ul class="task-steps"><li>En Search Console → Rendimiento → Páginas → Ordenar por "Clics" de mayor a menor</li><li>Identificar las 20 páginas de paquetes con más tráfico con URLs tipo /geotours/vp####/sp/</li><li>Para cada una, crear la nueva URL: /destinos/{destino}/{nombre-paquete}/</li><li>Ejemplo: /geotours/vp5755/sp/turquia-costa-azul-con-troya-15-das → /destinos/turquia/paquete-turquia-costa-azul-15-dias/</li><li>Crear las nuevas páginas en el CMS con los slugs correctos</li><li>Configurar redirects 301 desde las URLs antiguas en .htaccess o plugin de redirects</li><li>Verificar cada redirect con httpstatus.io — confirmar código 301, no 302</li></ul></div>
+    <div class="task-section"><div class="task-section-title">Herramientas</div><div class="task-tools"><span class="tool-tag">Google Search Console</span><span class="tool-tag">CMS / WordPress plugin Redirection</span><span class="tool-tag">httpstatus.io</span><span class="tool-tag">Google Sheets</span></div></div>
+    <div class="task-result">20 páginas de paquetes con URLs semánticas nuevas y redirects 301 activos. Google empieza a indexar las nuevas URLs en 2-4 semanas.</div>
+  </div>
+</div>
+
+<!-- BLOQUE 3 -->
+<div class="block-header"><div class="block-num">Bloque 03</div><h2>Optimización On-Page — Titles, Metas y H1s</h2><div class="block-meta">📅 Semanas 3–4 · Lunes 16 de junio al Viernes 27 de junio 2026 · Total: ~6 horas</div></div>
+
+<div class="task-card">
+  <div class="task-header"><div class="task-num">9</div><div class="task-header-info"><div class="task-title">Actualizar meta titles y descriptions en las 6 páginas principales</div><div class="task-meta"><span class="task-date">📅 Jueves 19 – Viernes 20 de junio</span><span class="task-time">⏱ 2 horas</span><span class="task-resp resp-seo">SEO</span><span class="task-resp resp-mkt">Marketing</span><span class="priority-badge p-critico">CRÍTICO</span></div></div></div>
+  <div class="task-body">
+    <div class="task-section"><div class="task-section-title">Pasos a seguir</div><ul class="task-steps"><li>Ingresar al CMS y navegar a cada una de estas 6 páginas: Homepage, /destinos/europa/, /destinos/turquia/, /destinos/tailandia/, /destinos/cruceros/, /nosotros/</li><li>Usar los títulos y descripciones exactas de la Sección 6 del Plan Maestro</li><li><strong>Regla de titles:</strong> máximo 60 caracteres — usar contador en seomofo.com</li><li><strong>Regla de descriptions:</strong> máximo 155 caracteres — incluir keyword + beneficio + llamada a la acción</li><li>También actualizar el H1 de cada página según la tabla de encabezados recomendada</li></ul></div>
+    <div class="task-section"><div class="task-section-title">Herramientas</div><div class="task-tools"><span class="tool-tag">CMS del sitio</span><span class="tool-tag">seomofo.com</span><span class="tool-tag">Google Search Console</span></div></div>
+    <div class="task-result">6 páginas principales con titles únicos, descriptions optimizadas y H1 que incluye la keyword principal.</div>
+  </div>
+</div>
+
+<div class="task-card">
+  <div class="task-header"><div class="task-num">10</div><div class="task-header-info"><div class="task-title">Optimizar páginas de destino con contenido H2/H3 y FAQ</div><div class="task-meta"><span class="task-date">📅 Lunes 23 – Miércoles 25 de junio</span><span class="task-time">⏱ 4 horas</span><span class="task-resp resp-content">Contenido</span><span class="task-resp resp-seo">SEO</span><span class="priority-badge p-alto">ALTO</span></div></div></div>
+  <div class="task-body">
+    <div class="task-section"><div class="task-section-title">Pasos a seguir — Página Europa (modelo)</div><ul class="task-steps"><li>Añadir sección "¿Por qué viajar a Europa con Geo Tours?" con H2 y texto de 200 palabras</li><li>Añadir sección "Lo que incluye tu viaje a Europa" con H2 y lista con íconos</li><li>Añadir sección "Preguntas frecuentes" con H2 y mínimo 5 preguntas/respuestas (texto visible en HTML)</li><li>Añadir texto en la parte inferior con enlace a /contacto/</li><li>Repetir el mismo proceso para /destinos/turquia/ y /destinos/tailandia/</li></ul></div>
+    <div class="task-section"><div class="task-section-title">Herramientas</div><div class="task-tools"><span class="tool-tag">CMS del sitio</span><span class="tool-tag">Google Docs (redacción previa)</span></div></div>
+    <div class="task-result">3 páginas de destino enriquecidas con contenido optimizado, FAQ visible y palabras clave secundarias.</div>
+  </div>
+</div>
+
+<!-- BLOQUE 4 -->
+<div class="block-header"><div class="block-num">Bloque 04</div><h2>Schema Markup — Datos Estructurados</h2><div class="block-meta">📅 Semanas 4–6 · Lunes 23 de junio al Viernes 11 de julio 2026 · Total: ~8 horas</div></div>
+
+<div class="task-card">
+  <div class="task-header"><div class="task-num">11</div><div class="task-header-info"><div class="task-title">Implementar Schema TravelAgency en el homepage</div><div class="task-meta"><span class="task-date">📅 Jueves 26 – Viernes 27 de junio</span><span class="task-time">⏱ 1.5 horas</span><span class="task-resp resp-dev">Dev</span><span class="priority-badge p-critico">CRÍTICO</span></div></div></div>
+  <div class="task-body">
+    <div class="task-section"><div class="task-section-title">Pasos a seguir</div><ul class="task-steps"><li>Copiar el código JSON-LD de TravelAgency de la Sección 7 del Plan Maestro</li><li>Actualizar los campos: logo (URL real), teléfono, email, horarios reales, aggregateRating con datos reales de Google Business</li><li>Insertar el bloque &lt;script type="application/ld+json"&gt; en el &lt;head&gt; del homepage</li><li>Validar en: <strong>search.google.com/test/rich-results</strong> — debe mostrar "TravelAgency detectado" sin errores</li></ul></div>
+    <div class="task-section"><div class="task-section-title">Herramientas</div><div class="task-tools"><span class="tool-tag">Google Rich Results Test</span><span class="tool-tag">Schema.org Validator</span></div></div>
+    <div class="task-result">Schema TravelAgency validado sin errores. Google puede mostrar información de Geo Tours en Knowledge Panel.</div>
+  </div>
+</div>
+
+<div class="task-card">
+  <div class="task-header"><div class="task-num">12</div><div class="task-header-info"><div class="task-title">Schema TouristTrip en las 10 páginas de paquetes principales</div><div class="task-meta"><span class="task-date">📅 Martes 30 de junio – Viernes 4 de julio</span><span class="task-time">⏱ 4 horas</span><span class="task-resp resp-dev">Dev</span><span class="priority-badge p-alto">ALTO</span></div></div></div>
+  <div class="task-body">
+    <div class="task-section"><div class="task-section-title">Pasos a seguir</div><ul class="task-steps"><li>Priorizar: Europa Dreams, Europa One, Europa Top, Europa en Tenis II, Turquía Increíble, Tailandia, 2 cruceros</li><li>Para cada paquete: rellenar nombre, descripción (150 palabras), ciudades del itinerario, duración, fechas de salida</li><li>Insertar el JSON-LD en el &lt;head&gt; de cada página de paquete</li><li>Validar las 10 páginas en Google Rich Results Test</li></ul></div>
+    <div class="task-section"><div class="task-section-title">Herramientas</div><div class="task-tools"><span class="tool-tag">Google Rich Results Test</span><span class="tool-tag">JSON-LD Playground (jsonld.com)</span></div></div>
+    <div class="task-result">10 páginas de paquetes con schema TouristTrip válido. Google puede generar rich snippets con itinerario y disponibilidad.</div>
+  </div>
+</div>
+
+<div class="task-card">
+  <div class="task-header"><div class="task-num">13</div><div class="task-header-info"><div class="task-title">Implementar Schema FAQPage en preguntas frecuentes</div><div class="task-meta"><span class="task-date">📅 Lunes 7 – Martes 8 de julio</span><span class="task-time">⏱ 1.5 horas</span><span class="task-resp resp-dev">Dev</span><span class="task-resp resp-content">Contenido</span><span class="priority-badge p-alto">ALTO</span></div></div></div>
+  <div class="task-body">
+    <div class="task-section"><div class="task-section-title">Pasos a seguir</div><ul class="task-steps"><li>Crear la página /preguntas-frecuentes/ si no existe</li><li>Redactar mínimo 10 preguntas frecuentes reales — usar las del schema de la Sección 7 como base</li><li>El texto de las respuestas debe ser visible en el HTML (no oculto con JavaScript)</li><li>Insertar el JSON-LD de FAQPage en el &lt;head&gt;</li><li>Validar en Google Rich Results Test — debe mostrar "FAQPage detectado"</li></ul></div>
+    <div class="task-section"><div class="task-section-title">Herramientas</div><div class="task-tools"><span class="tool-tag">Google Rich Results Test</span><span class="tool-tag">CMS del sitio</span></div></div>
+    <div class="task-result">Página de FAQ con schema válido. Posibilidad de aparecer con FAQ expandida en resultados de búsqueda.</div>
+  </div>
+</div>
+
+<!-- BLOQUE 5 -->
+<div class="block-header"><div class="block-num">Bloque 05</div><h2>Google Business Profile — SEO Local</h2><div class="block-meta">📅 Semana 4 · Lunes 23 de junio al Viernes 27 de junio 2026 · Total: ~4 horas</div></div>
+
+<div class="task-card">
+  <div class="task-header"><div class="task-num">14</div><div class="task-header-info"><div class="task-title">Optimizar Google Business Profile al 100%</div><div class="task-meta"><span class="task-date">📅 Lunes 23 – Martes 24 de junio</span><span class="task-time">⏱ 2.5 horas</span><span class="task-resp resp-mkt">Marketing</span><span class="priority-badge p-alto">ALTO</span></div></div></div>
+  <div class="task-body">
+    <div class="task-section"><div class="task-section-title">Pasos a seguir</div><ul class="task-steps"><li>Ir a <strong>business.google.com</strong> e ingresar con la cuenta de Geo Tours</li><li>Verificar nombre: <strong>Geo Tours - Agencia de Viajes</strong></li><li>Completar descripción (750 caracteres): incluir "agencia de viajes Medellín", "viajes a Europa desde Colombia", "IATA", "ANATO", "20 años de experiencia"</li><li>Categoría principal: <strong>Agencia de viajes</strong> — Secundaria: Tour Operator</li><li>Verificar dirección exacta: Calle 35 82A-12, Medellín, Antioquia</li><li>Actualizar horarios reales de atención</li><li>Subir mínimo 20 fotos: fachada, equipo, oficina, logos, destinos</li><li>Publicar primer Post tipo Oferta: "Primatón — 50% en el 2do pasajero" con imagen y link al sitio</li><li>Responder TODAS las reseñas pendientes</li><li>Si hay una segunda ubicación en Bogotá — crear o completar ese perfil también</li></ul></div>
+    <div class="task-section"><div class="task-section-title">Herramientas</div><div class="task-tools"><span class="tool-tag">Google Business Profile</span><span class="tool-tag">Canva (fotos y banners)</span></div></div>
+    <div class="task-result">Perfil de Google Business al 100% de completitud. Aparición en búsquedas locales "agencia de viajes medellín" mejorada.</div>
+  </div>
+</div>
+
+<!-- BLOQUE 6 -->
+<div class="block-header"><div class="block-num">Bloque 06</div><h2>Blog Editorial — Estrategia de Contenido</h2><div class="block-meta">📅 Semanas 5–10 · Martes 1 de julio al Viernes 8 de agosto 2026 · Total: ~20 horas</div></div>
+
+<div class="alert alert-blue"><div class="alert-icon">📝</div><div><div class="alert-title">POR QUÉ EL BLOG ES LA INVERSIÓN MÁS IMPORTANTE</div><div class="alert-text">El 80% del tráfico orgánico de agencias de viajes viene de búsquedas informacionales: "cuánto cuesta viajar a europa", "qué documentos necesito para turquía". Sin blog, Geo Tours solo puede capturar el 20% del tráfico disponible. Con blog, captura el proceso de decisión completo.</div></div></div>
+
+<div class="task-card">
+  <div class="task-header"><div class="task-num">15</div><div class="task-header-info"><div class="task-title">Crear estructura de blog + primeros 2 artículos</div><div class="task-meta"><span class="task-date">📅 Martes 1 – Viernes 4 de julio</span><span class="task-time">⏱ 6 horas</span><span class="task-resp resp-content">Contenido</span><span class="task-resp resp-seo">SEO</span><span class="priority-badge p-alto">ALTO</span></div></div></div>
+  <div class="task-body">
+    <div class="task-section"><div class="task-section-title">Paso 1: Crear la sección /blog/</div><ul class="task-steps"><li>Crear la página /blog/ en el CMS con categorías: Europa, Turquía, Tailandia, Cruceros, Consejos de Viaje</li><li>Meta title: "Blog de Viajes Geo Tours | Guías e Inspiración para Viajeros Colombianos"</li><li>Enlazar /blog/ desde el menú principal del sitio</li></ul></div>
+    <div class="task-section"><div class="task-section-title">Artículo 1: "Cuánto cuesta un viaje a Europa desde Colombia en 2026"</div><ul class="task-steps"><li>URL: /blog/europa/cuanto-cuesta-viaje-europa-colombia-2026/</li><li>Extensión: mínimo 1.500 palabras</li><li>Estructura: H1 con keyword → párrafo respuesta directa (50 palabras) → H2 "Factores que afectan el precio" → H2 "Qué incluye un paquete a Europa" → H2 "Preguntas frecuentes" (5 preguntas) → CTA final</li><li>Fecha de publicación: 1 julio 2026</li></ul></div>
+    <div class="task-section"><div class="task-section-title">Artículo 2: "Los mejores destinos de Europa para colombianos"</div><ul class="task-steps"><li>URL: /blog/europa/mejores-destinos-europa-colombianos/</li><li>Extensión: mínimo 1.200 palabras</li><li>Fecha de publicación: 4 julio 2026</li></ul></div>
+    <div class="task-section"><div class="task-section-title">Herramientas</div><div class="task-tools"><span class="tool-tag">CMS del sitio</span><span class="tool-tag">Yoast SEO (si es WordPress)</span><span class="tool-tag">Unsplash / Pexels</span></div></div>
+    <div class="task-result">Blog activo con 2 artículos publicados. Tráfico orgánico informacional comienza a crecer en 6-8 semanas.</div>
+  </div>
+</div>
+
+<div class="task-card">
+  <div class="task-header"><div class="task-num">16</div><div class="task-header-info"><div class="task-title">Artículos 3 y 4 del blog</div><div class="task-meta"><span class="task-date">📅 Lunes 14 – Viernes 18 de julio</span><span class="task-time">⏱ 6 horas</span><span class="task-resp resp-content">Contenido</span><span class="priority-badge p-normal">NORMAL</span></div></div></div>
+  <div class="task-body">
+    <div class="task-section"><div class="task-section-title">Artículo 3</div><ul class="task-steps"><li>Tema: "Visa Schengen para colombianos en 2026: requisitos, documentos y tiempos"</li><li>URL: /blog/europa/visa-schengen-colombianos-2026/</li><li>Incluir: checklist de documentos, tiempo de procesamiento, dónde solicitarla, link a paquetes Europa</li></ul></div>
+    <div class="task-section"><div class="task-section-title">Artículo 4</div><ul class="task-steps"><li>Tema: "Tailandia vs Bali: ¿Cuál elegir para tu viaje desde Colombia?"</li><li>URL: /blog/tailandia/tailandia-vs-bali-colombia/</li><li>CTA al final: enlazar al paquete Tailandia de Geo Tours</li></ul></div>
+    <div class="task-result">4 artículos de blog publicados. Presencia en Google para keywords informacionales de Europa y Tailandia.</div>
+  </div>
+</div>
+
+<div class="task-card">
+  <div class="task-header"><div class="task-num">17</div><div class="task-header-info"><div class="task-title">Artículos 5 y 6 del blog + actualizar sitemap</div><div class="task-meta"><span class="task-date">📅 Lunes 4 – Viernes 8 de agosto</span><span class="task-time">⏱ 6 horas</span><span class="task-resp resp-content">Contenido</span><span class="priority-badge p-normal">NORMAL</span></div></div></div>
+  <div class="task-body">
+    <div class="task-section"><div class="task-section-title">Artículo 5</div><ul class="task-steps"><li>Tema: "Cómo financiar tu viaje a Europa desde Colombia en cuotas"</li><li>URL: /blog/consejos/como-financiar-viaje-europa-colombia/</li></ul></div>
+    <div class="task-section"><div class="task-section-title">Artículo 6</div><ul class="task-steps"><li>Tema: "Qué llevar en la maleta para Europa: lista completa para colombianos"</li><li>URL: /blog/consejos/que-llevar-maleta-europa-colombia/</li><li>Actualizar sitemap.xml con las 6 nuevas URLs del blog y enviar al Search Console</li></ul></div>
+    <div class="task-result">6 artículos de blog publicados. Sitemap actualizado enviado a Google. Base de contenido SEO establecida para el resto de 2026.</div>
+  </div>
+</div>
+
+<!-- BLOQUE 7 -->
+<div class="block-header"><div class="block-num">Bloque 07</div><h2>GEO — Visibilidad en Inteligencia Artificial</h2><div class="block-meta">📅 Semanas 6–7 · Lunes 7 de julio al Viernes 18 de julio 2026 · Total: ~4 horas</div></div>
+
+<div class="task-card">
+  <div class="task-header"><div class="task-num">18</div><div class="task-header-info"><div class="task-title">Reescribir página /nosotros/ con bloque de identidad para IA</div><div class="task-meta"><span class="task-date">📅 Lunes 7 – Martes 8 de julio</span><span class="task-time">⏱ 2 horas</span><span class="task-resp resp-content">Contenido</span><span class="task-resp resp-dev">Dev</span><span class="priority-badge p-alto">ALTO</span></div></div></div>
+  <div class="task-body">
+    <div class="task-section"><div class="task-section-title">Pasos a seguir</div><ul class="task-steps"><li>Reescribir /nosotros/ usando el bloque de identidad estructurado de la Sección 8 del Plan Maestro</li><li>Primer párrafo: "Geo Tours es una agencia de viajes colombiana fundada en 2004, con sede en Medellín..."</li><li>Añadir lista de hechos verificables: años de operación, número de viajeros, certificaciones IATA/ANATO, RNT, destinos, ciudades de salida</li><li>Añadir sección "Nuestros premios y reconocimientos" si existen</li><li>El texto debe ser HTML puro visible, no generado con JavaScript</li></ul></div>
+    <div class="task-section"><div class="task-section-title">Herramientas</div><div class="task-tools"><span class="tool-tag">CMS del sitio</span><span class="tool-tag">Google Docs (redacción)</span></div></div>
+    <div class="task-result">Página /nosotros/ con contenido estructurado que los modelos de IA pueden leer y citar al responder preguntas sobre agencias en Colombia.</div>
+  </div>
+</div>
+
+<div class="task-card">
+  <div class="task-header"><div class="task-num">19</div><div class="task-header-info"><div class="task-title">Primer test de visibilidad en IA + plan de mejora</div><div class="task-meta"><span class="task-date">📅 Jueves 17 – Viernes 18 de julio</span><span class="task-time">⏱ 2 horas</span><span class="task-resp resp-seo">SEO</span><span class="task-resp resp-mkt">Marketing</span><span class="priority-badge p-alto">ALTO</span></div></div></div>
+  <div class="task-body">
+    <div class="task-section"><div class="task-section-title">Preguntas a testear (copiar exactas)</div><ul class="task-steps"><li>ChatGPT, Perplexity y Gemini: <strong>"¿Cuáles son las mejores agencias de viajes para ir a Europa desde Medellín Colombia?"</strong></li><li>ChatGPT, Perplexity y Gemini: <strong>"¿Qué agencias de viajes colombianas venden paquetes a Turquía todo incluido?"</strong></li><li>Google (búsqueda normal): <strong>"mejor agencia viajes europa medellín"</strong> — revisar si hay AI Overview</li></ul></div>
+    <div class="task-section"><div class="task-section-title">Registrar resultados</div><ul class="task-steps"><li>Crear tabla: Herramienta IA | Pregunta | ¿Aparece Geo Tours? | ¿Qué competitors aparecen?</li><li>Si no aparece: priorizar conseguir backlinks de medios (Bloque 8) y aumentar reseñas en Google</li></ul></div>
+    <div class="task-result">Documento de diagnóstico de visibilidad en IA con baseline establecido para comparar en semana 12.</div>
+  </div>
+</div>
+
+<!-- BLOQUE 8 -->
+<div class="block-header"><div class="block-num">Bloque 08</div><h2>Link Building y Campaña de Reseñas</h2><div class="block-meta">📅 Semanas 8–9 · Lunes 21 de julio al Viernes 1 de agosto 2026 · Total: ~6 horas</div></div>
+
+<div class="task-card">
+  <div class="task-header"><div class="task-num">20</div><div class="task-header-info"><div class="task-title">Campaña de reseñas en Google Business Profile</div><div class="task-meta"><span class="task-date">📅 Lunes 21 – Miércoles 23 de julio</span><span class="task-time">⏱ 2 horas</span><span class="task-resp resp-mkt">Marketing</span><span class="priority-badge p-alto">ALTO</span></div></div></div>
+  <div class="task-body">
+    <div class="task-section"><div class="task-section-title">Pasos a seguir</div><ul class="task-steps"><li>Ir a Google Business Profile → obtener el enlace directo para dejar reseñas</li><li>Redactar mensaje de WhatsApp para clientes: <em>"Hola [nombre], gracias por viajar con Geo Tours. ¿Podés tomarte 2 minutos para dejarnos una reseña en Google? Nos ayuda mucho. [LINK]"</em></li><li>Exportar lista de clientes de Bitrix24 que viajaron en los últimos 12 meses</li><li>Enviar el mensaje a grupos de máximo 50 contactos por día</li><li>Meta: 50 reseñas nuevas en 30 días</li><li>Responder CADA reseña que llegue — positiva con agradecimiento, negativa con disculpa y solución</li><li>No ofrecer descuentos a cambio de reseñas (viola políticas de Google)</li></ul></div>
+    <div class="task-section"><div class="task-section-title">Herramientas</div><div class="task-tools"><span class="tool-tag">Google Business Profile</span><span class="tool-tag">WhatsApp Business</span><span class="tool-tag">Bitrix24 CRM</span></div></div>
+    <div class="task-result">+50 reseñas nuevas en Google. Puntaje general sube a 4.8+. Señal de autoridad para Google y para los modelos de IA.</div>
+  </div>
+</div>
+
+<div class="task-card">
+  <div class="task-header"><div class="task-num">21</div><div class="task-header-info"><div class="task-title">Nota de prensa Primatón + outreach a medios y bloggers</div><div class="task-meta"><span class="task-date">📅 Jueves 24 de julio – Viernes 1 de agosto</span><span class="task-time">⏱ 4 horas</span><span class="task-resp resp-mkt">Marketing</span><span class="priority-badge p-normal">NORMAL</span></div></div></div>
+  <div class="task-body">
+    <div class="task-section"><div class="task-section-title">Pasos a seguir</div><ul class="task-steps"><li>Redactar nota de prensa de 400 palabras sobre la campaña Primatón: qué es, cuándo, beneficios, cita del gerente</li><li>Enviar a sección de negocios/turismo de: El Colombiano, El Tiempo, Pulzo, Semana Viajes, Revista Diners</li><li>Buscar en Google "blog de viajes colombia" y contactar los 5 primeros blogs para colaboración</li><li>Registrar en TripAdvisor si no existe perfil — añadir descripción, fotos y enlace al sitio</li><li>Meta: 3 menciones o backlinks en medios de autoridad en 30 días</li></ul></div>
+    <div class="task-section"><div class="task-section-title">Herramientas</div><div class="task-tools"><span class="tool-tag">Email corporativo</span><span class="tool-tag">TripAdvisor</span><span class="tool-tag">Google Docs</span><span class="tool-tag">LinkedIn</span></div></div>
+    <div class="task-result">3+ backlinks de medios colombianos de turismo. Aumento de autoridad de dominio. Mayor visibilidad en resultados de IA.</div>
+  </div>
+</div>
+
+<!-- BLOQUE 9 -->
+<div class="block-header"><div class="block-num">Bloque 09</div><h2>Monitoreo, Core Web Vitals y Reporte Final</h2><div class="block-meta">📅 Semanas 10–13 · Lunes 4 de agosto al Viernes 29 de agosto 2026 · Total: ~4 horas</div></div>
+
+<div class="task-card">
+  <div class="task-header"><div class="task-num">22</div><div class="task-header-info"><div class="task-title">Revisión técnica: Core Web Vitals semana 11</div><div class="task-meta"><span class="task-date">📅 Lunes 11 – Martes 12 de agosto</span><span class="task-time">⏱ 1.5 horas</span><span class="task-resp resp-dev">Dev</span><span class="task-resp resp-seo">SEO</span><span class="priority-badge p-normal">NORMAL</span></div></div></div>
+  <div class="task-body">
+    <div class="task-section"><div class="task-section-title">Pasos a seguir</div><ul class="task-steps"><li>Correr PageSpeed Insights en las mismas 5 páginas del test inicial (Tarea 4)</li><li>Comparar con la línea base: ¿mejoró el puntaje móvil? ¿bajó el LCP?</li><li><strong>Objetivos mínimos:</strong> LCP ≤ 2.5s, INP ≤ 200ms, CLS ≤ 0.1</li><li>En Search Console → Core Web Vitals: verificar cuántas URLs tienen estado "Bueno"</li><li>Documentar mejora vs línea base de semana 1</li></ul></div>
+    <div class="task-section"><div class="task-section-title">Herramientas</div><div class="task-tools"><span class="tool-tag">PageSpeed Insights</span><span class="tool-tag">Google Search Console → Core Web Vitals</span></div></div>
+    <div class="task-result">Informe de Core Web Vitals comparativo. Si puntaje móvil ≥ 65 en todas las páginas, objetivo cumplido.</div>
+  </div>
+</div>
+
+<div class="task-card">
+  <div class="task-header"><div class="task-num">23</div><div class="task-header-info"><div class="task-title">Test final de visibilidad en IA</div><div class="task-meta"><span class="task-date">📅 Lunes 18 – Martes 19 de agosto</span><span class="task-time">⏱ 1 hora</span><span class="task-resp resp-seo">SEO</span><span class="task-resp resp-mkt">Marketing</span><span class="priority-badge p-normal">NORMAL</span></div></div></div>
+  <div class="task-body">
+    <div class="task-section"><div class="task-section-title">Pasos a seguir</div><ul class="task-steps"><li>Repetir las mismas 4 preguntas de la Tarea 19 en ChatGPT, Perplexity y Gemini</li><li>Comparar con el test de la semana 7: ¿aparece Geo Tours ahora?</li><li>Si aparece: documentar la respuesta completa como evidencia para el reporte al jefe</li><li>Si no aparece: identificar cuáles señales faltan y planificar para Q4</li></ul></div>
+    <div class="task-result">Diagnóstico comparativo de visibilidad en IA. Evidencia documentada del avance en GEO.</div>
+  </div>
+</div>
+
+<div class="task-card">
+  <div class="task-header"><div class="task-num">24</div><div class="task-header-info"><div class="task-title">Reporte de resultados 90 días para presentar al jefe</div><div class="task-meta"><span class="task-date">📅 Lunes 25 – Viernes 29 de agosto</span><span class="task-time">⏱ 1.5 horas</span><span class="task-resp resp-seo">SEO</span><span class="task-resp resp-mkt">Marketing</span><span class="priority-badge p-normal">NORMAL</span></div></div></div>
+  <div class="task-body">
+    <div class="task-section"><div class="task-section-title">Métricas a incluir en el reporte</div><ul class="task-steps"><li>Tráfico orgánico: sesiones de junio vs agosto (Google Analytics 4)</li><li>Posición promedio en Google para top 10 keywords objetivo (Search Console)</li><li>Clics orgánicos: junio vs agosto</li><li>Reseñas Google: número antes y después</li><li>Errores de rastreo resueltos</li><li>URLs con schema implementado</li><li>6 artículos de blog publicados y tráfico que están generando</li><li>Visibilidad en IA: ¿aparece en ChatGPT/Perplexity?</li><li>Backlinks conseguidos</li></ul></div>
+    <div class="task-result">Reporte ejecutivo de 1-2 páginas con resultados cuantificables y plan Q4 aprobado.</div>
+  </div>
+</div>
+
+<!-- CHECKLIST FINAL GEO TOURS -->
+<div class="block-header" style="background: linear-gradient(90deg, #1e8449, #27ae60);">
+  <div class="block-num" style="color:#a8e6c0;">Checklist Final</div>
+  <h2>Verificación Completa — 90 Días</h2>
+  <div class="block-meta" style="color:#d5f5e3;">Antes de cerrar el plan, confirmá que cada ítem esté marcado como completado</div>
+</div>
+
+<ul class="checklist">
+  <li><div class="check-box"></div><div class="check-num">01</div>Google Search Console activo y sitemap enviado</li>
+  <li><div class="check-box"></div><div class="check-num">02</div>Google Analytics 4 instalado con conversiones configuradas</li>
+  <li><div class="check-box"></div><div class="check-num">03</div>URL truncada /ofertas-a-europ corregida con redirect 301</li>
+  <li><div class="check-box"></div><div class="check-num">04</div>Dominio viajesgeotours.com.co resuelto (redirect 301 al .com)</li>
+  <li><div class="check-box"></div><div class="check-num">05</div>Subdominio portalpagos bloqueado con robots.txt Disallow</li>
+  <li><div class="check-box"></div><div class="check-num">06</div>robots.txt principal actualizado con bots de IA permitidos</li>
+  <li><div class="check-box"></div><div class="check-num">07</div>20 páginas de paquetes con nuevas URLs semánticas + redirects 301</li>
+  <li><div class="check-box"></div><div class="check-num">08</div>/destino/punta-cana/ corregida a /destinos/punta-cana/</li>
+  <li><div class="check-box"></div><div class="check-num">09</div>Meta titles únicos en 6 páginas principales</li>
+  <li><div class="check-box"></div><div class="check-num">10</div>Meta descriptions optimizadas en 6 páginas principales</li>
+  <li><div class="check-box"></div><div class="check-num">11</div>Contenido H2/H3 + FAQ añadido a páginas de Europa, Turquía, Tailandia</li>
+  <li><div class="check-box"></div><div class="check-num">12</div>Schema TravelAgency validado en homepage sin errores</li>
+  <li><div class="check-box"></div><div class="check-num">13</div>Schema TouristTrip en 10 páginas de paquetes validado</li>
+  <li><div class="check-box"></div><div class="check-num">14</div>Schema FAQPage en /preguntas-frecuentes/ validado</li>
+  <li><div class="check-box"></div><div class="check-num">15</div>Google Business Profile al 100% — Medellín y Bogotá</li>
+  <li><div class="check-box"></div><div class="check-num">16</div>50+ reseñas nuevas en Google Business Profile</li>
+  <li><div class="check-box"></div><div class="check-num">17</div>Blog /blog/ activo con estructura de categorías</li>
+  <li><div class="check-box"></div><div class="check-num">18</div>6 artículos de blog publicados con FAQ y CTAs</li>
+  <li><div class="check-box"></div><div class="check-num">19</div>Sitemap.xml actualizado con todas las nuevas URLs</li>
+  <li><div class="check-box"></div><div class="check-num">20</div>Página /nosotros/ reescrita con bloque de identidad GEO</li>
+  <li><div class="check-box"></div><div class="check-num">21</div>Test de visibilidad en IA completado (semana 7 y semana 12)</li>
+  <li><div class="check-box"></div><div class="check-num">22</div>Nota de prensa Primatón enviada a medios</li>
+  <li><div class="check-box"></div><div class="check-num">23</div>3+ backlinks de medios o blogs de turismo colombianos</li>
+  <li><div class="check-box"></div><div class="check-num">24</div>Core Web Vitals revisados en semana 11 — mejora vs baseline</li>
+  <li><div class="check-box"></div><div class="check-num">25</div>Reporte ejecutivo 90 días entregado al jefe</li>
+  <li><div class="check-box"></div><div class="check-num">26</div>Plan Q4 (septiembre–diciembre) aprobado</li>
+</ul>
+
+<div style="margin-top: 40px; background: linear-gradient(135deg, #0f3460, #16213e); border-radius: 12px; padding: 24px 28px; color: #fff; text-align: center;">
+  <div style="font-size: 13pt; font-weight: 800; color: #e94560; margin-bottom: 8px;">¡Las 26 tareas completadas = Geo Tours visible en Google y en IA!</div>
+  <div style="font-size: 10pt; color: #a8b2d8;">El SEO es un trabajo de largo plazo. Los resultados más grandes llegan en los meses 4–6. Manteniendo el blog activo y las señales técnicas correctas, Geo Tours puede estar entre los 5 primeros resultados para las keywords objetivo antes de diciembre 2026.</div>
+</div>
+
+<div style="margin-top: 36px; padding-top: 20px; border-top: 1px solid #e8ecf5; text-align: center;">
+  <div style="font-size: 9pt; color: #999; margin-bottom: 4px;">Geo Tours · Geoser · Medellín, Colombia</div>
+  <div style="font-size: 9pt; color: #999;">Guía confidencial de implementación — Mayo 2026</div>
+</div>
+
+  </div><!-- /page -->
+</div><!-- /tab geo-guia -->
+
+<!-- ══ JAVASCRIPT ══ -->
+<script>
+function showTab(id) {
+  document.querySelectorAll('.tab-section').forEach(s => s.style.display = 'none');
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).style.display = 'block';
+  document.getElementById('btn-' + id).classList.add('active');
+  window.scrollTo(0,0);
+}
+// Initialize: show first tab
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.tab-section').forEach(s => s.style.display = 'none');
+  document.getElementById('akira-plan').style.display = 'block';
+});
+</script>
+
+</body>
+</html>
